@@ -22,8 +22,8 @@ body {
 /* NAVIGATION */
 nav {
     padding: 20px 0;
-    border-bottom: 1px solid ##ffe4ad;
-    background: #ffe4ad;
+    border-bottom: 1px solid #facd70;
+    background: #facd70;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -69,7 +69,7 @@ nav .container {
     display: inline-block;
     padding: 14px 34px;
     background: #fcf3dc;
-    color: #ffe4ad;
+    color: #facd70;
     text-decoration: none;
     border-radius: 40px;
     font-weight: 600;
@@ -92,7 +92,7 @@ nav .container {
 
 .btn-outline:hover {
     background: #fcf3dc;
-    color: #ffe4ad;
+    color: #facd70;
 }
 
 /* HERO (Ana Sayfa) */
@@ -168,7 +168,7 @@ section {
 }
 
 .poetry-card {
-    background: #ffe4ad;
+    background: #facd70;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -223,7 +223,7 @@ section {
 }
 
 .project-card {
-    background: #ffe4ad;
+    background: #facd70;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -305,13 +305,13 @@ section {
 footer {
     padding: 40px 0;
     background: #fcf3dc;
-    color: #ffe4ad;
+    color: #facd70;
     text-align: center;
     margin-top: 40px;
 }
 
 footer a {
-    color: #ffe4ad;
+    color: #facd70;
     text-decoration: none;
     transition: color 0.3s;
 }
