@@ -9,7 +9,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: #4a2f01;
-    color: #FFF8E1;
+    color: #fca9d1;
     line-height: 1.6;
 }
 
@@ -22,8 +22,8 @@ body {
 /* NAVIGATION */
 nav {
     padding: 20px 0;
-    border-bottom: 1px solid #FFE082;
-    background: #FFE082;
+    border-bottom: 1px solid #fca9d1;
+    background: #fca9d1;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -69,7 +69,7 @@ nav .container {
 .btn {
     display: inline-block;
     padding: 14px 34px;
-    background: #FFF8E1;
+    background: #fca9d1;
     color: #4a2f01;
     text-decoration: none;
     border-radius: 40px;
@@ -82,18 +82,18 @@ nav .container {
 
 .btn:hover {
     background: #6D4C2A;
-    color: #FFF8E1;
+    color: #fca9d1;
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    border: 2px solid #FFF8E1;
-    color: #FFF8E1;
+    border: 2px solid #fca9d1;
+    color: #fca9d1;
 }
 
 .btn-outline:hover {
-    background: #FFF8E1;
+    background: #fca9d1;
     color: #4a2f01;
 }
 
@@ -115,16 +115,16 @@ nav .container {
     line-height: 1.2;
     margin-bottom: 16px;
     letter-spacing: -1px;
-    color: #FFF8E1;
+    color: #fca9d1;
 }
 
 .hero-content h1 span {
-    color: #FFD54F;
+    color: #fca9d1;
 }
 
 .hero-content p {
     font-size: 18px;
-    color: #FFECB3;
+    color: #fca9d1;
     margin-bottom: 28px;
     max-width: 480px;
 }
@@ -153,12 +153,12 @@ section {
     font-weight: 700;
     text-align: center;
     margin-bottom: 12px;
-    color: #FFF8E1;
+    color: #fca9d1;
 }
 
 .section-desc {
     text-align: center;
-    color: #FFECB3;
+    color: #fca9d1;
     max-width: 600px;
     margin: 0 auto 48px;
     font-size: 18px;
@@ -172,7 +172,7 @@ section {
 }
 
 .poetry-card {
-    background: #FFE082;
+    background: #fca9d1;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -212,7 +212,7 @@ section {
 
 .poetry-card .poem-excerpt {
     font-style: italic;
-    background: #FFFDE7;
+    background: #fca9d1;
     padding: 16px 20px;
     border-radius: 10px;
     color: #3E2723;
@@ -228,7 +228,7 @@ section {
 }
 
 .project-card {
-    background: #FFE082;
+    background: #fca9d1;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -259,7 +259,7 @@ section {
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
-    color: #FFE082;
+    color: #fca9d1;
     margin-bottom: 12px;
 }
 
@@ -278,7 +278,7 @@ section {
 
 .about-text p {
     margin-bottom: 16px;
-    color: #FFECB3;
+    color: #fca9d1;
     font-size: 17px;
 }
 
@@ -298,19 +298,19 @@ section {
 .stat-number {
     font-size: 32px;
     font-weight: 700;
-    color: #FFD54F;
+    color: #fca9d1;
     display: block;
 }
 
 .stat-label {
     font-size: 14px;
-    color: #FFECB3;
+    color: #fca9d1;
 }
 
 /* FOOTER */
 footer {
     padding: 40px 0;
-    background: #FFE082;
+    background: #fca9d1;
     color: #4a2f01;
     text-align: center;
     margin-top: 40px;
