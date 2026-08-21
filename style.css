@@ -8,8 +8,8 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #4a2f01;
-    color: #fcf3dc;
+    background: #4a2f01; /* KAHVERENGİ KALDI */
+    color: #FFF8E1; /* AÇIK SARI (okunabilirlik için) */
     line-height: 1.6;
 }
 
@@ -22,8 +22,8 @@ body {
 /* NAVIGATION */
 nav {
     padding: 20px 0;
-    border-bottom: 1px solid #facd70;
-    background: #facd70;
+    border-bottom: 1px solid #FFE082; /* AÇIK SARI */
+    background: #FFE082; /* AÇIK SARI */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -39,10 +39,11 @@ nav .container {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.5px;
+    color: #4a2f01; /* KAHVERENGİ (okunabilirlik için) */
 }
 
 .logo span {
-    color: #c49d5a;
+    color: #8D6E3F; /* KAHVERENGİ TONU (kaldı) */
 }
 
 .nav-links {
@@ -53,7 +54,7 @@ nav .container {
 
 .nav-links a {
     text-decoration: none;
-    color: #fcf3dc;
+    color: #4a2f01; /* KAHVERENGİ (okunabilirlik için) */
     font-weight: 500;
     font-size: 15px;
     transition: color 0.3s;
@@ -61,15 +62,15 @@ nav .container {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #c49d5a;
+    color: #8D6E3F; /* KAHVERENGİ TONU */
 }
 
 /* BUTTONS */
 .btn {
     display: inline-block;
     padding: 14px 34px;
-    background: #fcf3dc;
-    color: #facd70;
+    background: #FFF8E1; /* AÇIK SARI */
+    color: #4a2f01; /* KAHVERENGİ (okunabilirlik için) */
     text-decoration: none;
     border-radius: 40px;
     font-weight: 600;
@@ -80,19 +81,20 @@ nav .container {
 }
 
 .btn:hover {
-    background: #c49d5a;
+    background: #8D6E3F; /* KAHVERENGİ TONU */
+    color: #FFF8E1; /* AÇIK SARI */
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    border: 2px solid #fcf3dc;
-    color: #fcf3dc;
+    border: 2px solid #FFF8E1; /* AÇIK SARI */
+    color: #FFF8E1; /* AÇIK SARI */
 }
 
 .btn-outline:hover {
-    background: #fcf3dc;
-    color: #facd70;
+    background: #FFF8E1; /* AÇIK SARI */
+    color: #4a2f01; /* KAHVERENGİ */
 }
 
 /* HERO (Ana Sayfa) */
@@ -113,15 +115,16 @@ nav .container {
     line-height: 1.2;
     margin-bottom: 16px;
     letter-spacing: -1px;
+    color: #FFF8E1; /* AÇIK SARI */
 }
 
 .hero-content h1 span {
-    color: #c49d5a;
+    color: #FFD54F; /* DAHA PARLAK AÇIK SARI (vurgu) */
 }
 
 .hero-content p {
     font-size: 18px;
-    color: #555;
+    color: #FFECB3; /* AÇIK SARI (okunabilir) */
     margin-bottom: 28px;
     max-width: 480px;
 }
@@ -136,8 +139,8 @@ nav .container {
     height: 340px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #c49d5a;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border: 4px solid #8D6E3F; /* KAHVERENGİ TONU */
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
 /* SECTION HEADERS */
@@ -150,11 +153,12 @@ section {
     font-weight: 700;
     text-align: center;
     margin-bottom: 12px;
+    color: #FFF8E1; /* AÇIK SARI */
 }
 
 .section-desc {
     text-align: center;
-    color: #666;
+    color: #FFECB3; /* AÇIK SARI */
     max-width: 600px;
     margin: 0 auto 48px;
     font-size: 18px;
@@ -168,10 +172,10 @@ section {
 }
 
 .poetry-card {
-    background: #facd70;
+    background: #FFE082; /* AÇIK SARI */
     border-radius: 20px;
     padding: 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     transition: transform 0.3s;
 }
 
@@ -191,28 +195,29 @@ section {
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 6px;
+    color: #4a2f01; /* KAHVERENGİ (okunabilirlik için) */
 }
 
 .poetry-card .isbn {
     font-size: 13px;
-    color: #999;
+    color: #6D4C2A; /* KAHVERENGİ TONU */
     margin-bottom: 8px;
 }
 
 .poetry-card p {
     font-size: 15px;
-    color: #444;
+    color: #3E2723; /* KOYU KAHVERENGİ (okunabilirlik için) */
     margin-bottom: 12px;
 }
 
 .poetry-card .poem-excerpt {
     font-style: italic;
-    background: #f8f4f0;
+    background: #FFFDE7; /* ÇOK AÇIK SARI */
     padding: 16px 20px;
     border-radius: 10px;
-    color: #333;
+    color: #3E2723; /* KOYU KAHVERENGİ */
     font-size: 15px;
-    border-left: 3px solid #c49d5a;
+    border-left: 3px solid #8D6E3F; /* KAHVERENGİ TONU */
 }
 
 /* PROJECTS GRID (Projeler Sayfası) */
@@ -223,16 +228,16 @@ section {
 }
 
 .project-card {
-    background: #facd70;
+    background: #FFE082; /* AÇIK SARI */
     border-radius: 20px;
     padding: 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
 .project-card .icon {
@@ -244,22 +249,23 @@ section {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 6px;
+    color: #4a2f01; /* KAHVERENGİ */
 }
 
 .project-card .tag {
     display: inline-block;
     padding: 4px 14px;
-    background: #4a2f01;
+    background: #4a2f01; /* KAHVERENGİ (kaldı) */
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
-    color: #555;
+    color: #FFE082; /* AÇIK SARI (okunabilirlik için) */
     margin-bottom: 12px;
 }
 
 .project-card p {
     font-size: 15px;
-    color: #444;
+    color: #3E2723; /* KOYU KAHVERENGİ */
 }
 
 /* ABOUT SECTION (Ana Sayfa) */
@@ -272,7 +278,7 @@ section {
 
 .about-text p {
     margin-bottom: 16px;
-    color: #444;
+    color: #FFECB3; /* AÇIK SARI */
     font-size: 17px;
 }
 
@@ -283,7 +289,7 @@ section {
 }
 
 .stat {
-    background: #4a2f01;
+    background: #5D4037; /* KAHVERENGİ TONU (kaldı) */
     padding: 20px 24px;
     border-radius: 16px;
     text-align: center;
@@ -292,32 +298,32 @@ section {
 .stat-number {
     font-size: 32px;
     font-weight: 700;
-    color: #c49d5a;
+    color: #FFD54F; /* PARLAK AÇIK SARI */
     display: block;
 }
 
 .stat-label {
     font-size: 14px;
-    color: #555;
+    color: #FFECB3; /* AÇIK SARI */
 }
 
 /* FOOTER */
 footer {
     padding: 40px 0;
-    background: #fcf3dc;
-    color: #facd70;
+    background: #FFE082; /* AÇIK SARI */
+    color: #4a2f01; /* KAHVERENGİ */
     text-align: center;
     margin-top: 40px;
 }
 
 footer a {
-    color: #facd70;
+    color: #4a2f01; /* KAHVERENGİ */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 footer a:hover {
-    color: #c49d5a;
+    color: #8D6E3F; /* KAHVERENGİ TONU */
 }
 
 /* RESPONSIVE */
