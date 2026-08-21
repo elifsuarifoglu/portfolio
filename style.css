@@ -249,7 +249,7 @@ section {
 .project-card .tag {
     display: inline-block;
     padding: 4px 14px;
-    background: #f0ebe5;
+    background: #4a2f01;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
@@ -283,7 +283,7 @@ section {
 }
 
 .stat {
-    background: #f8f4f0;
+    background: #4a2f01;
     padding: 20px 24px;
     border-radius: 16px;
     text-align: center;
