@@ -9,7 +9,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: #4a2f01;
-    color: #1e1e1e;
+    color: #fcf3dc;
     line-height: 1.6;
 }
 
@@ -23,7 +23,7 @@ body {
 nav {
     padding: 20px 0;
     border-bottom: 1px solid #eee;
-    background: #fff;
+    background: #ffe4ad;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -53,7 +53,7 @@ nav .container {
 
 .nav-links a {
     text-decoration: none;
-    color: #1e1e1e;
+    color: #fcf3dc;
     font-weight: 500;
     font-size: 15px;
     transition: color 0.3s;
@@ -68,8 +68,8 @@ nav .container {
 .btn {
     display: inline-block;
     padding: 14px 34px;
-    background: #1e1e1e;
-    color: #fff;
+    background: #fcf3dc;
+    color: #ffe4ad;
     text-decoration: none;
     border-radius: 40px;
     font-weight: 600;
@@ -86,13 +86,13 @@ nav .container {
 
 .btn-outline {
     background: transparent;
-    border: 2px solid #1e1e1e;
-    color: #1e1e1e;
+    border: 2px solid #fcf3dc;
+    color: #fcf3dc;
 }
 
 .btn-outline:hover {
-    background: #1e1e1e;
-    color: #fff;
+    background: #fcf3dc;
+    color: #ffe4ad;
 }
 
 /* HERO (Ana Sayfa) */
@@ -168,7 +168,7 @@ section {
 }
 
 .poetry-card {
-    background: #fff;
+    background: #ffe4ad;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -223,7 +223,7 @@ section {
 }
 
 .project-card {
-    background: #fff;
+    background: #ffe4ad;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -304,7 +304,7 @@ section {
 /* FOOTER */
 footer {
     padding: 40px 0;
-    background: #1e1e1e;
+    background: #fcf3dc;
     color: #aaa;
     text-align: center;
     margin-top: 40px;
