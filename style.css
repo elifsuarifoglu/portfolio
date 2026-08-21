@@ -22,7 +22,7 @@ body {
 /* NAVIGATION */
 nav {
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid ##ffe4ad;
     background: #ffe4ad;
     position: sticky;
     top: 0;
@@ -305,13 +305,13 @@ section {
 footer {
     padding: 40px 0;
     background: #fcf3dc;
-    color: #aaa;
+    color: #ffe4ad;
     text-align: center;
     margin-top: 40px;
 }
 
 footer a {
-    color: #ccc;
+    color: #ffe4ad;
     text-decoration: none;
     transition: color 0.3s;
 }
