@@ -42,7 +42,7 @@ nav .container {
 }
 
 .logo span {
-    color: #4a2f01;
+    color: #c49d5a;
 }
 
 .nav-links {
@@ -61,7 +61,7 @@ nav .container {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #4a2f01;
+    color: #c49d5a;
 }
 
 /* BUTTONS */
@@ -80,7 +80,7 @@ nav .container {
 }
 
 .btn:hover {
-    background: #4a2f01;
+    background: #c49d5a;
     transform: translateY(-2px);
 }
 
@@ -116,7 +116,7 @@ nav .container {
 }
 
 .hero-content h1 span {
-    color: #4a2f01;
+    color: #c49d5a;
 }
 
 .hero-content p {
@@ -136,7 +136,7 @@ nav .container {
     height: 340px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #4a2f01;
+    border: 4px solid #c49d5a;
     box-shadow: 0 12px 40px rgba(0,0,0,0.08);
 }
 
@@ -212,7 +212,7 @@ section {
     border-radius: 10px;
     color: #333;
     font-size: 15px;
-    border-left: 3px solid #4a2f01;
+    border-left: 3px solid #c49d5a;
 }
 
 /* PROJECTS GRID (Projeler Sayfası) */
@@ -292,7 +292,7 @@ section {
 .stat-number {
     font-size: 32px;
     font-weight: 700;
-    color: #4a2f01;
+    color: #c49d5a;
     display: block;
 }
 
@@ -317,7 +317,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #4a2f01;
+    color: #c49d5a;
 }
 
 /* RESPONSIVE */
