@@ -228,9 +228,8 @@ section {
     border-left: 3px solid #6D4C2A;
 }
 
-/* ===== YENİ EKLENEN: ŞİİR KARTLARI ===== */
+/* ===== ŞİİR KARTLARI ===== */
 
-/* Kitap kartları ile şiir kartlarını ayırmak için */
 .book-card {
     background: #fcc7e1;
 }
@@ -248,18 +247,27 @@ section {
     margin-bottom: 14px;
 }
 
-/* Şiir metni - SİYAH RENK */
+/* Şiir metni - SİYAH RENK, boşluksuz */
 .poem-full {
     color: #000000;
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.8;
     margin: 10px 0 14px;
     padding: 14px 16px;
     background: #f9f6f0;
     border-radius: 10px;
-    white-space: pre-wrap;
     font-family: 'Georgia', serif;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
+}
+
+/* Şiir metni içindeki satır araları için */
+.poem-full .line {
+    display: block;
+}
+
+.poem-full .line-break {
+    display: block;
+    margin-top: 8px;
 }
 
 /* Durum etiketleri */
@@ -283,12 +291,11 @@ section {
     color: #c62828;
 }
 
-/* Tüm şiirler bölümü için özel grid */
 .all-poems {
     margin-top: 10px;
 }
 
-/* ===== YENİ EKLENEN: ŞİİR KARTLARI SONU ===== */
+/* ===== ŞİİR KARTLARI SONU ===== */
 
 /* PROJECTS GRID */
 .projects-grid {
