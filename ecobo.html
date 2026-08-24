@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECOBO | Elifsu Arifoğlu</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ECOBO özel stilleri */
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .project-hero .icon-large {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fcc7e1;
+            margin-bottom: 8px;
+        }
+
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 6px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
+        }
+
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Görsel Galeri */
+        .gallery-section {
+            margin-top: 40px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fcc7e1;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero h1 {
+                font-size: 30px;
+            }
+
+            .project-main {
+                padding: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../poetry.html">Poetry</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+
+            <!-- Geri Butonu -->
+            <a href="../projects.html" class="btn-back">← Back to Projects</a>
+
+            <!-- PROJE HERO -->
+            <div class="project-hero">
+                <span class="icon-large">🌱</span>
+                <h1>ECOBO</h1>
+                <span class="tag-large">Vice President · Sustainability</span>
+            </div>
+
+            <!-- PROJE İÇERİĞİ -->
+            <div class="project-content">
+
+                <!-- Ana İçerik -->
+                <div class="project-main">
+                    <h2>About ECOBO</h2>
+                    <p>
+                        ECOBO is a student-led sustainability organization dedicated to creating
+                        a greener, more environmentally conscious school culture. As Vice President,
+                        I lead a passionate team of 60+ volunteers working on impactful projects
+                        that promote recycling, conservation, and environmental awareness.
+                    </p>
+
+                    <h3>🌍 What We Do</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">👥</span>
+                            <div>
+                                <strong>Team Leadership:</strong> Serving as Vice President of a 60+ volunteer team,
+                                coordinating school-wide sustainability and environmental protection projects.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📚</span>
+                            <div>
+                                <strong>Comprehensive Education Program:</strong> Organizing and delivering regular
+                                environmental seminars to 900+ students, raising awareness about conservation and recycling.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">♻️</span>
+                            <div>
+                                <strong>Efficient Waste Management:</strong> Collecting, sorting, and ensuring delivery
+                                of recyclable waste from across the school to official recycling centers.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📋</span>
+                            <div>
+                                <strong>Cleanliness Motivation System:</strong> Implementing daily classroom evaluations
+                                based on cleanliness criteria, maintaining objective assessment standards.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🏆</span>
+                            <div>
+                                <strong>Award and Recognition Mechanism:</strong> Rewarding the cleanest classrooms of
+                                the week and month with specially designed flags, creating visible symbols of achievement.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>🎓 Special Event: Prof. Dr. Latif Kurt</h3>
+                    <p>
+                        We had the honor of hosting <strong>Prof. Dr. Latif Kurt</strong>, a renowned botanist and
+                        environmental scientist, for a special seminar attended by over 900 students. His inspiring
+                        talk on biodiversity, conservation, and the importance of protecting our natural heritage
+                        was a defining moment for ECOBO and our school community.
+                    </p>
+                </div>
+
+                <!-- Kenar Bilgileri -->
+                <div class="project-sidebar">
+
+                    <div class="sidebar-card">
+                        <h4>📊 Quick Facts</h4>
+                        <ul>
+                            <li><strong>Role:</strong> Vice President</li>
+                            <li><strong>Team Size:</strong> 60+ Volunteers</li>
+                            <li><strong>Students Reached:</strong> 900+</li>
+                            <li><strong>Status:</strong> Active</li>
+                            <li><strong>Location:</strong> School-Wide</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🏅 Key Achievements</h4>
+                        <ul>
+                            <li>✅ Hosted Prof. Dr. Latif Kurt (900+ attendees)</li>
+                            <li>✅ Implemented school-wide recycling system</li>
+                            <li>✅ Created classroom cleanliness evaluation</li>
+                            <li>✅ Designed achievement flag rewards</li>
+                            <li>✅ Organized 15+ environmental seminars</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🔗 Related</h4>
+                        <ul>
+                            <li>🌱 Sustainability</li>
+                            <li>♻️ Recycling</li>
+                            <li>📚 Education</li>
+                            <li>🌍 Environment</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- GÖRSEL GALERİ -->
+            <div class="gallery-section">
+                <h2>📸 ECOBO Gallery</h2>
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🌱</span>
+                            <span class="label">Team Meeting</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">♻️</span>
+                            <span class="label">Recycling Event</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">📚</span>
+                            <span class="label">Seminar with Prof. Dr. Latif Kurt</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🏆</span>
+                            <span class="label">Award Ceremony</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">👥</span>
+                            <span class="label">Volunteer Team</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🗑️</span>
+                            <span class="label">Waste Sorting</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Elif. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
