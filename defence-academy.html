@@ -1,1 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defense Industry Academy | Elifsu Arifoğlu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Savunma Sanayii özel stilleri - SADECE İÇERİK İÇİN */
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .project-hero .icon-large {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fcc7e1;
+            margin-bottom: 8px;
+        }
+
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 6px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
+        }
+
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: #4a2f01;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: #fcc7e1;
+        }
+
+        .highlight-box strong {
+            color: #ffffff;
+        }
+
+        .highlight-box a {
+            color: #fcc7e1;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .highlight-box a:hover {
+            color: #ffffff;
+        }
+
+        .institution-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 16px 0;
+            justify-content: center;
+        }
+
+        .institution-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #6D4C2A;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .gallery-section {
+            margin-top: 40px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fcc7e1;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero h1 {
+                font-size: 30px;
+            }
+
+            .project-main {
+                padding: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="poetry.html">Poetry</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+
+            <a href="projects.html" class="btn-back">← Back to Projects</a>
+
+            <div class="project-hero">
+                <span class="icon-large">🛡️</span>
+                <h1>Defense Industry Academy</h1>
+                <span class="tag-large">SSB · National Competence Initiative</span>
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-main">
+                    <h2>About the Program</h2>
+                    <p>
+                        The <strong>Savunma Lise Eğitim Programı (Defense High School Education Program)</strong>
+                        is an initiative by the <strong>T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı (SSB)</strong>
+                        under the <strong>Milli Yetkinlik Hamlesi (National Competence Initiative)</strong>.
+                        This 11-week program introduces high school students to Turkey's defense industry
+                        ecosystem, its historical development, and future trends[citation:1][citation:2].
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>🎯 Program Mission</strong><br />
+                        To raise awareness about the Turkish defense industry, provide insight into
+                        its products and history, address ethics and confidentiality, and analyze
+                        current and near-future technologies[citation:1].
+                    </div>
+
+                    <h3>🏛️ Executing Institutions</h3>
+                    <div class="institution-logos">
+                        <span class="institution-tag">T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı</span>
+                        <span class="institution-tag">Savunma Sanayii Akademi</span>
+                        <span class="institution-tag">TR Eğitim ve Teknoloji A.Ş.</span>
+                        <span class="institution-tag">T.C. Millî Eğitim Bakanlığı</span>
+                        <span class="institution-tag">Savunma Kariyer</span>
+                    </div>
+
+                    <h3>📚 What I Learned</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">🔐</span>
+                            <div>
+                                <strong>Security & Defense Concepts:</strong> Understanding fundamental
+                                security and defense concepts and discovering career opportunities
+                                in the field[citation:1].
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">⏳</span>
+                            <div>
+                                <strong>Historical Development:</strong> Examining how defense technologies
+                                have evolved from the past to the present[citation:1].
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🇹🇷</span>
+                            <div>
+                                <strong>Turkish Defense Industry:</strong> Learning about the dynamics
+                                of the Turkish defense industry and the opportunities it offers[citation:1].
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🚀</span>
+                            <div>
+                                <strong>Future Trends:</strong> Understanding where defense technologies
+                                are heading and what to expect in the coming years[citation:1].
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">⚖️</span>
+                            <div>
+                                <strong>Ethics in Defense:</strong> Exploring the relationship between
+                                defense technologies and ethical responsibilities[citation:1].
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">💼</span>
+                            <div>
+                                <strong>Career Opportunities:</strong> Discovering how to build a
+                                career in the defense industry sector[citation:1].
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>🎓 Expert Speakers & Sessions</h3>
+                    <p>
+                        The program featured 11 weekly sessions with leading experts from Turkey's
+                        top defense institutions[citation:1][citation:4]:
+                    </p>
+                    <ul>
+                        <li>
+                            <span class="li-icon">1️⃣</span>
+                            <div>
+                                <strong>Mustafa Emre Cansev (ROKETSAN):</strong> Production Technologies
+                                & OT Security
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">2️⃣</span>
+                            <div>
+                                <strong>Mustafa Özçelik (HTR):</strong> Software-Based Security Technologies
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">3️⃣</span>
+                            <div>
+                                <strong>Burak Akdemir (STM):</strong> Unmanned & Autonomous Platforms
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">4️⃣</span>
+                            <div>
+                                <strong>Levent Erikan (SSB):</strong> Human-Machine Collaboration in Security
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">5️⃣</span>
+                            <div>
+                                <strong>Prof. Dr. Fatma Duygu Özel Demiralp:</strong> Bio-Security
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">6️⃣</span>
+                            <div>
+                                <strong>Dr. Orçun Dayıbaş (TÜBİTAK-BİLGEM İLTAREN):</strong> Cognitive Excellence
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">7️⃣</span>
+                            <div>
+                                <strong>Dr. Erol Yücel (HAVELSAN):</strong> Real-Time Mapping & Dynamic Environments
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">8️⃣</span>
+                            <div>
+                                <strong>Prof. Dr. Abdurrahman Akyol (Teknopark İstanbul):</strong> Environment & Energy
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">9️⃣</span>
+                            <div>
+                                <strong>Prof. Dr. Cenk Aktaş (SSA):</strong> New Materials in Security Technologies
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🔟</span>
+                            <div>
+                                <strong>Onur Caba (BİTES):</strong> Extended & Augmented Reality-Based Security Technologies
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">1️⃣1️⃣</span>
+                            <div>
+                                <strong>Prof. Dr. Hakan Karataş (SSB):</strong> Talent Transformation in Defense Industry
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>📜 Certification</h3>
+                    <p>
+                        Upon successful completion of the 11-week program, participants receive
+                        an official <strong>Katılım Belgesi (Certificate of Participation)</strong>
+                        recognized by the Presidency of Defense Industries[citation:1].
+                    </p>
+                </div>
+
+                <div class="project-sidebar">
+
+                    <div class="sidebar-card">
+                        <h4>📊 Quick Facts</h4>
+                        <ul>
+                            <li><strong>Institution:</strong> SSB / SSA</li>
+                            <li><strong>Program:</strong> Savunma Lise</li>
+                            <li><strong>Duration:</strong> 11 Weeks</li>
+                            <li><strong>Status:</strong> Completed</li>
+                            <li><strong>Certificate:</strong> Katılım Belgesi</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🏅 Key Takeaways</h4>
+                        <ul>
+                            <li>✅ Defense industry fundamentals</li>
+                            <li>✅ Turkish defense technologies</li>
+                            <li>✅ Ethics & confidentiality</li>
+                            <li>✅ Career pathways in defense</li>
+                            <li>✅ Expert insights from 11 speakers</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🔗 Related</h4>
+                        <ul>
+                            <li>🛡️ National Security</li>
+                            <li>🇹🇷 Turkish Defense Industry</li>
+                            <li>🚀 Technology</li>
+                            <li>🎓 Education</li>
+                            <li>💼 Career Development</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-section">
+                <h2>📸 Defense Industry Academy Gallery</h2>
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🛡️</span>
+                            <span class="label">Program Certificate</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🎓</span>
+                            <span class="label">Online Session</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">📋</span>
+                            <span class="label">Training Material</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">👨‍🏫</span>
+                            <span class="label">Expert Speaker</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🏛️</span>
+                            <span class="label">SSB Official</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🚀</span>
+                            <span class="label">Defense Technology</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Elif. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
