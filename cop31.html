@@ -1,1 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDD ORG & COP31 | Elifsu Arifoğlu</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* IDD & COP31 özel stilleri */
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .project-hero .icon-large {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fcc7e1;
+            margin-bottom: 8px;
+        }
+
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 6px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
+        }
+
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: #4a2f01;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: #fcc7e1;
+        }
+
+        .highlight-box strong {
+            color: #ffffff;
+        }
+
+        .highlight-box a {
+            color: #fcc7e1;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .highlight-box a:hover {
+            color: #ffffff;
+        }
+
+        /* Buton stilleri */
+        .btn-magazine {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #6D4C2A;
+            color: #fcc7e1;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn-magazine:hover {
+            background: #4a2f01;
+            transform: translateY(-2px);
+        }
+
+        .btn-magazine .icon {
+            margin-right: 8px;
+        }
+
+        /* Görsel Galeri */
+        .gallery-section {
+            margin-top: 40px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fcc7e1;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero h1 {
+                font-size: 30px;
+            }
+
+            .project-main {
+                padding: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../poetry.html">Poetry</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+
+            <!-- Geri Butonu -->
+            <a href="../projects.html" class="btn-back">← Back to Projects</a>
+
+            <!-- PROJE HERO -->
+            <div class="project-hero">
+                <span class="icon-large">🇺🇳</span>
+                <h1>IDD ORG & COP31</h1>
+                <span class="tag-large">UN-Affiliated · Climate Action</span>
+            </div>
+
+            <!-- PROJE İÇERİĞİ -->
+            <div class="project-content">
+
+                <!-- Ana İçerik -->
+                <div class="project-main">
+                    <h2>About IDD ORG & COP31</h2>
+                    <p>
+                        IDD ORG (International Development and Diplomacy Organization) is a UN-affiliated
+                        platform that brings together young leaders committed to global governance,
+                        climate action, and sustainable development. As an active delegate, I work
+                        alongside international youth to shape meaningful climate policies.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>🌍 COP31 Delegate</strong><br />
+                        Representing Capital Youth Assembly at COP31, contributing to pre-conference
+                        campaigns and climate policy discussions in Ankara.
+                    </div>
+
+                    <h3>📝 Key Contributions</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">✍️</span>
+                            <div>
+                                <strong>UN-Bound Climate Magazine:</strong> Co-authored an article for a
+                                UN-affiliated climate magazine, addressing youth-led climate action
+                                and sustainable development goals.
+                                <br />
+                                <a href="#" class="btn-magazine" target="_blank">
+                                    <span class="icon">📖</span> Read the Magazine
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🇺🇳</span>
+                            <div>
+                                <strong>COP31 Delegation:</strong> Selected as a delegate for COP31
+                                through Capital Youth Assembly, participating in high-level climate
+                                discussions and policy workshops.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📢</span>
+                            <div>
+                                <strong>Pre-COP31 Campaigns:</strong> Organizing and leading pre-COP31
+                                awareness campaigns in Ankara, engaging students and young professionals
+                                in climate dialogue.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🌱</span>
+                            <div>
+                                <strong>Climate Advocacy:</strong> Active participation in international
+                                climate forums, advocating for inclusive and youth-centric climate policies.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>🌿 Youth Leadership & Global Impact</h3>
+                    <p>
+                        Through IDD ORG, I have had the opportunity to collaborate with young leaders
+                        from around the world, sharing insights and strategies for effective climate
+                        governance. Our collective efforts aim to ensure that youth voices are heard
+                        in global decision-making processes, particularly in the lead-up to COP31.
+                    </p>
+
+                    <p>
+                        The work we do through IDD ORG emphasizes the importance of international
+                        cooperation, diplomatic engagement, and actionable climate solutions that
+                        can be implemented at both local and global levels.
+                    </p>
+                </div>
+
+                <!-- Kenar Bilgileri -->
+                <div class="project-sidebar">
+
+                    <div class="sidebar-card">
+                        <h4>📊 Quick Facts</h4>
+                        <ul>
+                            <li><strong>Organization:</strong> IDD ORG</li>
+                            <li><strong>Affiliation:</strong> UN-Affiliated</li>
+                            <li><strong>Role:</strong> Delegate & Contributor</li>
+                            <li><strong>Status:</strong> Active</li>
+                            <li><strong>Focus:</strong> Climate Action & Diplomacy</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🏅 Key Achievements</h4>
+                        <ul>
+                            <li>✅ Co-authored UN-bound climate magazine</li>
+                            <li>✅ COP31 Delegate (Capital Youth Assembly)</li>
+                            <li>✅ Led pre-COP31 campaigns in Ankara</li>
+                            <li>✅ Participated in international climate forums</li>
+                            <li>✅ Engaged 500+ youth in climate awareness</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🔗 Related</h4>
+                        <ul>
+                            <li>🌍 Climate Action</li>
+                            <li>🇺🇳 UN Affairs</li>
+                            <li>📢 Youth Advocacy</li>
+                            <li>🤝 Diplomacy</li>
+                            <li>♻️ Sustainability</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- GÖRSEL GALERİ -->
+            <div class="gallery-section">
+                <h2>📸 IDD ORG & COP31 Gallery</h2>
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🇺🇳</span>
+                            <span class="label">COP31 Delegation</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">✍️</span>
+                            <span class="label">Climate Magazine</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">📢</span>
+                            <span class="label">Pre-COP31 Campaign</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🌍</span>
+                            <span class="label">Climate Forum</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">👥</span>
+                            <span class="label">Youth Delegates</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🏛️</span>
+                            <span class="label">Diplomatic Event</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Elif. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
