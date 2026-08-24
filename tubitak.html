@@ -1,1 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TÜBİTAK 4006 | Elifsu Arifoğlu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* TÜBİTAK özel stilleri - SADECE İÇERİK İÇİN */
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .project-hero .icon-large {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fcc7e1;
+            margin-bottom: 8px;
+        }
+
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 6px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
+        }
+
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: #4a2f01;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: #fcc7e1;
+        }
+
+        .highlight-box strong {
+            color: #ffffff;
+        }
+
+        .highlight-box a {
+            color: #fcc7e1;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .highlight-box a:hover {
+            color: #ffffff;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .team-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #6D4C2A;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fcc7e1;
+        }
+
+        .gallery-section {
+            margin-top: 40px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fcc7e1;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Bulgular özel listesi */
+        .findings-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .findings-list li {
+            padding: 8px 16px;
+            margin-bottom: 6px;
+            background: #ffffff;
+            border-radius: 8px;
+            border-left: 3px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero h1 {
+                font-size: 30px;
+            }
+
+            .project-main {
+                padding: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="poetry.html">Poetry</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+
+            <a href="projects.html" class="btn-back">← Back to Projects</a>
+
+            <div class="project-hero">
+                <span class="icon-large">🧬</span>
+                <h1>TÜBİTAK 4006</h1>
+                <span class="tag-large">Research · Sustainable Protein</span>
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-main">
+                    <h2>About the Project</h2>
+                    <p>
+                        <strong>Alternatif Protein Kaynağı: Böcek Yetiştiriciliği ve Besin Değeri Analizi</strong>
+                        (Alternative Protein Source: Insect Farming and Nutritional Value Analysis)
+                        is a TÜBİTAK 4006 research project exploring the potential of <strong>Tenebrio molitor</strong>
+                        (mealworm) larvae as a sustainable protein source for the future.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>🧬 Project Information</strong><br />
+                        <strong>Project Type:</strong> Research<br />
+                        <strong>Main Field:</strong> Food and Food Supply Security<br />
+                        <strong>Thematic Topic:</strong> Food and Food Supply Security<br />
+                        <strong>Advisor Teacher:</strong> Nazlı ÇOBAN YEŞİL
+                    </div>
+
+                    <h3>👥 Project Team</h3>
+                    <div class="team-members">
+                        <span class="team-tag">Azra Gül BAKIR</span>
+                        <span class="team-tag">Elifsu ARİFOĞLU</span>
+                        <span class="team-tag">Meryem ÖZER</span>
+                    </div>
+
+                    <h3>❓ Problem Statement</h3>
+                    <p>
+                        The world population is growing rapidly, but food production is not keeping pace.
+                        According to Malthus's theory, population grows geometrically while food production
+                        grows arithmetically. Climate change, water scarcity, and decreasing agricultural
+                        land create a risk of protein deficiency in the future. This situation makes
+                        alternative and sustainable protein sources essential.
+                    </p>
+
+                    <h3>🔬 Methodology</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">🔄</span>
+                            <div>
+                                <strong>Life Cycle Analysis:</strong> The life cycle of mealworms (Egg → Larva → Pupa → Adult Beetle) was studied.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🧪</span>
+                            <div>
+                                <strong>Laboratory Farming:</strong> Mealworms were raised in laboratory conditions.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🌾</span>
+                            <div>
+                                <strong>Feeding Regimen:</strong> Larvae were fed wheat bran and organic waste (carrots, etc.).
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📚</span>
+                            <div>
+                                <strong>Literature Review:</strong> Nutritional values were researched through scientific literature.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📊</span>
+                            <div>
+                                <strong>Observation & Analysis:</strong> Comparative analysis and observations were conducted.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>📊 Findings</h3>
+                    <ul class="findings-list">
+                        <li>🔹 <strong>High Protein Content:</strong> Mealworm larvae contain up to <strong>50% protein</strong>.</li>
+                        <li>🔹 <strong>Low Resource Requirements:</strong> Requires very little water and space, reproduces quickly.</li>
+                        <li>🔹 <strong>Organic Waste Utilization:</strong> Can be easily fed with organic waste.</li>
+                        <li>🔹 <strong>Environmental Friendliness:</strong> Lower carbon emissions compared to traditional livestock farming.</li>
+                        <li>🔹 <strong>Successful Cultivation:</strong> Larval and adult stages were successfully obtained in laboratory conditions.</li>
+                    </ul>
+
+                    <h3>📝 Conclusion & Discussion</h3>
+                    <p>
+                        <strong>Tenebrio molitor</strong> larvae have great potential as a sustainable,
+                        economical, and environmentally friendly alternative protein source for the
+                        growing world population and increasing protein needs.
+                    </p>
+                    <p>
+                        With high protein content (up to 50%), low water and space requirements, ability
+                        to feed on organic waste, and low carbon footprint, they offer significant advantages
+                        over traditional livestock. In laboratory experiments, larval and adult stages were
+                        successfully obtained, demonstrating that farming is practically feasible.
+                    </p>
+                    <p>
+                        While there are challenges such as cultural prejudices, legal regulations, and
+                        hygiene standards, the approach of <strong>"No to GMOs, Yes to Natural Worms!"</strong>
+                        presents a natural and healthy option. If necessary regulations are made in Turkey,
+                        mealworm farming could significantly contribute to food supply security.
+                    </p>
+
+                    <h3>📖 References</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">📄</span>
+                            <div>
+                                <strong>FAO</strong> — Sustainable Nutrition Reports
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📄</span>
+                            <div>
+                                <strong>Scientific Studies:</strong> Nutritional value and cultivation research on Tenebrio molitor
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📄</span>
+                            <div>
+                                <strong>Laboratory Observations:</strong> Experimental data and photographic documentation
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-sidebar">
+
+                    <div class="sidebar-card">
+                        <h4>📊 Quick Facts</h4>
+                        <ul>
+                            <li><strong>Project:</strong> TÜBİTAK 4006</li>
+                            <li><strong>Type:</strong> Research</li>
+                            <li><strong>Field:</strong> Food & Supply Security</li>
+                            <li><strong>Status:</strong> Completed</li>
+                            <li><strong>Advisor:</strong> Nazlı ÇOBAN YEŞİL</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🏅 Key Achievements</h4>
+                        <ul>
+                            <li>✅ High-protein alternative source</li>
+                            <li>✅ Sustainable farming method</li>
+                            <li>✅ Organic waste utilization</li>
+                            <li>✅ Low environmental impact</li>
+                            <li>✅ Successful laboratory cultivation</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🔗 Related</h4>
+                        <ul>
+                            <li>🧬 Sustainable Protein</li>
+                            <li>🌾 Food Security</li>
+                            <li>🔬 Research</li>
+                            <li>♻️ Environmental Sustainability</li>
+                            <li>🧪 Laboratory Science</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-section">
+                <h2>📸 TÜBİTAK 4006 Gallery</h2>
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🪲</span>
+                            <span class="label">Adult Mealworm Beetles</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🐛</span>
+                            <span class="label">Larval Farming Environment</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🔬</span>
+                            <span class="label">Larva Stage</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🧪</span>
+                            <span class="label">Laboratory Analysis</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">⚗️</span>
+                            <span class="label">Processed Larva Sample</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🌱</span>
+                            <span class="label">Natural vs GMO Poster</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Elif. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
