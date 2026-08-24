@@ -1,560 +1,289 @@
-/* style.css */
+/* ===== PROJE DETAY SAYFASI İÇİN EKLENMESİ GEREKENLER ===== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #4a2f01;
-    color: #fcc7e1;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* NAVIGATION */
-nav {
-    padding: 20px 0;
-    border-bottom: 1px solid #fcc7e1;
-    background: #fcc7e1;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #4a2f01;
-}
-
-.logo span {
-    color: #6D4C2A;
-}
-
-.nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #4a2f01;
-    font-weight: 500;
-    font-size: 15px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #6D4C2A;
-}
-
-/* BUTTONS */
-.btn {
-    display: inline-block;
-    padding: 14px 34px;
-    background: #fcc7e1;
-    color: #4a2f01;
-    text-decoration: none;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 15px;
-    transition: background 0.3s, transform 0.2s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: #6D4C2A;
-    color: #fcc7e1;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid #fcc7e1;
-    color: #fcc7e1;
-}
-
-.btn-outline:hover {
-    background: #fcc7e1;
-    color: #4a2f01;
-}
-
-/* HERO */
-.hero {
-    padding: 80px 0 60px;
-}
-
-.hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -1px;
-    color: #fcc7e1;
-}
-
-.hero-content h1 span {
-    color: #fcc7e1;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #fcc7e1;
-    margin-bottom: 28px;
-    max-width: 480px;
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 340px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #6D4C2A;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
-
-/* SECTION HEADERS */
-section {
-    padding: 80px 0;
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: 700;
+/* Project Hero - proje başlık bölümü */
+.project-hero {
     text-align: center;
-    margin-bottom: 12px;
-    color: #fcc7e1;
+    margin-bottom: 40px;
 }
 
-.section-desc {
-    text-align: center;
-    color: #fcc7e1;
-    max-width: 600px;
-    margin: 0 auto 48px;
-    font-size: 18px;
-}
-
-.section-subtitle {
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    margin: 60px 0 30px;
-    color: #fcc7e1;
-}
-
-/* POETRY GRID - 2 sütun */
-.poetry-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-
-/* Eğer 3. bir şey olursa diye auto-fit yedek */
-.poetry-grid.auto-fit {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.poetry-card {
-    background: #fcc7e1;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-}
-
-.poetry-card:hover {
-    transform: translateY(-6px);
-}
-
-.poetry-card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 12px;
+.project-hero .icon-large {
+    font-size: 80px;
+    display: block;
     margin-bottom: 16px;
 }
 
-.poetry-card h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #4a2f01;
-}
-
-.poetry-card .isbn {
-    font-size: 13px;
-    color: #6D4C2A;
+.project-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fcc7e1;
     margin-bottom: 8px;
 }
 
-.poetry-card p {
-    font-size: 15px;
-    color: #3E2723;
-    margin-bottom: 12px;
-}
-
-.poetry-card .poem-excerpt {
-    font-style: italic;
-    background: #fcc7e1;
-    padding: 16px 20px;
-    border-radius: 10px;
-    color: #3E2723;
-    font-size: 15px;
-    border-left: 3px solid #6D4C2A;
-}
-
-/* ===== ŞİİR KARTLARI ===== */
-
-.book-card {
-    background: #fcc7e1;
-}
-
-.poem-card {
-    background: #ffffff;
-    border: 1px solid #e0d6c8;
-}
-
-.poem-card h3 {
-    color: #4a2f01;
-    font-size: 20px;
-    border-bottom: 2px solid #6D4C2A;
-    padding-bottom: 10px;
-    margin-bottom: 14px;
-}
-
-/* Şiir metni - SİYAH RENK, boşluksuz */
-.poem-full {
-    color: #000000;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin: 10px 0 14px;
-    padding: 14px 16px;
-    background: #f9f6f0;
-    border-radius: 10px;
-    font-family: 'Georgia', serif;
-    letter-spacing: 0.2px;
-}
-
-/* Şiir metni içindeki satır araları için */
-.poem-full .line {
-    display: block;
-}
-
-.poem-full .line-break {
-    display: block;
-    margin-top: 8px;
-}
-
-/* Durum etiketleri */
-.poem-status {
+.project-hero .tag-large {
     display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 14px;
-    border-radius: 20px;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
-}
-
-.poem-status.published {
-    background: #e8f5e9;
-    color: #2e7d32;
-}
-
-.poem-status.unpublished {
-    background: #ffebee;
-    color: #c62828;
-}
-
-.all-poems {
-    margin-top: 10px;
-}
-
-/* ===== ŞİİR KARTLARI SONU ===== */
-
-/* PROJECTS GRID */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background: #fcc7e1;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
-
-.project-card .icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-}
-
-.project-card h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #4a2f01;
-}
-
-.project-card .tag {
-    display: inline-block;
-    padding: 4px 14px;
+    padding: 6px 20px;
     background: #4a2f01;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fcc7e1;
-    margin-bottom: 12px;
-}
-
-.project-card p {
-    font-size: 15px;
-    color: #3E2723;
-    flex-grow: 1;
-}
-
-/* ===== MORE BUTTON ===== */
-.btn-more {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 8px 24px;
-    background: #4a2f01;
-    color: #fcc7e1;
-    text-decoration: none;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
-    transition: background 0.3s, transform 0.2s;
-    border: none;
-    cursor: pointer;
-    align-self: flex-start;
-}
-
-.btn-more:hover {
-    background: #6D4C2A;
-    transform: translateX(4px);
-}
-
-/* ===== PROJECT DETAIL PAGE ===== */
-
-/* Back Button */
-.btn-back {
-    display: inline-block;
-    margin-bottom: 30px;
     color: #fcc7e1;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s, transform 0.2s;
 }
 
-.btn-back:hover {
-    color: #6D4C2A;
-    transform: translateX(-4px);
+/* Ana içerik grid - 2 sütun */
+.project-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-/* Project Detail */
-.project-detail {
+/* Ana içerik kartı */
+.project-main {
     background: #fcc7e1;
     border-radius: 20px;
-    padding: 40px;
+    padding: 36px;
     color: #4a2f01;
 }
 
-.project-detail-icon {
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-.project-detail .tag {
-    display: inline-block;
-    padding: 4px 14px;
-    background: #4a2f01;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fcc7e1;
-    margin-bottom: 20px;
-}
-
-.project-detail-content h2 {
+.project-main h2 {
     font-size: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: #4a2f01;
+    border-bottom: 3px solid #6D4C2A;
+    padding-bottom: 10px;
 }
 
-.project-detail-content h3 {
+.project-main h3 {
     font-size: 18px;
-    margin: 20px 0 10px;
+    margin: 24px 0 12px;
     color: #4a2f01;
 }
 
-.project-detail-content p {
+.project-main p {
     font-size: 16px;
     line-height: 1.8;
     color: #3E2723;
     margin-bottom: 12px;
 }
 
-.project-detail-content ul {
-    list-style: disc;
-    padding-left: 24px;
+.project-main ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-main ul li {
+    padding: 10px 16px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-left: 4px solid #6D4C2A;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #3E2723;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.project-main ul li .li-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Kenar çubuğu */
+.project-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-card {
+    background: #fcc7e1;
+    border-radius: 20px;
+    padding: 24px;
+    color: #4a2f01;
+}
+
+.sidebar-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #4a2f01;
+    border-bottom: 2px solid #6D4C2A;
+    padding-bottom: 8px;
+}
+
+.sidebar-card p,
+.sidebar-card li {
+    font-size: 14px;
+    line-height: 1.7;
     color: #3E2723;
 }
 
-.project-detail-content ul li {
-    margin-bottom: 8px;
-    line-height: 1.6;
+.sidebar-card ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* ===== PROJECT DETAIL PAGE SONU ===== */
-
-/* ABOUT */
-.about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    margin-top: 20px;
+.sidebar-card ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(74, 47, 1, 0.1);
 }
 
-.about-text p {
-    margin-bottom: 16px;
-    color: #fcc7e1;
-    font-size: 17px;
+.sidebar-card ul li:last-child {
+    border-bottom: none;
 }
 
-.about-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.stat {
-    background: #5D4037;
-    padding: 20px 24px;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 32px;
-    font-weight: 700;
-    color: #fcc7e1;
-    display: block;
-}
-
-.stat-label {
-    font-size: 14px;
+/* Vurgu kutusu */
+.highlight-box {
+    background: #4a2f01;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0;
     color: #fcc7e1;
 }
 
-/* FOOTER */
-footer {
-    padding: 40px 0;
-    background: #fcc7e1;
-    color: #4a2f01;
-    text-align: center;
-    margin-top: 40px;
+.highlight-box strong {
+    color: #ffffff;
 }
 
-footer a {
-    color: #4a2f01;
-    text-decoration: none;
+.highlight-box a {
+    color: #fcc7e1;
+    text-decoration: underline;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
-footer a:hover {
+.highlight-box a:hover {
+    color: #ffffff;
+}
+
+/* Ülke etiketleri */
+.country-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.country-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #6D4C2A;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fcc7e1;
+}
+
+/* Dergi butonu */
+.btn-magazine {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #6D4C2A;
+    color: #fcc7e1;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 8px;
+}
+
+.btn-magazine:hover {
+    background: #4a2f01;
+    transform: translateY(-2px);
+}
+
+.btn-magazine .icon {
+    margin-right: 8px;
+}
+
+/* Görsel Galeri */
+.gallery-section {
+    margin-top: 40px;
+}
+
+.gallery-section h2 {
+    font-size: 24px;
+    color: #fcc7e1;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    background: #fcc7e1;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a2f01;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+    border: 2px dashed #6D4C2A;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item .placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-item .placeholder .icon {
+    font-size: 48px;
+}
+
+.gallery-item .placeholder .label {
+    font-weight: 500;
+    font-size: 13px;
     color: #6D4C2A;
 }
 
-/* RESPONSIVE */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== RESPONSIVE EKLEMELER ===== */
+
 @media (max-width: 768px) {
-    .hero .container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-content p {
-        margin: 0 auto 28px;
-    }
-
-    .hero-image img {
-        width: 220px;
-        height: 220px;
-    }
-
-    .about-grid {
+    /* Proje detay sayfası için */
+    .project-content {
         grid-template-columns: 1fr;
     }
 
-    .nav-links {
-        gap: 16px;
+    .project-hero h1 {
+        font-size: 30px;
     }
 
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    section {
-        padding: 50px 0;
-    }
-
-    /* Mobilde tek sütun */
-    .poetry-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .poem-full {
-        font-size: 0.85rem;
-        padding: 12px;
-    }
-
-    .project-detail {
+    .project-main {
         padding: 24px;
     }
 
-    .project-detail-content h2 {
-        font-size: 20px;
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }
