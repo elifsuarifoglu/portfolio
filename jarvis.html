@@ -1,1 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVIS AI Assistant | Elifsu Arifoğlu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* JARVIS özel stilleri - SADECE İÇERİK İÇİN */
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .project-hero .icon-large {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fcc7e1;
+            margin-bottom: 8px;
+        }
+
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 6px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
+        }
+
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: #4a2f01;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: #fcc7e1;
+        }
+
+        .highlight-box strong {
+            color: #ffffff;
+        }
+
+        .highlight-box a {
+            color: #fcc7e1;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .highlight-box a:hover {
+            color: #ffffff;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 5px 14px;
+            background: #6D4C2A;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .github-link {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #4a2f01;
+            color: #fcc7e1;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .github-link:hover {
+            background: #6D4C2A;
+            transform: translateY(-2px);
+        }
+
+        .github-link .icon {
+            margin-right: 8px;
+        }
+
+        .gallery-section {
+            margin-top: 40px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fcc7e1;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .demo-video {
+            background: #4a2f01;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+            text-align: center;
+            color: #fcc7e1;
+        }
+
+        .demo-video a {
+            color: #fcc7e1;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero h1 {
+                font-size: 30px;
+            }
+
+            .project-main {
+                padding: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="poetry.html">Poetry</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+
+            <a href="projects.html" class="btn-back">← Back to Projects</a>
+
+            <div class="project-hero">
+                <span class="icon-large">🤖</span>
+                <h1>JARVIS AI Assistant</h1>
+                <span class="tag-large">Python · Personal AI</span>
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-main">
+                    <h2>About JARVIS</h2>
+                    <p>
+                        <strong>JARVIS</strong> is a personal AI assistant project inspired by Tony Stark's
+                        iconic AI from the Marvel Cinematic Universe. Built with Python, this assistant
+                        is designed to handle various tasks through voice commands, making daily
+                        productivity seamless and efficient.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>🤖 Project Vision</strong><br />
+                        To create a fully functional, voice-controlled personal AI assistant that
+                        integrates with system operations, automates tasks, and provides an interactive
+                        user experience — all while prioritizing privacy and security.
+                    </div>
+
+                    <h3>⚡ Key Features</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">🎤</span>
+                            <div>
+                                <strong>Voice Recognition:</strong> Natural language processing and
+                                speech recognition for hands-free interaction.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📷</span>
+                            <div>
+                                <strong>Camera Access:</strong> Integrated camera functionality for
+                                computer vision tasks and visual recognition.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🖥️</span>
+                            <div>
+                                <strong>Remote Control:</strong> System control capabilities for
+                                managing applications and automating workflows.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">⚙️</span>
+                            <div>
+                                <strong>Task Automation:</strong> Automated routine tasks to boost
+                                productivity and efficiency.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🔒</span>
+                            <div>
+                                <strong>Privacy Focused:</strong> Designed with privacy and security
+                                as core principles, keeping your data safe.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🧠</span>
+                            <div>
+                                <strong>AI Integration:</strong> Intelligent responses and contextual
+                                understanding for natural conversations.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>🛠️ Technologies Used</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">🐍 Python</span>
+                        <span class="tech-tag">🎤 Speech Recognition</span>
+                        <span class="tech-tag">👁️ OpenCV</span>
+                        <span class="tech-tag">🤖 NLP</span>
+                        <span class="tech-tag">📷 Camera Integration</span>
+                        <span class="tech-tag">⚡ Automation</span>
+                    </div>
+
+                    <h3>🚀 What JARVIS Can Do</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">🗣️</span>
+                            <div>
+                                <strong>Voice Commands:</strong> Execute commands through natural
+                                speech, just like talking to a real assistant.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📂</span>
+                            <div>
+                                <strong>File Management:</strong> Open files, organize folders,
+                                and manage system resources with simple voice instructions.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🌐</span>
+                            <div>
+                                <strong>Web Integration:</strong> Search the web, open websites,
+                                and fetch information on demand.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📅</span>
+                            <div>
+                                <strong>Task Management:</strong> Set reminders, manage calendars,
+                                and keep track of your daily schedule.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🎵</span>
+                            <div>
+                                <strong>Media Control:</strong> Play music, control volume, and
+                                manage media playback.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">💬</span>
+                            <div>
+                                <strong>Conversational AI:</strong> Engage in natural conversations
+                                with context-aware responses.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>📈 Future Plans</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">🧩</span>
+                            <div>
+                                <strong>Plugin System:</strong> Extend functionality with a modular
+                                plugin architecture.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">☁️</span>
+                            <div>
+                                <strong>Cloud Integration:</strong> Sync with cloud services for
+                                seamless data access across devices.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📱</span>
+                            <div>
+                                <strong>Mobile Support:</strong> Mobile companion app for on-the-go
+                                assistance.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🧠</span>
+                            <div>
+                                <strong>Deep Learning:</strong> Advanced machine learning models
+                                for improved understanding and personalization.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="demo-video">
+                        <strong>📹 Demo & Source Code</strong><br />
+                        <p style="color: #fcc7e1; margin-top: 8px;">
+                            Check out the project on GitHub and see JARVIS in action!
+                        </p>
+                        <a href="https://github.com/elifsuarifoglu/jarvis-ai-assistant" class="github-link" target="_blank">
+                            <span class="icon">🐙</span> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-sidebar">
+
+                    <div class="sidebar-card">
+                        <h4>📊 Quick Facts</h4>
+                        <ul>
+                            <li><strong>Project:</strong> JARVIS AI Assistant</li>
+                            <li><strong>Language:</strong> Python</li>
+                            <li><strong>Status:</strong> Active Development</li>
+                            <li><strong>Type:</strong> Personal AI</li>
+                            <li><strong>Platform:</strong> Desktop</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🏅 Key Achievements</h4>
+                        <ul>
+                            <li>✅ Voice-controlled interaction</li>
+                            <li>✅ Camera & vision integration</li>
+                            <li>✅ Task automation system</li>
+                            <li>✅ Privacy-first design</li>
+                            <li>✅ Natural language processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🔗 Related</h4>
+                        <ul>
+                            <li>🤖 Artificial Intelligence</li>
+                            <li>🐍 Python</li>
+                            <li>🎤 Voice Recognition</li>
+                            <li>⚡ Automation</li>
+                            <li>🔒 Privacy</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-section">
+                <h2>📸 JARVIS Gallery</h2>
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🖥️</span>
+                            <span class="label">JARVIS Interface</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🎤</span>
+                            <span class="label">Voice Recognition</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">📷</span>
+                            <span class="label">Camera Integration</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">⚙️</span>
+                            <span class="label">Task Automation</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">💬</span>
+                            <span class="label">Conversation Demo</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🧠</span>
+                            <span class="label">AI Processing</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Elif. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
