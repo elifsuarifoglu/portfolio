@@ -61,8 +61,15 @@ nav .container {
 }
 
 .nav-links a:hover,
+.nav-links a.active,
+.nav-links a:visited,
+.nav-links a:active {
+    color: #6D4C2A;
+}
+
 .nav-links a.active {
     color: #6D4C2A;
+    font-weight: 600;
 }
 
 /* ===== BUTTONS ===== */
@@ -745,7 +752,6 @@ footer a:hover {
         padding: 12px;
     }
 
-    /* Proje detay sayfası responsive */
     .project-content {
         grid-template-columns: 1fr;
     }
