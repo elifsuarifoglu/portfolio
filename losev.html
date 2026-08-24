@@ -1,1 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LÖSEV | Elifsu Arifoğlu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* LÖSEV özel stilleri - SADECE İÇERİK İÇİN */
+        .project-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .project-hero .icon-large {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fcc7e1;
+            margin-bottom: 8px;
+        }
+
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 6px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
+        }
+
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: #4a2f01;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: #fcc7e1;
+        }
+
+        .highlight-box strong {
+            color: #ffffff;
+        }
+
+        .gallery-section {
+            margin-top: 40px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fcc7e1;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-hero h1 {
+                font-size: 30px;
+            }
+
+            .project-main {
+                padding: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="poetry.html">Poetry</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+
+            <a href="projects.html" class="btn-back">← Back to Projects</a>
+
+            <div class="project-hero">
+                <span class="icon-large">💛</span>
+                <h1>LÖSEV</h1>
+                <span class="tag-large">Volunteer · Support</span>
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-main">
+                    <h2>About LÖSEV</h2>
+                    <p>
+                        <strong>LÖSEV (Lösemili Çocuklar Vakfı)</strong> is a non-governmental organization
+                        dedicated to supporting children with leukemia and their families. As a volunteer,
+                        I actively participate in fundraising events, awareness campaigns, and community
+                        outreach programs to make a meaningful difference in the lives of these children.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>💛 Mission</strong><br />
+                        LÖSEV was established to ensure that every child with leukemia has access to
+                        healthcare, education, and emotional support. The organization provides free
+                        treatment services, scholarships, and psychological support to thousands of
+                        children across Turkey.
+                    </div>
+
+                    <h3>🎗️ What We Do</h3>
+                    <ul>
+                        <li>
+                            <span class="li-icon">💛</span>
+                            <div>
+                                <strong>Awareness Campaigns:</strong> Organizing and participating in
+                                campaigns to raise awareness about childhood leukemia and the importance
+                                of early diagnosis and treatment.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🎯</span>
+                            <div>
+                                <strong>Fundraising Events:</strong> Actively involved in planning and
+                                executing fundraising activities to support LÖSEV's treatment and
+                                education programs.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">🤝</span>
+                            <div>
+                                <strong>Community Outreach:</strong> Engaging with local communities to
+                                build solidarity and support networks for children with leukemia and
+                                their families.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">📚</span>
+                            <div>
+                                <strong>Educational Support:</strong> Contributing to LÖSEV's scholarship
+                                programs that ensure children can continue their education during and
+                                after treatment.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="li-icon">💪</span>
+                            <div>
+                                <strong>Emotional Support:</strong> Providing emotional support to
+                                families navigating the challenges of leukemia treatment and recovery.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>💛 Why LÖSEV Matters</h3>
+                    <p>
+                        LÖSEV is more than just a foundation—it is a beacon of hope for thousands of
+                        families. Every child deserves a chance to grow up healthy and happy, and LÖSEV
+                        works tirelessly to ensure that children with leukemia receive the medical care,
+                        emotional support, and educational opportunities they need to thrive.
+                    </p>
+
+                    <p>
+                        The organization's holistic approach addresses not only the medical needs of
+                        children but also their psychological well-being and academic future. By supporting
+                        LÖSEV, I am part of a community that believes in the power of solidarity and
+                        compassion to create lasting change.
+                    </p>
+                </div>
+
+                <div class="project-sidebar">
+
+                    <div class="sidebar-card">
+                        <h4>📊 Quick Facts</h4>
+                        <ul>
+                            <li><strong>Organization:</strong> LÖSEV</li>
+                            <li><strong>Role:</strong> Volunteer</li>
+                            <li><strong>Focus:</strong> Childhood Leukemia</li>
+                            <li><strong>Status:</strong> Active</li>
+                            <li><strong>Services:</strong> Treatment, Education, Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🏅 Key Activities</h4>
+                        <ul>
+                            <li>✅ Awareness campaigns</li>
+                            <li>✅ Fundraising events</li>
+                            <li>✅ Community outreach</li>
+                            <li>✅ Educational support</li>
+                            <li>✅ Family assistance programs</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>🔗 Related</h4>
+                        <ul>
+                            <li>💛 Childhood Leukemia</li>
+                            <li>🎗️ Cancer Awareness</li>
+                            <li>🤝 Solidarity</li>
+                            <li>📚 Education</li>
+                            <li>💪 Support</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-section">
+                <h2>📸 LÖSEV Gallery</h2>
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">💛</span>
+                            <span class="label">Awareness Campaign</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🎯</span>
+                            <span class="label">Fundraising Event</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">🤝</span>
+                            <span class="label">Community Outreach</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">📚</span>
+                            <span class="label">Educational Support</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">👥</span>
+                            <span class="label">Volunteer Team</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="placeholder">
+                            <span class="icon">💪</span>
+                            <span class="label">Support Program</span>
+                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Elif. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
