@@ -1,14 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elifsu Arifoğlu | Projects</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #fcc7e1;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #4a2f01;
+        }
+
+        .logo span {
+            color: #6D4C2A;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a2f01;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #6D4C2A;
+            background: rgba(74, 47, 1, 0.1);
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #fcc7e1;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #fcc7e1;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-size: 18px;
+        }
+
+        /* CATEGORY HEADER */
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #fcc7e1;
+            padding-bottom: 12px;
+        }
+
+        .category-header .cat-icon {
+            font-size: 36px;
+        }
+
+        .category-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fcc7e1;
+        }
+
+        .category-header .cat-sub {
+            font-size: 16px;
+            color: #fcc7e1;
+            opacity: 0.7;
+            margin-left: auto;
+            font-style: italic;
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #4a2f01;
+        }
+
+        .project-card .tag {
+            display: inline-block;
+            padding: 4px 14px;
+            background: #4a2f01;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #fcc7e1;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            font-size: 15px;
+            color: #3E2723;
+            margin-bottom: 16px;
+        }
+
+        .btn-more {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #4a2f01;
+            color: #fcc7e1;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .btn-more:hover {
+            background: #6D4C2A;
+            transform: translateX(4px);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #4a2f01;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #6D4C2A;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 4px 6px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .category-header {
+                flex-wrap: wrap;
+            }
+
+            .category-header .cat-sub {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .category-header h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="container">
             <div class="logo">Elifsu Arifoğlu<span>.</span></div>
@@ -16,10 +263,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="poetry.html">Poetry</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="cop31.html">COP31</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- PROJECTS SECTION -->
     <section>
         <div class="container">
             <h1 class="section-title">Projects</h1>
@@ -28,90 +277,136 @@
                 the planet, or human connection.
             </p>
 
-            <div class="projects-grid">
-
-                <!-- ECOBO -->
-                <div class="project-card">
-                    <div class="icon">🌱</div>
-                    <h3>ECOBO</h3>
-                    <span class="tag">Vice President</span>
-                    <p>Lead 60+ volunteers in sustainability projects. Hosted Prof. Dr. Latif Kurt for 900+ students. Implemented recycling & classroom evaluation system.</p>
-                    <a href="ecobo.html" class="btn-more">More →</a>
+            <!-- ==========================================
+            CATEGORY 1: INNOVATE (Yenilikçi / Yaratıcı / Teknik)
+            ========================================== -->
+            <div class="category">
+                <div class="category-header">
+                    <span class="cat-icon">💡</span>
+                    <h2>INNOVATE</h2>
+                    <span class="cat-sub">New ideas · New solutions</span>
                 </div>
 
-                <!-- IDD ORG & COP31 -->
-                <div class="project-card">
-                    <div class="icon">🇺🇳</div>
-                    <h3>IDD ORG & COP31</h3>
-                    <span class="tag">UN-Affiliated</span>
-                    <p>Co-authored article for UN-bound climate magazine. COP31 delegate with Capital Youth Assembly. Organizing pre-COP31 campaigns in Ankara.</p>
-                    <a href="cop31.html" class="btn-more">More →</a>
-                </div>
+                <div class="projects-grid">
 
-                <!-- JARVIS AI Assistant -->
-                <div class="project-card">
-                    <div class="icon">🤖</div>
-                    <h3>JARVIS AI Assistant</h3>
-                    <span class="tag">Python · Personal</span>
-                    <p>Building a personal AI assistant with camera access, remote control, and task automation. Designed for productivity and privacy.</p>
-                    <a href="jarvis.html" class="btn-more">More →</a>
-                </div>
+                    <!-- JARVIS AI Assistant -->
+                    <div class="project-card">
+                        <div class="icon">🤖</div>
+                        <h3>JARVIS AI Assistant</h3>
+                        <span class="tag">Python · Personal</span>
+                        <p>Building a personal AI assistant with camera access, remote control, and task automation. Designed for productivity and privacy.</p>
+                        <a href="jarvis.html" class="btn-more">More →</a>
+                    </div>
 
-                <!-- TÜBİTAK 4006 -->
-                <div class="project-card">
-                    <div class="icon">🧬</div>
-                    <h3>TÜBİTAK 4006</h3>
-                    <span class="tag">Research</span>
-                    <p>Researched sustainable protein using Tenebrio molitor larvae. Selected for school & city science fair.</p>
-                    <a href="tubitak.html" class="btn-more">More →</a>
-                </div>
+                    <!-- Renpy Visual Novel -->
+                    <div class="project-card">
+                        <div class="icon">✍️</div>
+                        <h3>Renpy Visual Novel</h3>
+                        <span class="tag">Python · Narrative</span>
+                        <p>Developed an interactive visual novel using Renpy — merging storytelling and code.</p>
+                        <a href="renpy.html" class="btn-more">More →</a>
+                    </div>
 
-                <!-- Defense Industry Academy -->
-                <div class="project-card">
-                    <div class="icon">🛡️</div>
-                    <h3>Defense Industry Academy</h3>
-                    <span class="tag">SSB</span>
-                    <p>Training at Turkish Presidency of Defense Industries. Explored technology, engineering, and national security.</p>
-                    <a href="defense-academy.html" class="btn-more">More →</a>
-                </div>
+                    <!-- TÜBİTAK 4006 -->
+                    <div class="project-card">
+                        <div class="icon">🧬</div>
+                        <h3>TÜBİTAK 4006</h3>
+                        <span class="tag">Research</span>
+                        <p>Researched sustainable protein using Tenebrio molitor larvae. Selected for school &amp; city science fair.</p>
+                        <a href="tubitak.html" class="btn-more">More →</a>
+                    </div>
 
-                <!-- Renpy Visual Novel -->
-                <div class="project-card">
-                    <div class="icon">✍️</div>
-                    <h3>Renpy Visual Novel</h3>
-                    <span class="tag">Python · Narrative</span>
-                    <p>Developed an interactive visual novel using Renpy — merging storytelling and code.</p>
-                    <a href="renpy.html" class="btn-more">More →</a>
                 </div>
-
-                <!-- Youth LEAP -->
-                <div class="project-card">
-                    <div class="icon">🌍</div>
-                    <h3>Youth LEAP (Erasmus+)</h3>
-                    <span class="tag">International</span>
-                    <p>Active delegate working with Italy, Spain, Bulgaria on civic engagement models via Capital Youth Assembly.</p>
-                    <a href="youth-leap.html" class="btn-more">More →</a>
-                </div>
-
-                <!-- LÖSEV -->
-                <div class="project-card">
-                    <div class="icon">💛</div>
-                    <h3>LÖSEV</h3>
-                    <span class="tag">Volunteer</span>
-                    <p>Active volunteer supporting children with leukemia through awareness campaigns and fundraising events.</p>
-                    <a href="losev.html" class="btn-more">More →</a>
-                </div>
-
             </div>
+
+            <!-- ==========================================
+            CATEGORY 2: BUILD (İnşa Et / Teknik / Mühendislik)
+            ========================================== -->
+            <div class="category">
+                <div class="category-header">
+                    <span class="cat-icon">🏗️</span>
+                    <h2>BUILD</h2>
+                    <span class="cat-sub">Engineering · Systems · Infrastructure</span>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- Defense Industry Academy -->
+                    <div class="project-card">
+                        <div class="icon">🛡️</div>
+                        <h3>Defense Industry Academy</h3>
+                        <span class="tag">SSB</span>
+                        <p>Training at Turkish Presidency of Defense Industries. Explored technology, engineering, and national security.</p>
+                        <a href="defense-academy.html" class="btn-more">More →</a>
+                    </div>
+
+                    <!-- IDD ORG & COP31 -->
+                    <div class="project-card">
+                        <div class="icon">🇺🇳</div>
+                        <h3>IDD ORG &amp; COP31</h3>
+                        <span class="tag">UN-Affiliated</span>
+                        <p>Co-authored article for UN-bound climate magazine. COP31 delegate with Capital Youth Assembly. Organizing pre-COP31 campaigns in Ankara.</p>
+                        <a href="cop31.html" class="btn-more">More →</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ==========================================
+            CATEGORY 3: IMPACT (Etki / Toplum / Çevre)
+            ========================================== -->
+            <div class="category">
+                <div class="category-header">
+                    <span class="cat-icon">🌍</span>
+                    <h2>IMPACT</h2>
+                    <span class="cat-sub">People · Planet · Change</span>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- ECOBO -->
+                    <div class="project-card">
+                        <div class="icon">🌱</div>
+                        <h3>ECOBO</h3>
+                        <span class="tag">Vice President</span>
+                        <p>Lead 60+ volunteers in sustainability projects. Hosted Prof. Dr. Latif Kurt for 900+ students. Implemented recycling &amp; classroom evaluation system.</p>
+                        <a href="ecobo.html" class="btn-more">More →</a>
+                    </div>
+
+                    <!-- Youth LEAP (Erasmus+) -->
+                    <div class="project-card">
+                        <div class="icon">🌍</div>
+                        <h3>Youth LEAP (Erasmus+)</h3>
+                        <span class="tag">International</span>
+                        <p>Active delegate working with Italy, Spain, Bulgaria on civic engagement models via Capital Youth Assembly.</p>
+                        <a href="youth-leap.html" class="btn-more">More →</a>
+                    </div>
+
+                    <!-- LÖSEV -->
+                    <div class="project-card">
+                        <div class="icon">💛</div>
+                        <h3>LÖSEV</h3>
+                        <span class="tag">Volunteer</span>
+                        <p>Active volunteer supporting children with leukemia through awareness campaigns and fundraising events.</p>
+                        <a href="losev.html" class="btn-more">More →</a>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>© 2026 Elif. Built with ❤️</p>
+            <p style="margin-top: 6px; font-size: 14px;">
+                <a href="https://github.com/elifsuarifoglu" target="_blank">GitHub</a> ·
+                <a href="https://linkedin.com/in/elifsuarifoglu" target="_blank">LinkedIn</a>
+            </p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
