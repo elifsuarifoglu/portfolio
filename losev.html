@@ -3,206 +3,453 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>LÖSEV | Elifsu Arifoğlu</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
     <style>
-        /* LÖSEV özel stilleri - SADECE İÇERİK İÇİN */
-        .project-hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
 
-        .project-hero .icon-large {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 16px;
-        }
+        /* =========================
+           GLOBAL
+        ========================== */
 
-        .project-hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #fcc7e1;
-            margin-bottom: 8px;
-        }
-
-        .project-hero .tag-large {
-            display: inline-block;
-            padding: 6px 20px;
-            background: #4a2f01;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fcc7e1;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .project-main {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 36px;
-            color: #4a2f01;
-        }
-
-        .project-main h2 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #4a2f01;
-            border-bottom: 3px solid #6D4C2A;
-            padding-bottom: 10px;
-        }
-
-        .project-main h3 {
-            font-size: 18px;
-            margin: 24px 0 12px;
-            color: #4a2f01;
-        }
-
-        .project-main p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #3E2723;
-            margin-bottom: 12px;
-        }
-
-        .project-main ul {
-            list-style: none;
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .project-main ul li {
-            padding: 10px 16px;
-            margin-bottom: 8px;
-            background: #ffffff;
-            border-radius: 10px;
-            border-left: 4px solid #6D4C2A;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3E2723;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            padding: 20px 0;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.12);
+        }
+
+        nav .container {
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .project-main ul li .li-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .project-sidebar {
-            display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             gap: 20px;
         }
 
-        .sidebar-card {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 24px;
+        .logo {
             color: #4a2f01;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .sidebar-card h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #4a2f01;
-            border-bottom: 2px solid #6D4C2A;
-            padding-bottom: 8px;
+        .logo span {
+            color: #6D4C2A;
         }
 
-        .sidebar-card p,
-        .sidebar-card li {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #3E2723;
-        }
-
-        .sidebar-card ul {
+        .nav-links {
+            display: flex;
+            gap: 12px;
             list-style: none;
-            padding: 0;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
-        .sidebar-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        .nav-links a {
+            color: #4a2f01;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
         }
 
-        .sidebar-card ul li:last-child {
-            border-bottom: none;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #6D4C2A;
+            background: rgba(74, 47, 1, 0.08);
         }
 
-        .highlight-box {
-            background: #4a2f01;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: 16px 0;
-            color: #fcc7e1;
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 100px 0 85px;
         }
 
-        .highlight-box strong {
-            color: #ffffff;
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0.6;
+            margin-bottom: 45px;
         }
 
-        .gallery-section {
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 65px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 95px);
+            line-height: 0.88;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            max-width: 720px;
+            font-size: 20px;
+            opacity: 0.78;
+        }
+
+        .hero-side {
+            border-left: 1px solid rgba(252, 199, 225, 0.35);
+            padding-left: 30px;
+        }
+
+        .hero-side p {
+            font-size: 15px;
+            opacity: 0.68;
+            margin-bottom: 22px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 7px 11px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -1.8px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 730px;
+            font-size: 17px;
+            opacity: 0.71;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+        }
+
+        .about-grid .section-label {
+            color: #4a2f01;
+        }
+
+        .about-grid h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a2f01;
+        }
+
+        .about-text p + p {
+            margin-top: 18px;
+        }
+
+        .quote {
+            margin-top: 30px;
+            border-left: 3px solid #6D4C2A;
+            padding-left: 20px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           MY ROLE
+        ========================== */
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 70px;
+        }
+
+        .role-grid h2 {
+            font-size: 43px;
+            line-height: 1.04;
+            letter-spacing: -2px;
+        }
+
+        .role-text {
+            font-size: 17px;
+            opacity: 0.74;
+            line-height: 1.8;
+        }
+
+        .role-text p + p {
+            margin-top: 18px;
+        }
+
+        .role-highlight {
+            margin-top: 28px;
+            padding: 22px;
+            border: 1px solid rgba(252, 199, 225, 0.3);
+            border-radius: 16px;
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .role-highlight strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+
+        /* =========================
+           ACTIVITIES
+        ========================== */
+
+        .activities-section {
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .activities-header {
+            max-width: 740px;
+            margin-bottom: 40px;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .activity-card {
+            padding: 30px;
+            border: 1px solid rgba(252, 199, 225, 0.3);
+            border-radius: 20px;
+            background: rgba(252, 199, 225, 0.04);
+        }
+
+        .activity-number {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.43;
+            margin-bottom: 20px;
+        }
+
+        .activity-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .activity-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           IMPACT
+        ========================== */
+
+        .impact-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .impact-section .section-label {
+            color: #4a2f01;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
             margin-top: 40px;
         }
 
-        .gallery-section h2 {
-            font-size: 24px;
-            color: #fcc7e1;
-            text-align: center;
-            margin-bottom: 24px;
+        .impact-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            border-left: 4px solid #6D4C2A;
+        }
+
+        .impact-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .impact-card p {
+            color: #3E2723;
+            font-size: 13px;
+            opacity: 0.75;
+        }
+
+
+        /* =========================
+           REFLECTION
+        ========================== */
+
+        .reflection-box {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 60px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 26px;
+        }
+
+        .reflection-box h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .reflection-box p {
+            max-width: 800px;
+            font-size: 17px;
+            opacity: 0.74;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding-top: 30px;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-header h2 {
+            font-size: 35px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-header p {
+            font-size: 13px;
+            opacity: 0.5;
+            text-align: right;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
 
         .gallery-item {
+            aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            border-radius: 16px;
+            color: #4a2f01;
+            border-radius: 18px;
             overflow: hidden;
-            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4a2f01;
-            font-size: 14px;
             text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            border: 2px dashed #6D4C2A;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item .placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-item .placeholder .icon {
-            font-size: 48px;
-        }
-
-        .gallery-item .placeholder .label {
-            font-weight: 500;
-            font-size: 13px;
-            color: #6D4C2A;
         }
 
         .gallery-item img {
@@ -211,236 +458,733 @@
             object-fit: cover;
         }
 
-        @media (max-width: 768px) {
-            .project-content {
+        .placeholder {
+            padding: 20px;
+        }
+
+        .placeholder strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .placeholder span {
+            font-size: 12px;
+            opacity: 0.55;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav .container {
+                flex-direction: column;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .role-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-hero h1 {
-                font-size: 30px;
+            .hero-side {
+                border-left: none;
+                border-top: 1px solid rgba(252, 199, 225, 0.35);
+                padding-left: 0;
+                padding-top: 25px;
             }
 
-            .project-main {
-                padding: 24px;
+            .activity-grid,
+            .impact-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .gallery-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gallery-header p {
+                text-align: left;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                padding: 70px 0 55px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-title {
+                font-size: 17px;
+            }
+
+            .activity-grid,
+            .impact-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
+
+            .about-grid h2,
+            .role-grid h2,
+            .reflection-box h2 {
+                font-size: 31px;
+            }
+
+            .reflection-box {
+                padding: 32px 24px;
+            }
         }
+
     </style>
 </head>
+
+
 <body>
 
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav>
+
         <div class="container">
-            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+
+            <a href="index.html" class="logo">
+                Elifsu Arifoğlu<span>.</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="poetry.html">Poetry</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="poetry.html">Poetry</a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+
             </ul>
+
         </div>
+
     </nav>
 
-    <section>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
         <div class="container">
 
-            <a href="projects.html" class="btn-back">← Back to Projects</a>
+            <a href="projects.html" class="back-link">
+                ← Back to Projects
+            </a>
 
-            <div class="project-hero">
-                <span class="icon-large">💛</span>
-                <h1>LÖSEV</h1>
-                <span class="tag-large">Volunteer · Support</span>
-            </div>
+            <div class="hero-grid">
 
-            <div class="project-content">
+                <div>
 
-                <div class="project-main">
-                    <h2>About LÖSEV</h2>
-                    <p>
-                        <strong>LÖSEV (Lösemili Çocuklar Vakfı)</strong> is a non-governmental organization
-                        dedicated to supporting children with leukemia and their families. As a volunteer,
-                        I actively participate in fundraising events, awareness campaigns, and community
-                        outreach programs to make a meaningful difference in the lives of these children.
-                    </p>
-
-                    <div class="highlight-box">
-                        <strong>💛 Mission</strong><br />
-                        LÖSEV was established to ensure that every child with leukemia has access to
-                        healthcare, education, and emotional support. The organization provides free
-                        treatment services, scholarships, and psychological support to thousands of
-                        children across Turkey.
+                    <div class="eyebrow">
+                        Community · Volunteering
                     </div>
 
-                    <h3>🎗️ What We Do</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">💛</span>
-                            <div>
-                                <strong>Awareness Campaigns:</strong> Organizing and participating in
-                                campaigns to raise awareness about childhood leukemia and the importance
-                                of early diagnosis and treatment.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🎯</span>
-                            <div>
-                                <strong>Fundraising Events:</strong> Actively involved in planning and
-                                executing fundraising activities to support LÖSEV's treatment and
-                                education programs.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🤝</span>
-                            <div>
-                                <strong>Community Outreach:</strong> Engaging with local communities to
-                                build solidarity and support networks for children with leukemia and
-                                their families.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📚</span>
-                            <div>
-                                <strong>Educational Support:</strong> Contributing to LÖSEV's scholarship
-                                programs that ensure children can continue their education during and
-                                after treatment.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">💪</span>
-                            <div>
-                                <strong>Emotional Support:</strong> Providing emotional support to
-                                families navigating the challenges of leukemia treatment and recovery.
-                            </div>
-                        </li>
-                    </ul>
+                    <h1>
+                        LÖSEV
+                    </h1>
 
-                    <h3>💛 Why LÖSEV Matters</h3>
-                    <p>
-                        LÖSEV is more than just a foundation—it is a beacon of hope for thousands of
-                        families. Every child deserves a chance to grow up healthy and happy, and LÖSEV
-                        works tirelessly to ensure that children with leukemia receive the medical care,
-                        emotional support, and educational opportunities they need to thrive.
+                    <p class="hero-title">
+                        Volunteering with a community working to support
+                        children with leukemia and their families.
                     </p>
 
-                    <p>
-                        The organization's holistic approach addresses not only the medical needs of
-                        children but also their psychological well-being and academic future. By supporting
-                        LÖSEV, I am part of a community that believes in the power of solidarity and
-                        compassion to create lasting change.
-                    </p>
                 </div>
 
-                <div class="project-sidebar">
 
-                    <div class="sidebar-card">
-                        <h4>📊 Quick Facts</h4>
-                        <ul>
-                            <li><strong>Organization:</strong> LÖSEV</li>
-                            <li><strong>Role:</strong> Volunteer</li>
-                            <li><strong>Focus:</strong> Childhood Leukemia</li>
-                            <li><strong>Status:</strong> Active</li>
-                            <li><strong>Services:</strong> Treatment, Education, Support</li>
-                        </ul>
-                    </div>
+                <div class="hero-side">
 
-                    <div class="sidebar-card">
-                        <h4>🏅 Key Activities</h4>
-                        <ul>
-                            <li>✅ Awareness campaigns</li>
-                            <li>✅ Fundraising events</li>
-                            <li>✅ Community outreach</li>
-                            <li>✅ Educational support</li>
-                            <li>✅ Family assistance programs</li>
-                        </ul>
-                    </div>
+                    <p>
+                        My role as a volunteer has involved taking part
+                        in awareness, fundraising, and community-oriented
+                        activities.
+                    </p>
 
-                    <div class="sidebar-card">
-                        <h4>🔗 Related</h4>
-                        <ul>
-                            <li>💛 Childhood Leukemia</li>
-                            <li>🎗️ Cancer Awareness</li>
-                            <li>🤝 Solidarity</li>
-                            <li>📚 Education</li>
-                            <li>💪 Support</li>
-                        </ul>
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            Volunteering
+                        </span>
+
+                        <span class="tag">
+                            Community
+                        </span>
+
+                        <span class="tag">
+                            Awareness
+                        </span>
+
+                        <span class="tag">
+                            Solidarity
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            <div class="gallery-section">
-                <h2>📸 LÖSEV Gallery</h2>
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">💛</span>
-                            <span class="label">Awareness Campaign</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🎯</span>
-                            <span class="label">Fundraising Event</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🤝</span>
-                            <span class="label">Community Outreach</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">📚</span>
-                            <span class="label">Educational Support</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">👥</span>
-                            <span class="label">Volunteer Team</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">💪</span>
-                            <span class="label">Support Program</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
+
+    </header>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about-section">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        The Organization
+                    </div>
+
+                    <h2>
+                        Turning solidarity
+                        into action.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <p>
+                        <strong>LÖSEV (Lösemili Çocuklar Vakfı)</strong>
+                        is a Turkish non-governmental organization
+                        supporting children with leukemia and their
+                        families.
+                    </p>
+
+                    <p>
+                        Its work includes healthcare-related support,
+                        education, awareness, and community initiatives
+                        for children and families affected by leukemia.
+                    </p>
+
+                    <p>
+                        I became involved as a volunteer because I wanted
+                        to contribute to a community where even small
+                        actions can help create awareness, solidarity,
+                        and practical support.
+                    </p>
+
+                    <div class="quote">
+                        Volunteering taught me that impact does not
+                        always begin with building something new.
+                        Sometimes it begins with showing up consistently.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <footer>
+
+    <!-- =========================
+         MY ROLE
+    ========================== -->
+
+    <section>
+
         <div class="container">
-            <p>© 2026 Elif. Built with ❤️</p>
+
+            <div class="role-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        My Role
+                    </div>
+
+                    <h2>
+                        Contributing where
+                        help is needed.
+                    </h2>
+
+                </div>
+
+
+                <div class="role-text">
+
+                    <p>
+                        As a volunteer, I have participated in
+                        awareness campaigns, fundraising activities,
+                        and community outreach initiatives associated
+                        with LÖSEV.
+                    </p>
+
+                    <p>
+                        Rather than having one fixed responsibility,
+                        volunteering has meant contributing to different
+                        activities and supporting the wider work of the
+                        organization.
+                    </p>
+
+                    <div class="role-highlight">
+
+                        <strong>
+                            My contribution
+                        </strong>
+
+                        Awareness · Fundraising · Community participation
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACTIVITIES
+    ========================== -->
+
+    <section class="activities-section">
+
+        <div class="container">
+
+            <div class="activities-header">
+
+                <div class="section-label">
+                    Activities
+                </div>
+
+                <h2 class="section-title">
+                    Small actions,
+                    shared by a community.
+                </h2>
+
+                <p class="section-description">
+                    My volunteering experience has centered on
+                    supporting activities that connect awareness
+                    with community action.
+                </p>
+
+            </div>
+
+
+            <div class="activity-grid">
+
+
+                <div class="activity-card">
+
+                    <span class="activity-number">
+                        01 · AWARENESS
+                    </span>
+
+                    <h3>
+                        Awareness Campaigns
+                    </h3>
+
+                    <p>
+                        Participating in activities designed to raise
+                        public awareness about childhood leukemia and
+                        the needs of affected families.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <span class="activity-number">
+                        02 · FUNDRAISING
+                    </span>
+
+                    <h3>
+                        Fundraising Activities
+                    </h3>
+
+                    <p>
+                        Supporting fundraising events that contribute
+                        to the organization's broader mission and
+                        community work.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <span class="activity-number">
+                        03 · COMMUNITY
+                    </span>
+
+                    <h3>
+                        Community Outreach
+                    </h3>
+
+                    <p>
+                        Taking part in community-oriented activities
+                        focused on solidarity and public participation.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <span class="activity-number">
+                        04 · PARTICIPATION
+                    </span>
+
+                    <h3>
+                        Volunteer Support
+                    </h3>
+
+                    <p>
+                        Contributing time and effort to activities
+                        where volunteer participation helps extend
+                        the organization's reach.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMPACT
+    ========================== -->
+
+    <section class="impact-section">
+
+        <div class="container">
+
+            <div class="section-label">
+                What Matters
+            </div>
+
+            <h2 class="section-title">
+                Impact is also about
+                people.
+            </h2>
+
+            <p class="section-description">
+                LÖSEV has made me more aware of the human side of
+                social impact: empathy, consistency, and community
+                participation.
+            </p>
+
+
+            <div class="impact-grid">
+
+
+                <div class="impact-card">
+
+                    <h3>
+                        Awareness
+                    </h3>
+
+                    <p>
+                        Helping important issues become more visible
+                        within the wider community.
+                    </p>
+
+                </div>
+
+
+                <div class="impact-card">
+
+                    <h3>
+                        Solidarity
+                    </h3>
+
+                    <p>
+                        Contributing to a community built around
+                        supporting children and families.
+                    </p>
+
+                </div>
+
+
+                <div class="impact-card">
+
+                    <h3>
+                        Consistency
+                    </h3>
+
+                    <p>
+                        Learning that meaningful volunteering is
+                        often about showing up repeatedly, not just once.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REFLECTION
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="reflection-box">
+
+                <div class="section-label">
+                    What I Learned
+                </div>
+
+                <h2>
+                    Not every meaningful
+                    contribution has to be
+                    measurable.
+                </h2>
+
+                <p>
+                    My volunteering experience with LÖSEV has reminded
+                    me that social impact is not always captured by a
+                    large number or a technical achievement. Sometimes
+                    it is about awareness, participation, reliability,
+                    and being willing to contribute to work that already
+                    exists. That perspective has influenced how I think
+                    about community work alongside my more project-based
+                    experiences.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="container">
+
+            <div class="gallery-header">
+
+                <div>
+
+                    <div class="section-label">
+                        Visual Documentation
+                    </div>
+
+                    <h2>
+                        LÖSEV in action
+                    </h2>
+
+                </div>
+
+                <p>
+                    Add your own photographs from
+                    volunteering activities and events.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Awareness Campaign
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Fundraising Event
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Volunteer Activity
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Community Event
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Volunteer Team
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Event Documentation
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Elifsu Arifoğlu · Built with curiosity.
+            </p>
+
+        </div>
+
     </footer>
 
-    <script src="script.js"></script>
+
 </body>
 </html>
