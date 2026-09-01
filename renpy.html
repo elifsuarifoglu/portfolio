@@ -3,234 +3,500 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mimozia | Renpy Visual Novel</title>
+
+    <title>Mimozia | Elifsu Arifoğlu</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
     <style>
-        /* MİMOZİA özel stilleri - SADECE İÇERİK İÇİN */
-        .project-hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .project-hero .icon-large {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .project-hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #fcc7e1;
-            margin-bottom: 8px;
-        }
-
-        .project-hero .tag-large {
-            display: inline-block;
-            padding: 6px 20px;
-            background: #4a2f01;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fcc7e1;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .project-main {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 36px;
-            color: #4a2f01;
-        }
-
-        .project-main h2 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #4a2f01;
-            border-bottom: 3px solid #6D4C2A;
-            padding-bottom: 10px;
-        }
-
-        .project-main h3 {
-            font-size: 18px;
-            margin: 24px 0 12px;
-            color: #4a2f01;
-        }
-
-        .project-main p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #3E2723;
-            margin-bottom: 12px;
-        }
-
-        .project-main ul {
-            list-style: none;
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .project-main ul li {
-            padding: 10px 16px;
-            margin-bottom: 8px;
-            background: #ffffff;
-            border-radius: 10px;
-            border-left: 4px solid #6D4C2A;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3E2723;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            padding: 20px 0;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.12);
+        }
+
+        nav .container {
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .project-main ul li .li-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .project-sidebar {
-            display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             gap: 20px;
         }
 
-        .sidebar-card {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 24px;
+        .logo {
             color: #4a2f01;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .sidebar-card h4 {
-            font-size: 16px;
+        .logo span {
+            color: #6D4C2A;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            color: #4a2f01;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(74, 47, 1, 0.08);
+            color: #6D4C2A;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 100px 0 85px;
+        }
+
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 12px;
-            color: #4a2f01;
-            border-bottom: 2px solid #6D4C2A;
-            padding-bottom: 8px;
+            opacity: 0.6;
+            margin-bottom: 45px;
+            transition: opacity 0.25s ease;
         }
 
-        .sidebar-card p,
-        .sidebar-card li {
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(56px, 9vw, 100px);
+            line-height: 0.86;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .hero-subtitle {
+            max-width: 720px;
+            font-size: 20px;
+            opacity: 0.78;
+        }
+
+        .hero-side {
+            border-left: 1px solid rgba(252, 199, 225, 0.35);
+            padding-left: 30px;
+        }
+
+        .hero-side p {
+            font-size: 15px;
+            opacity: 0.68;
+            margin-bottom: 22px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 7px 11px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -1.8px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 720px;
+            font-size: 17px;
+            opacity: 0.7;
+        }
+
+        /* =========================
+           INTRO
+        ========================== */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .intro-grid h2 {
+            font-size: 41px;
+            line-height: 1.05;
+            letter-spacing: -1.7px;
+        }
+
+        .intro-text {
+            font-size: 17px;
+            opacity: 0.76;
+        }
+
+        .intro-text p + p {
+            margin-top: 18px;
+        }
+
+        /* =========================
+           WHY
+        ========================== */
+
+        .why-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 70px;
+        }
+
+        .why-grid .section-label {
+            color: #4a2f01;
+        }
+
+        .why-grid h2 {
+            font-size: 43px;
+            line-height: 1.04;
+            letter-spacing: -2px;
+        }
+
+        .why-text {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .why-text p + p {
+            margin-top: 18px;
+        }
+
+        .quote {
+            margin-top: 30px;
+            border-left: 3px solid #6D4C2A;
+            padding-left: 20px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           STORY
+        ========================== */
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .story-card {
+            background: #fcc7e1;
+            color: #4a2f01;
+            border-radius: 24px;
+            padding: 32px;
+        }
+
+        .story-card h3 {
+            font-size: 25px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .story-card p {
+            font-size: 14px;
+            line-height: 1.75;
+            opacity: 0.78;
+        }
+
+        .story-text p {
+            font-size: 17px;
+            opacity: 0.76;
+        }
+
+        .story-text p + p {
+            margin-top: 18px;
+        }
+
+        /* =========================
+           SCALE
+        ========================== */
+
+        .scale-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        .scale-card {
+            padding: 30px 24px;
+            border: 1px solid rgba(252, 199, 225, 0.3);
+            border-radius: 20px;
+            background: rgba(252, 199, 225, 0.04);
+        }
+
+        .scale-number {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .scale-card h3 {
+            font-size: 16px;
+            margin-bottom: 7px;
+        }
+
+        .scale-card p {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        /* =========================
+           SYSTEMS
+        ========================== */
+
+        .systems-section {
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .systems-header {
+            max-width: 730px;
+            margin-bottom: 40px;
+        }
+
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .system-card {
+            background: #fcc7e1;
+            color: #4a2f01;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .system-number {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.45;
+            margin-bottom: 20px;
+        }
+
+        .system-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .system-card p {
             font-size: 14px;
             line-height: 1.7;
-            color: #3E2723;
+            opacity: 0.76;
         }
 
-        .sidebar-card ul {
-            list-style: none;
-            padding: 0;
+        /* =========================
+           TECHNICAL
+        ========================== */
+
+        .technical-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 65px;
+            align-items: start;
         }
 
-        .sidebar-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        .technical-grid h2 {
+            font-size: 40px;
+            line-height: 1.05;
+            letter-spacing: -1.6px;
         }
 
-        .sidebar-card ul li:last-child {
-            border-bottom: none;
-        }
-
-        .highlight-box {
-            background: #4a2f01;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: 16px 0;
-            color: #fcc7e1;
-        }
-
-        .highlight-box strong {
-            color: #ffffff;
-        }
-
-        .highlight-box a {
-            color: #fcc7e1;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .highlight-box a:hover {
-            color: #ffffff;
+        .tech-content p {
+            font-size: 17px;
+            opacity: 0.74;
+            margin-bottom: 25px;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 12px 0;
+            gap: 9px;
         }
 
         .tech-tag {
-            display: inline-block;
-            padding: 5px 14px;
-            background: #6D4C2A;
-            border-radius: 20px;
-            font-size: 13px;
+            padding: 8px 12px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 999px;
+            font-size: 12px;
             font-weight: 600;
-            color: #fcc7e1;
         }
 
-        .gallery-section {
-            margin-top: 40px;
+        /* =========================
+           REFLECTION
+        ========================== */
+
+        .reflection-box {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 60px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 26px;
         }
 
-        .gallery-section h2 {
-            font-size: 24px;
-            color: #fcc7e1;
-            text-align: center;
-            margin-bottom: 24px;
+        .reflection-box h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .reflection-box p {
+            max-width: 790px;
+            font-size: 17px;
+            opacity: 0.75;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding-top: 25px;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-header h2 {
+            font-size: 35px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-header p {
+            font-size: 13px;
+            opacity: 0.5;
+            text-align: right;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
 
         .gallery-item {
+            aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            border-radius: 16px;
+            color: #4a2f01;
+            border-radius: 18px;
             overflow: hidden;
-            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4a2f01;
-            font-size: 14px;
             text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            border: 2px dashed #6D4C2A;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item .placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-item .placeholder .icon {
-            font-size: 48px;
-        }
-
-        .gallery-item .placeholder .label {
-            font-weight: 500;
-            font-size: 13px;
-            color: #6D4C2A;
         }
 
         .gallery-item img {
@@ -239,329 +505,960 @@
             object-fit: cover;
         }
 
-        .story-section {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-            color: #4a2f01;
+        .placeholder {
+            padding: 20px;
         }
 
-        .story-section h3 {
-            color: #4a2f01;
-            border-bottom: 2px solid #6D4C2A;
-            padding-bottom: 10px;
-            margin-bottom: 16px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .feature-item {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 16px 20px;
-            border-left: 4px solid #6D4C2A;
-        }
-
-        .feature-item h4 {
-            color: #4a2f01;
-            margin-bottom: 4px;
-        }
-
-        .feature-item p {
-            color: #3E2723;
+        .placeholder strong {
+            display: block;
             font-size: 14px;
-            line-height: 1.6;
+            margin-bottom: 5px;
         }
 
-        @media (max-width: 768px) {
-            .project-content {
+        .placeholder span {
+            font-size: 12px;
+            opacity: 0.55;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #4a2f01;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav .container {
+                flex-direction: column;
+            }
+
+            .hero-grid,
+            .intro-grid,
+            .why-grid,
+            .story-grid,
+            .technical-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-hero h1 {
-                font-size: 30px;
+            .hero-side {
+                border-left: none;
+                border-top: 1px solid rgba(252, 199, 225, 0.35);
+                padding-left: 0;
+                padding-top: 25px;
             }
 
-            .project-main {
-                padding: 24px;
+            .scale-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .systems-grid {
+                grid-template-columns: 1fr;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .feature-grid {
-                grid-template-columns: 1fr;
+            .gallery-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gallery-header p {
+                text-align: left;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                padding: 70px 0 55px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .scale-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .intro-grid h2,
+            .why-grid h2,
+            .technical-grid h2,
+            .reflection-box h2 {
+                font-size: 31px;
+            }
+
+            .reflection-box {
+                padding: 32px 24px;
             }
         }
     </style>
 </head>
+
+
 <body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <nav>
         <div class="container">
-            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+
+            <a href="index.html" class="logo">
+                Elifsu Arifoğlu<span>.</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="poetry.html">Poetry</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="poetry.html">Poetry</a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+
             </ul>
+
         </div>
     </nav>
 
-    <section>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
         <div class="container">
 
-            <a href="projects.html" class="btn-back">← Back to Projects</a>
+            <a href="projects.html" class="back-link">
+                ← Back to Projects
+            </a>
 
-            <div class="project-hero">
-                <span class="icon-large">✍️</span>
-                <h1>Mimozia</h1>
-                <span class="tag-large">Python · Narrative · Interactive</span>
-            </div>
+            <div class="hero-grid">
 
-            <div class="project-content">
+                <div>
 
-                <div class="project-main">
-                    <h2>About the Game</h2>
-                    <p>
-                        <strong>Mimozia</strong> is an interactive psychological thriller visual novel
-                        developed using the <strong>Ren'Py</strong> engine. The game follows Özgür,
-                        a young man who travels to a mysterious town to find his missing girlfriend,
-                        Elif — only to uncover a dark secret hidden within the walls of an abandoned
-                        hospital.
-                    </p>
-
-                    <div class="highlight-box">
-                        <strong>🎮 Game Overview</strong><br />
-                        A psychological thriller visual novel with multiple endings, branching
-                        narratives, and a deep mystery involving a secret project called
-                        <strong>"Mimozia"</strong>.
+                    <div class="eyebrow">
+                        Interactive Fiction · Game Development
                     </div>
 
-                    <h3>📖 Story</h3>
-                    <p>
-                        Three months after Elif's sudden disappearance, Özgür arrives at a small,
-                        isolated town where she was last seen. With no money and nowhere to stay,
-                        he finds a job as a night watchman at the abandoned <strong>Star Hospital</strong>.
-                    </p>
-                    <p>
-                        As Özgür explores the hospital's dark corridors, he discovers that Elif
-                        was part of a secret experiment called <strong>"Mimozia"</strong> — a
-                        project designed to transfer psychic abilities between subjects. But
-                        something went terribly wrong, and now Mimozia has awakened inside Elif.
+                    <h1>
+                        Mimozia
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        A psychological thriller visual novel where
+                        storytelling, programming, exploration, and
+                        player choice become one system.
                     </p>
 
-                    <div class="story-section">
-                        <h3>🔍 Key Features</h3>
-                        <div class="feature-grid">
-                            <div class="feature-item">
-                                <h4>🧠 Branching Narrative</h4>
-                                <p>Your choices matter — every decision affects Özgür's stats and leads to different endings.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🔎 Exploration</h4>
-                                <p>Search through 30+ rooms across 6 floors of the hospital, each containing clues about the Mimozia project.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>📝 Note System</h4>
-                                <p>Collect notes from Özgür and Elif's perspectives, building a complete picture of the mystery.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🎭 Multiple Endings</h4>
-                                <p>4 different endings based on your choices.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🧩 Puzzles</h4>
-                                <p>Solve intricate puzzles using clues found throughout the hospital to unlock hidden areas.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4>🌌 Psychological Thriller</h4>
-                                <p>A gripping story inspired by classic psychological horror with a sci-fi twist.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>🛠️ Technologies Used</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">🐍 Ren'Py</span>
-                        <span class="tech-tag">📖 Python</span>
-                        <span class="tech-tag">🎨 Visual Novel</span>
-                        <span class="tech-tag">🧠 Psychological Thriller</span>
-                        <span class="tech-tag">🔎 Interactive Fiction</span>
-                    </div>
-
-                    <h3>🎯 Game Systems</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">📊</span>
-                            <div>
-                                <strong>Stat System:</strong> Three core stats — <strong>Logic</strong> ,
-                                <strong>Trust</strong> , and <strong>Psychic Sensitivity</strong>
-                                — evolve based on your choices and unlock unique dialogue options.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🗺️</span>
-                            <div>
-                                <strong>Exploration System:</strong> Navigate through multiple floors of the hospital,
-                                each with unique rooms and discoveries. Track your progress with the exploration map.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📝</span>
-                            <div>
-                                <strong>Note Collection:</strong> Discover notes from both Özgür and Elif's perspectives.
-                                New notes are highlighted with a "+" indicator for easy tracking.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🧩</span>
-                            <div>
-                                <strong>Puzzle System:</strong> Solve cryptographic puzzles (number sequences, code
-                                cracking, symbol matching) to unlock hidden areas and advance the story.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🎭</span>
-                            <div>
-                                <strong>Multiple Endings:</strong> Your choices determine the final outcome.
-                                Will you save Elif, or will Mimozia consume everything?
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3>📜 Development</h3>
-                    <p>
-                        <strong>Mimozia</strong> was developed as a personal project to explore
-                        interactive storytelling and the Ren'Py engine. The game features a
-                        complex branching narrative with over <strong>100+ unique scenes</strong>,
-                        <strong>30+ explorable locations</strong>, and a deeply layered mystery
-                        that unfolds through exploration and investigation.
-                    </p>
-                    <p>
-                        The game is currently in development and will be available for download
-                        on <strong>Itch.io</strong> upon completion.
-                    </p>
                 </div>
 
-                <div class="project-sidebar">
 
-                    <div class="sidebar-card">
-                        <h4>📊 Quick Facts</h4>
-                        <ul>
-                            <li><strong>Project:</strong> Mimozia</li>
-                            <li><strong>Engine:</strong> Ren'Py</li>
-                            <li><strong>Language:</strong> Python</li>
-                            <li><strong>Genre:</strong> Psychological Thriller</li>
-                            <li><strong>Status:</strong> In Development</li>
-                            <li><strong>Platform:</strong> Desktop</li>
-                        </ul>
-                    </div>
+                <div class="hero-side">
 
-                    <div class="sidebar-card">
-                        <h4>🏅 Key Achievements</h4>
-                        <ul>
-                            <li>✅ 100+ interactive scenes</li>
-                            <li>✅ 30+ explorable locations</li>
-                            <li>✅ 4 unique endings</li>
-                            <li>✅ Complex puzzle system</li>
-                            <li>✅ Dual-perspective notes</li>
-                            <li>✅ Branching narrative</li>
-                        </ul>
-                    </div>
+                    <p>
+                        I created Mimozia to explore what happens when
+                        a story is no longer something you simply read,
+                        but something you navigate, influence, and uncover.
+                    </p>
 
-                    <div class="sidebar-card">
-                        <h4>🔗 Related</h4>
-                        <ul>
-                            <li>📖 Interactive Fiction</li>
-                            <li>🧠 Psychological Horror</li>
-                            <li>🐍 Python</li>
-                            <li>🎨 Visual Novel</li>
-                            <li>🔎 Mystery</li>
-                        </ul>
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            Ren'Py
+                        </span>
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Interactive Fiction
+                        </span>
+
+                        <span class="tag">
+                            Narrative Design
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            <div class="gallery-section">
-                <h2>📸 Mimozia Gallery</h2>
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🏥</span>
-                            <span class="label">Hospital Exterior</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">📝</span>
-                            <span class="label">Note System</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🔬</span>
-                            <span class="label">Laboratory Scene</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🎭</span>
-                            <span class="label">Character Dialogue</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🧩</span>
-                            <span class="label">Puzzle Interface</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🌌</span>
-                            <span class="label">Ending Scene</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="intro-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        The Project
+                    </div>
+
+                    <h2>
+                        A story designed
+                        to be explored.
+                    </h2>
+
+                </div>
+
+
+                <div class="intro-text">
+
+                    <p>
+                        <strong>Mimozia</strong> is a psychological thriller
+                        visual novel developed with the Ren'Py engine.
+                    </p>
+
+                    <p>
+                        The player follows Özgür, a young man who travels
+                        to a mysterious town searching for his missing
+                        girlfriend, Elif. His investigation leads him to
+                        the abandoned Star Hospital and a secret experiment
+                        known as Mimozia.
+                    </p>
+
+                    <p>
+                        The project combines narrative design with
+                        programming: choices change character statistics,
+                        unlock dialogue, reveal clues, and ultimately
+                        influence the ending.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <footer>
+
+    <!-- =========================
+         WHY I MADE IT
+    ========================== -->
+
+    <section class="why-section">
+
         <div class="container">
-            <p>© 2026 Elif. Built with ❤️</p>
+
+            <div class="why-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        Why I Made It
+                    </div>
+
+                    <h2>
+                        I wanted to make
+                        storytelling interactive.
+                    </h2>
+
+                </div>
+
+
+                <div class="why-text">
+
+                    <p>
+                        I have always been interested in storytelling,
+                        but writing a linear story only gives the reader
+                        one path through the world.
+                    </p>
+
+                    <p>
+                        With Mimozia, I wanted to experiment with what
+                        changes when the audience becomes part of the
+                        structure itself.
+                    </p>
+
+                    <p>
+                        Programming allowed me to turn narrative decisions
+                        into systems: relationships could change,
+                        information could be discovered in different
+                        orders, and the same story could end in different ways.
+                    </p>
+
+                    <div class="quote">
+                        Mimozia became a way to use code not just to
+                        build a game, but to build a different kind of story.
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =========================
+         STORY
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="story-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        The Story
+                    </div>
+
+                    <div class="story-card">
+
+                        <h3>
+                            A missing girl.
+                            An abandoned hospital.
+                            A hidden experiment.
+                        </h3>
+
+                        <p>
+                            Three months after Elif disappears,
+                            Özgür arrives in the isolated town where
+                            she was last seen.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="story-text">
+
+                    <p>
+                        With no money and nowhere to stay, Özgür finds
+                        work as a night watchman at Star Hospital, an
+                        abandoned building filled with unanswered questions.
+                    </p>
+
+                    <p>
+                        As he explores the hospital, he discovers evidence
+                        that Elif was connected to a secret experiment
+                        called <strong>Mimozia</strong>, a project designed
+                        to transfer psychic abilities between subjects.
+                    </p>
+
+                    <p>
+                        The deeper Özgür goes, the harder it becomes to
+                        distinguish what is real, what is memory, and
+                        what the experiment has changed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCALE
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-label">
+                The Scale
+            </div>
+
+            <h2 class="section-title">
+                A surprisingly large system
+                for a personal project.
+            </h2>
+
+            <p class="section-description">
+                Mimozia grew from a simple story idea into a multi-layered
+                interactive system.
+            </p>
+
+
+            <div class="scale-grid">
+
+
+                <div class="scale-card">
+
+                    <div class="scale-number">
+                        100+
+                    </div>
+
+                    <h3>
+                        Interactive Scenes
+                    </h3>
+
+                    <p>
+                        Branching narrative moments and interactions.
+                    </p>
+
+                </div>
+
+
+                <div class="scale-card">
+
+                    <div class="scale-number">
+                        30+
+                    </div>
+
+                    <h3>
+                        Locations
+                    </h3>
+
+                    <p>
+                        Explorable rooms across the hospital.
+                    </p>
+
+                </div>
+
+
+                <div class="scale-card">
+
+                    <div class="scale-number">
+                        4
+                    </div>
+
+                    <h3>
+                        Endings
+                    </h3>
+
+                    <p>
+                        Different outcomes shaped by player choices.
+                    </p>
+
+                </div>
+
+
+                <div class="scale-card">
+
+                    <div class="scale-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Core Stats
+                    </h3>
+
+                    <p>
+                        Logic, Trust, and Psychic Sensitivity.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SYSTEMS
+    ========================== -->
+
+    <section class="systems-section">
+
+        <div class="container">
+
+            <div class="systems-header">
+
+                <div class="section-label">
+                    Systems Design
+                </div>
+
+                <h2 class="section-title">
+                    The story is powered by systems.
+                </h2>
+
+                <p class="section-description">
+                    Instead of treating the game as a collection of scenes,
+                    I designed systems that connect player decisions to the
+                    narrative.
+                </p>
+
+            </div>
+
+
+            <div class="systems-grid">
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        01 · BRANCHING
+                    </span>
+
+                    <h3>
+                        Choices &amp; Endings
+                    </h3>
+
+                    <p>
+                        Player decisions affect relationships, dialogue,
+                        available information, and eventually the ending
+                        of the story.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        02 · STATS
+                    </span>
+
+                    <h3>
+                        Character State
+                    </h3>
+
+                    <p>
+                        Logic, Trust, and Psychic Sensitivity evolve
+                        throughout the game and unlock different
+                        interactions.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        03 · EXPLORATION
+                    </span>
+
+                    <h3>
+                        World Navigation
+                    </h3>
+
+                    <p>
+                        Players move through multiple floors and rooms,
+                        discovering clues and tracking their progress
+                        through the hospital.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        04 · INFORMATION
+                    </span>
+
+                    <h3>
+                        Dual-Perspective Notes
+                    </h3>
+
+                    <p>
+                        Notes from Özgür and Elif provide different
+                        perspectives, gradually revealing the larger
+                        mystery.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        05 · PUZZLES
+                    </span>
+
+                    <h3>
+                        Investigation
+                    </h3>
+
+                    <p>
+                        Number sequences, code cracking, and symbol
+                        matching connect exploration with problem solving.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        06 · CONSEQUENCE
+                    </span>
+
+                    <h3>
+                        Player Agency
+                    </h3>
+
+                    <p>
+                        Information is not simply presented to the player.
+                        What they discover and how they act changes their
+                        path through the game.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNICAL
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="technical-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        Technical Work
+                    </div>
+
+                    <h2>
+                        Code became part
+                        of the storytelling.
+                    </h2>
+
+                </div>
+
+
+                <div class="tech-content">
+
+                    <p>
+                        Mimozia uses Ren'Py's scripting system together
+                        with Python to manage branching dialogue,
+                        character state, exploration logic, puzzles,
+                        note collection, and multiple endings.
+                    </p>
+
+                    <p>
+                        The challenge was not only writing scenes.
+                        It was making sure the different systems could
+                        interact without breaking the narrative structure.
+                    </p>
+
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">
+                            Ren'Py
+                        </span>
+
+                        <span class="tech-tag">
+                            Python
+                        </span>
+
+                        <span class="tech-tag">
+                            Branching Logic
+                        </span>
+
+                        <span class="tech-tag">
+                            State Management
+                        </span>
+
+                        <span class="tech-tag">
+                            Interactive Fiction
+                        </span>
+
+                        <span class="tech-tag">
+                            Narrative Design
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REFLECTION
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="reflection-box">
+
+                <div class="section-label">
+                    What I Learned
+                </div>
+
+                <h2>
+                    Writing and programming
+                    solve different problems —
+                    and become interesting
+                    when they work together.
+                </h2>
+
+                <p>
+                    Mimozia taught me to think of narrative as a system.
+                    A scene is not only something the player sees; it can
+                    be a consequence of everything they did before it.
+                    Building that structure made me more interested in
+                    the space between creative writing and engineering,
+                    where rules can become a form of storytelling.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DEVELOPMENT STATUS
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-label">
+                Current Status
+            </div>
+
+            <h2 class="section-title">
+                Still in development.
+            </h2>
+
+            <p class="section-description">
+                Mimozia is a personal project that continues to evolve.
+                I plan to release the completed game on Itch.io.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="container">
+
+            <div class="gallery-header">
+
+                <div>
+
+                    <div class="section-label">
+                        Visual Log
+                    </div>
+
+                    <h2>
+                        Inside Mimozia
+                    </h2>
+
+                </div>
+
+                <p>
+                    Screenshots from the game and development process.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Hospital Exterior
+                        </strong>
+
+                        <span>
+                            Add screenshot
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Exploration
+                        </strong>
+
+                        <span>
+                            Add screenshot
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Character Dialogue
+                        </strong>
+
+                        <span>
+                            Add screenshot
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Notes System
+                        </strong>
+
+                        <span>
+                            Add screenshot
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Puzzle
+                        </strong>
+
+                        <span>
+                            Add screenshot
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Ending
+                        </strong>
+
+                        <span>
+                            Add screenshot
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Elifsu Arifoğlu · Built with curiosity.
+            </p>
+
+        </div>
+
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
