@@ -1,14 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elifsu Arifoğlu | Poetry</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #fcc7e1;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #4a2f01;
+        }
+
+        .logo span {
+            color: #6D4C2A;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a2f01;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #6D4C2A;
+            background: rgba(74, 47, 1, 0.1);
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #fcc7e1;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #fcc7e1;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-size: 18px;
+        }
+
+        /* POETRY GRID */
+        .poetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .poetry-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .poetry-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .poetry-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            background: #6D4C2A;
+        }
+
+        .poetry-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #4a2f01;
+        }
+
+        .poetry-card .isbn {
+            font-size: 13px;
+            color: #6D4C2A;
+            margin-bottom: 8px;
+        }
+
+        .poetry-card p {
+            font-size: 15px;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .poetry-card .poem-excerpt {
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 16px 20px;
+            border-radius: 10px;
+            color: #3E2723;
+            font-size: 15px;
+            border-left: 3px solid #6D4C2A;
+        }
+
+        /* READ MORE BUTTON */
+        .read-more-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .read-more-btn:hover {
+            background: #6D4C2A;
+            color: #fcc7e1;
+            transform: scale(1.05);
+        }
+
+        .center-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #4a2f01;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #6D4C2A;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 4px 6px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="container">
             <div class="logo">Elifsu Arifoğlu<span>.</span></div>
@@ -16,10 +236,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="poetry.html" class="active">Poetry</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="cop31.html">COP31</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- POETRY SECTION -->
     <section>
         <div class="container">
             <h1 class="section-title">Poetry</h1>
@@ -55,334 +277,24 @@
 
             </div>
 
-            <!-- TÜM ŞİİRLER (AYRI KARTLAR) -->
-            <h2 class="section-subtitle">All of My Poems</h2>
-            <div class="poetry-grid all-poems">
-
-                <!-- Şiir 1: Semicolon -->
-                <div class="poetry-card poem-card">
-                    <h3>Semicolon</h3>
-                    <div class="poem-full">
-I could have been a period, bringing an end,<br />
-A comma, too, silently waiting to descend.<br />
-But I remained between—neither stop nor cease,<br />
-A semicolon: pausing, yet finding release.<br />
-<br />
-I could have written an end to the dark of the night,<br />
-Yet a sliver of light crept in—my sentence took flight.<br />
-For in every story they thought was done,<br />
-They say a new beginning has just begun.<br />
-<br />
-Whatever broke me, whatever tore me apart,<br />
-Was etched not on my skin, but deep in my heart.<br />
-But look—here I stand, still breathing, still here,<br />
-With my half-finished sentences, unbroken, sincere.<br />
-<br />
-You thought it was over, didn't you?<br />
-Words fell silent, roads blurred from view,<br />
-But my story didn't stop at that door—<br />
-Because I did not choose to end with a period's floor.<br />
-<br />
-Like breath, like a wave, like a storm at sea,<br />
-I fell and rose, was wounded, yet free.<br />
-Still I walked, still I wrote through the night—<br />
-Because I did not choose to fade with a comma's slight.<br />
-<br />
-At times I was quiet, at times I would cry,<br />
-My knees would tremble, my heart would go dry.<br />
-But I came to see—my road has no final bend,<br />
-My story is not over; this is not the end.
-                    </div>
-                    <span class="poem-status published">✅ published</span>
-                </div>
-
-                <!-- Şiir 2: Sky Cemetery -->
-                <div class="poetry-card poem-card">
-                    <h3>Sky Cemetery</h3>
-                    <div class="poem-full">
-While night takes the hours as its own,<br />
-Stars are born like a dream overthrown.<br />
-With the whispers of souls in the air,<br />
-Like screams made of light, beyond compare.<br />
-<br />
-Graves no longer lie upon the ground—<br />
-Hearts are buried in the skyward bound.<br />
-The heavens have become a vast graveyard,<br />
-Capturing everyone, keeping them barred.<br />
-<br />
-The planets no longer turn in place,<br />
-They only flee from each other's face.<br />
-No death wishes to touch another kind—<br />
-For if they did, the order would unwind.<br />
-<br />
-At the edge of a galaxy far away,<br />
-There is a silence whose name I cannot say.<br />
-There, guards keep watch without rest—<br />
-No hands, no eyes, yet they perceive my quest;<br />
-With every step I take, they follow my trace.<br />
-<br />
-Inside my chest, a star pounds every night,<br />
-Like a forgotten dead one, out of sight,<br />
-Like a love that no longer remembers me...<br />
-<br />
-And you...<br />
-Your star is fading, slowly, quietly,<br />
-Because in this vast, unending sea,<br />
-There is no one left who remembers you.<br />
-<br />
-But I am still alive.<br />
-Though I do not remember you,<br />
-Still, every night I look up to the sky,<br />
-Watching the stars drift by.<br />
-<br />
-And without knowing,<br />
-I celebrate the triumph<br />
-Of having forgotten you.
-                    </div>
-                    <span class="poem-status published">✅ published</span>
-                </div>
-
-                <!-- Şiir 3: Comma -->
-                <div class="poetry-card poem-card">
-                    <h3>Comma</h3>
-                    <div class="poem-full">
-I think I am truly half now—<br />
-I've become like a comma,<br />
-Forgotten, unable to carry on.<br />
-<br />
-I was dragged from place to place,<br />
-Waited for the period to end it all.<br />
-The semicolon turned out to be a lie—<br />
-It left me behind mercilessly.<br />
-<br />
-Life crossed out my sentences one last time,<br />
-Words were brushed aside meaninglessly with me.<br />
-I was forgotten, I couldn't explain—<br />
-The fault is mine, of course, for those who understand.<br />
-<br />
-Among these empty words,<br />
-My story remained unfinished,<br />
-Like a comma scattered into life's lines.<br />
-<br />
-I wished to stay for a moment, I tried—<br />
-How surprising, isn't it? I couldn't succeed.<br />
-Amid all this chaos,<br />
-I was forgotten—I couldn't remain,<br />
-Couldn't hold on—<br />
-I was sent off into nothingness, like a comma.
-                    </div>
-                    <span class="poem-status published">✅ published</span>
-                </div>
-
-                <!-- Şiir 4: Reyyan -->
-                <div class="poetry-card poem-card">
-                    <h3>Reyyan</h3>
-                    <div class="poem-full">
-We became less one morning—<br />
-The sun that rose with your eyes had set.<br />
-When you were still a child,<br />
-They forgot your childhood, it seems…<br />
-You fell silent, and the world went deaf.<br />
-<br />
-Was your heart already tired at fourteen?<br />
-Or was the world too heavy on your shoulders?<br />
-There was a scream inside you—<br />
-No one heard you, not even I.<br />
-<br />
-Now I ask the stars for your name,<br />
-The sky gives no answer, the night is cold.<br />
-But in every star, I see you still—<br />
-It hurts to look, and I remember once more.<br />
-<br />
-I wish I had held your hands that day,<br />
-Held you a little tighter, closer still.<br />
-Maybe even silence with you would have been enough—<br />
-But I was too late, as I always am.<br />
-<br />
-There is no more pain now—<br />
-This world can no longer make you cry.<br />
-But I will always miss you—<br />
-In every new dawn, in every lost star…
-                    </div>
-                    <span class="poem-status published">✅ published</span>
-                </div>
-
-                <!-- Şiir 5: Love in Ankara -->
-                <div class="poetry-card poem-card">
-                    <h3>Love in Ankara</h3>
-                    <div class="poem-full">
-A streetlamp flickers before my eyes,<br />
-The misty sky hangs heavy overhead.<br />
-No one knows—and if they do, they stay silent—<br />
-Ankara, loneliness suits you instead.<br />
-<br />
-Old memories pass through the intersections,<br />
-In my hand, a forgotten warmth remains.<br />
-Cold pavements sometimes speak to me,<br />
-A teary glance falls from my eyes like rain.<br />
-<br />
-With every step into this grey city,<br />
-Every thought dissolves into the wind.<br />
-There is a void inside you, in Ankara—<br />
-A night resembling a dream you've sinned.<br />
-<br />
-Cigarette smoke wraps around the air,<br />
-I hear your voice—but no one is near.<br />
-Hope in my eyes, coldness in my chest,<br />
-Love in Ankara is always hidden, never clear.<br />
-<br />
-Old trees tremble in the empty park,<br />
-Every corner, every wall leaves a trace.<br />
-Those with broken hearts in Ankara,<br />
-Remain with disappointment, like the love they embrace.<br />
-<br />
-Sorrow in my eyes, wind in the street,<br />
-Every step I take is searching for you.<br />
-Every pain, every fracture lived in Ankara,<br />
-Cannot be forgotten—my heart bears a wound that's true.<br />
-<br />
-Then everything stops, time slips away,<br />
-The grey city falls silent, I forget you, they say.<br />
-But every corner, every street, every night,<br />
-Leaves a mark—reminding me of you anyway.
-                    </div>
-                    <span class="poem-status published">✅ published</span>
-                </div>
-
-                <!-- Şiir 6: Cinderella -->
-                <div class="poetry-card poem-card">
-                    <h3>Cinderella</h3>
-                    <div class="poem-full">
-And the hours are passing by,<br />
-Cinderella's fairy tale is running dry.<br />
-The cycle breaks apart,<br />
-Everyone returns to where they belong—back to the start.<br />
-<br />
-Don't run, Cinderella—<br />
-This ending was always clear.<br />
-The fairies have gone now,<br />
-It's time to go home, my dear.
-                    </div>
-                    <span class="poem-status unpublished">⏳ not published</span>
-                </div>
-
-                <!-- Şiir 7: You -->
-                <div class="poetry-card poem-card">
-                    <h3>You</h3>
-                    <div class="poem-full">
-You never once turned to look at me,<br />
-My name was unknown in your world.<br />
-You passed by me like the wind,<br />
-Your silence wounded my soul without mercy.<br />
-<br />
-Your name never leaves my lips,<br />
-But if asked, I couldn't speak of its pain.<br />
-Your eyes looked at me like I was nothing—<br />
-Always cold, always distant, your breath.<br />
-<br />
-The poems I wrote for you,<br />
-The verses I chose so carefully,<br />
-Couldn't even be crumpled up like nothing—<br />
-They never reached you.<br />
-<br />
-You never saw me, you never knew me,<br />
-You passed right through my heart.<br />
-But I, every night, with your name on my lips,<br />
-Kept vanishing into your existence.
-                    </div>
-                    <span class="poem-status unpublished">⏳ not published</span>
-                </div>
-
-                <!-- Şiir 8: The Paradox of Loss -->
-                <div class="poetry-card poem-card">
-                    <h3>The Paradox of Loss</h3>
-                    <div class="poem-full">
-A weak star glides from my depths within,<br />
-A piece of life falls from where I've been.<br />
-The fox turns back, my shadow starts to shake,<br />
-Each glance of hers tears my heart, makes it ache.<br />
-<br />
-Whispers sink deep into my skin,<br />
-Silence hides beneath my fingertips, within.<br />
-Every memory a wound, an old scar left behind,<br />
-With every breath, hope dissolves, unkind.<br />
-<br />
-Nights are long, dreams are blurred,<br />
-My memories stay distant, unheard.<br />
-Glass is sharp, my heart is broken,<br />
-The fox collects my pieces, leaves them smoking.<br />
-<br />
-Silent fish, lost reverie,<br />
-Bind every broken piece of you to the fox, you see.<br />
-Foxes wander through her mind,<br />
-Their tails tangle in seaweed, though they try to unwind.<br />
-<br />
-The fish drifts through cold waters wide—<br />
-Won't it perish in this eternal tide?<br />
-Yet the fish still searches for the fox again,<br />
-But what does a fox seek in the ocean's domain?<br />
-<br />
-Foolish fish, drifting, struggling to survive,<br />
-The fox smirks slyly, grinning alive.<br />
-His heart still lingers on her shore,<br />
-While hers belongs to no one—silent, wanting more.<br />
-<br />
-And the night ends, but the dream goes on,<br />
-Drown in the ocean, live on the lawn—<br />
-Fish and fox, an endless game,<br />
-The seaweed still burns for her, death remains the same.
-                    </div>
-                    <span class="poem-status unpublished">⏳ not published</span>
-                </div>
-
-                <!-- Şiir 9: I Am Waiting -->
-                <div class="poetry-card poem-card">
-                    <h3>I Am Waiting</h3>
-                    <div class="poem-full">
-I ask questions into the void.<br />
-Silence… no answer.<br />
-Are your eyes now just a memory,<br />
-Or a dream that never truly was?<br />
-<br />
-Does he love me, or not?<br />
-Oh daisy,<br />
-Are you also just a game of a dream?<br />
-<br />
-They said you would return.<br />
-But you were never truly mine—<br />
-So what does "returning" even mean?<br />
-Perhaps you are lost inside me,<br />
-Vanished within my very being…<br />
-<br />
-I am waiting.<br />
-Perhaps for a moment, perhaps for a trace,<br />
-Perhaps just for a single word.<br />
-Something—a sign from you.<br />
-<br />
-And if I am still here,<br />
-Perhaps it is only to see:<br />
-Is this real, or is it a play?<br />
-This time, let *you* decide.<br />
-<br />
-And I—<br />
-I am still waiting.<br />
-Truthfully, for you—<br />
-But most of all, for the things<br />
-I could not even confess to myself.
-                    </div>
-                    <span class="poem-status unpublished">⏳ not published</span>
-                </div>
-
+            <!-- READ MY POEMS BUTTON -->
+            <div class="center-btn">
+                <a href="poems.html" class="read-more-btn">📖 Read My Poems →</a>
             </div>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>© 2026 Elif. Built with ❤️</p>
+            <p>© 2026 Elifsu Arifoğlu. Built with ❤️</p>
+            <p style="margin-top: 6px; font-size: 14px;">
+                <a href="https://github.com/elifsuarifoglu" target="_blank">GitHub</a> ·
+                <a href="https://linkedin.com/in/elifsuarifoglu" target="_blank">LinkedIn</a>
+            </p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
