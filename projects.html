@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +104,7 @@
         ========================== */
 
         .projects-hero {
-            padding: 100px 0 70px;
+            padding: 105px 0 75px;
             text-align: center;
         }
 
@@ -118,7 +119,7 @@
         }
 
         .section-title {
-            font-size: clamp(44px, 7vw, 78px);
+            font-size: clamp(46px, 7vw, 80px);
             line-height: 0.95;
             font-weight: 700;
             letter-spacing: -3px;
@@ -128,19 +129,19 @@
         .hero-description {
             max-width: 700px;
             margin: 0 auto;
-            font-size: 18px;
-            opacity: 0.82;
+            font-size: 19px;
+            opacity: 0.85;
         }
 
         .hero-statement {
-            max-width: 720px;
-            margin: 26px auto 0;
+            max-width: 700px;
+            margin: 25px auto 0;
             font-size: 15px;
-            opacity: 0.65;
+            opacity: 0.62;
         }
 
         /* =========================
-           SECTION
+           SECTIONS
         ========================== */
 
         section {
@@ -150,8 +151,8 @@
         .section-heading {
             display: flex;
             justify-content: space-between;
-            align-items: end;
-            gap: 20px;
+            align-items: flex-end;
+            gap: 25px;
             margin-bottom: 30px;
         }
 
@@ -161,14 +162,14 @@
         }
 
         .section-heading p {
-            max-width: 440px;
+            max-width: 470px;
             font-size: 14px;
             opacity: 0.65;
             text-align: right;
         }
 
         /* =========================
-           FEATURED GRID
+           FEATURED WORK
         ========================== */
 
         .featured-grid {
@@ -182,14 +183,12 @@
             color: #4a2f01;
             border-radius: 24px;
             padding: 34px;
-            min-height: 340px;
+            min-height: 345px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.35s ease, box-shadow 0.35s ease;
             box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
-            overflow: hidden;
-            position: relative;
         }
 
         .featured-card:hover {
@@ -212,7 +211,7 @@
 
         .project-type {
             display: inline-block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -222,10 +221,10 @@
         }
 
         .featured-card h3 {
-            font-size: 34px;
+            font-size: 35px;
             line-height: 1.05;
             letter-spacing: -1.5px;
-            margin: 25px 0 12px;
+            margin: 25px 0 13px;
         }
 
         .featured-card p {
@@ -270,50 +269,130 @@
         }
 
         /* =========================
-           MORE WORK
+           GLOBAL & COMMUNITY
         ========================== */
 
-        .more-work {
-            margin-top: 80px;
+        .global-section {
+            margin-top: 45px;
         }
 
-        .work-list {
+        .global-intro {
+            max-width: 680px;
+            font-size: 17px;
+            opacity: 0.75;
+            margin-bottom: 35px;
+        }
+
+        .global-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .global-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 285px;
+            padding: 30px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 22px;
+            background: rgba(252, 199, 225, 0.045);
+            text-decoration: none;
+            transition: transform 0.3s ease,
+                        background 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .global-card:hover {
+            transform: translateY(-5px);
+            background: rgba(252, 199, 225, 0.09);
+            border-color: rgba(252, 199, 225, 0.6);
+        }
+
+        .global-card .project-number {
+            color: #fcc7e1;
+        }
+
+        .global-card h3 {
+            font-size: 28px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin: 22px 0 12px;
+        }
+
+        .global-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        .global-card .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            gap: 15px;
+        }
+
+        .global-card .category {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.55;
+        }
+
+        .global-card .arrow {
+            font-size: 18px;
+        }
+
+        /* =========================
+           PROGRAMS
+        ========================== */
+
+        .programs-section {
+            margin-top: 45px;
+        }
+
+        .program-list {
             border-top: 1px solid rgba(252, 199, 225, 0.35);
         }
 
-        .work-item {
+        .program-item {
             display: grid;
-            grid-template-columns: 90px 1.3fr 1fr 110px;
+            grid-template-columns: 70px 1.5fr 1fr 40px;
             align-items: center;
             gap: 20px;
-            padding: 25px 0;
+            padding: 27px 0;
             border-bottom: 1px solid rgba(252, 199, 225, 0.35);
             text-decoration: none;
-            transition: padding 0.3s ease, background 0.3s ease;
+            transition: padding 0.3s ease,
+                        background 0.3s ease;
         }
 
-        .work-item:hover {
+        .program-item:hover {
             padding-left: 12px;
             padding-right: 12px;
             background: rgba(252, 199, 225, 0.05);
         }
 
-        .work-number {
+        .program-number {
             font-size: 12px;
             opacity: 0.45;
         }
 
-        .work-title {
+        .program-title {
             font-size: 18px;
             font-weight: 600;
         }
 
-        .work-category {
+        .program-category {
             font-size: 13px;
-            opacity: 0.65;
+            opacity: 0.6;
         }
 
-        .work-arrow {
+        .program-arrow {
             font-size: 18px;
             text-align: right;
         }
@@ -323,11 +402,11 @@
         ========================== */
 
         .reflection {
-            margin-top: 100px;
+            margin-top: 70px;
         }
 
         .reflection-box {
-            max-width: 900px;
+            max-width: 930px;
             margin: 0 auto;
             padding: 55px;
             border: 1px solid rgba(252, 199, 225, 0.35);
@@ -348,17 +427,17 @@
             font-size: 38px;
             line-height: 1.1;
             letter-spacing: -1.5px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .reflection-box p {
-            max-width: 760px;
+            max-width: 780px;
             font-size: 17px;
             opacity: 0.78;
         }
 
         /* =========================
-           CTA
+           CLOSING
         ========================== */
 
         .closing {
@@ -424,7 +503,8 @@
                 padding-top: 70px;
             }
 
-            .featured-grid {
+            .featured-grid,
+            .global-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -437,8 +517,12 @@
                 text-align: left;
             }
 
-            .work-item {
-                grid-template-columns: 55px 1fr 100px 30px;
+            .program-item {
+                grid-template-columns: 55px 1fr 30px;
+            }
+
+            .program-category {
+                display: none;
             }
         }
 
@@ -470,25 +554,29 @@
             }
 
             .featured-card h3 {
-                font-size: 28px;
+                font-size: 29px;
             }
 
-            .work-item {
+            .global-card {
+                padding: 26px;
+                min-height: 260px;
+            }
+
+            .global-card h3 {
+                font-size: 25px;
+            }
+
+            .program-item {
                 grid-template-columns: 1fr 30px;
                 gap: 8px;
             }
 
-            .work-number,
-            .work-category {
+            .program-number {
                 display: none;
             }
 
-            .work-title {
+            .program-title {
                 font-size: 16px;
-            }
-
-            .work-arrow {
-                text-align: right;
             }
 
             .reflection-box {
@@ -506,6 +594,7 @@
     </style>
 </head>
 
+
 <body>
 
     <!-- =========================
@@ -520,6 +609,7 @@
             </a>
 
             <ul class="nav-links">
+
                 <li>
                     <a href="index.html">Home</a>
                 </li>
@@ -532,9 +622,6 @@
                     <a href="projects.html" class="active">Projects</a>
                 </li>
 
-                <li>
-                    <a href="cop31.html">COP31</a>
-                </li>
             </ul>
 
         </div>
@@ -546,9 +633,12 @@
     ========================== -->
 
     <header class="projects-hero">
+
         <div class="container">
 
-            <span class="eyebrow">Selected Work</span>
+            <span class="eyebrow">
+                Selected Work
+            </span>
 
             <h1 class="section-title">
                 Projects
@@ -559,11 +649,13 @@
             </p>
 
             <p class="hero-statement">
-                Every project is a system I built to protect something —
-                creativity, the planet, or human connection.
+                I don't really believe in choosing one lane.
+                I like exploring what happens when technology,
+                creativity, science, and people meet.
             </p>
 
         </div>
+
     </header>
 
 
@@ -572,19 +664,25 @@
     ========================== -->
 
     <section>
+
         <div class="container">
 
             <div class="section-heading">
-                <h2>Featured Work</h2>
+
+                <h2>
+                    Featured Work
+                </h2>
 
                 <p>
-                    A few projects that best represent how I think,
-                    build, and work with others.
+                    Projects that best represent the way I think,
+                    create, investigate, and build.
                 </p>
+
             </div>
 
 
             <div class="featured-grid">
+
 
                 <!-- JARVIS -->
 
@@ -593,21 +691,41 @@
                     <div>
 
                         <div class="featured-top">
-                            <span class="project-number">01</span>
-                            <span class="project-type">AI · Systems</span>
+
+                            <span class="project-number">
+                                01
+                            </span>
+
+                            <span class="project-type">
+                                AI · Systems
+                            </span>
+
                         </div>
 
-                        <h3>JARVIS</h3>
+                        <h3>
+                            JARVIS
+                        </h3>
 
                         <p>
                             A personal AI assistant exploring voice,
-                            vision, automation, and privacy.
+                            vision, automation, and human-computer
+                            interaction.
                         </p>
 
                         <div class="project-meta">
-                            <span class="meta-tag">Python</span>
-                            <span class="meta-tag">Computer Vision</span>
-                            <span class="meta-tag">Automation</span>
+
+                            <span class="meta-tag">
+                                Python
+                            </span>
+
+                            <span class="meta-tag">
+                                Computer Vision
+                            </span>
+
+                            <span class="meta-tag">
+                                Automation
+                            </span>
+
                         </div>
 
                     </div>
@@ -626,21 +744,41 @@
                     <div>
 
                         <div class="featured-top">
-                            <span class="project-number">02</span>
-                            <span class="project-type">Environment · Leadership</span>
+
+                            <span class="project-number">
+                                02
+                            </span>
+
+                            <span class="project-type">
+                                Environment · Leadership
+                            </span>
+
                         </div>
 
-                        <h3>ECOBO</h3>
+                        <h3>
+                            ECOBO
+                        </h3>
 
                         <p>
-                            A student-led sustainability initiative where
-                            I helped organize people, education, and action.
+                            A student-led sustainability initiative
+                            connecting environmental education,
+                            leadership, and action.
                         </p>
 
                         <div class="project-meta">
-                            <span class="meta-tag">60+ Volunteers</span>
-                            <span class="meta-tag">900+ Students</span>
-                            <span class="meta-tag">Sustainability</span>
+
+                            <span class="meta-tag">
+                                60+ Volunteers
+                            </span>
+
+                            <span class="meta-tag">
+                                900+ Students
+                            </span>
+
+                            <span class="meta-tag">
+                                Sustainability
+                            </span>
+
                         </div>
 
                     </div>
@@ -652,28 +790,48 @@
                 </article>
 
 
-                <!-- MIMOZIA / RENPY -->
+                <!-- MIMOZIA -->
 
                 <article class="featured-card">
 
                     <div>
 
                         <div class="featured-top">
-                            <span class="project-number">03</span>
-                            <span class="project-type">Storytelling · Code</span>
+
+                            <span class="project-number">
+                                03
+                            </span>
+
+                            <span class="project-type">
+                                Storytelling · Code
+                            </span>
+
                         </div>
 
-                        <h3>Mimozia</h3>
+                        <h3>
+                            Mimozia
+                        </h3>
 
                         <p>
-                            An interactive psychological thriller where
-                            narrative branches are controlled by code.
+                            An interactive psychological thriller
+                            where narrative branches are controlled
+                            by code.
                         </p>
 
                         <div class="project-meta">
-                            <span class="meta-tag">Ren'Py</span>
-                            <span class="meta-tag">Python</span>
-                            <span class="meta-tag">Interactive Fiction</span>
+
+                            <span class="meta-tag">
+                                Ren'Py
+                            </span>
+
+                            <span class="meta-tag">
+                                Python
+                            </span>
+
+                            <span class="meta-tag">
+                                Interactive Fiction
+                            </span>
+
                         </div>
 
                     </div>
@@ -685,18 +843,27 @@
                 </article>
 
 
-                <!-- TUBITAK -->
+                <!-- TÜBİTAK -->
 
                 <article class="featured-card">
 
                     <div>
 
                         <div class="featured-top">
-                            <span class="project-number">04</span>
-                            <span class="project-type">Research · Sustainability</span>
+
+                            <span class="project-number">
+                                04
+                            </span>
+
+                            <span class="project-type">
+                                Research · Sustainability
+                            </span>
+
                         </div>
 
-                        <h3>TÜBİTAK</h3>
+                        <h3>
+                            TÜBİTAK
+                        </h3>
 
                         <p>
                             Research into sustainable protein through
@@ -704,9 +871,19 @@
                         </p>
 
                         <div class="project-meta">
-                            <span class="meta-tag">Research</span>
-                            <span class="meta-tag">Sustainability</span>
-                            <span class="meta-tag">Science Fair</span>
+
+                            <span class="meta-tag">
+                                Research
+                            </span>
+
+                            <span class="meta-tag">
+                                Sustainability
+                            </span>
+
+                            <span class="meta-tag">
+                                Science
+                            </span>
+
                         </div>
 
                     </div>
@@ -717,117 +894,243 @@
 
                 </article>
 
+
             </div>
 
         </div>
+
     </section>
 
 
     <!-- =========================
-         MORE WORK
+         GLOBAL & COMMUNITY
     ========================== -->
 
-    <section class="more-work">
+    <section class="global-section">
+
         <div class="container">
 
             <div class="section-heading">
-                <h2>More Work</h2>
+
+                <h2>
+                    Global &amp; Community
+                </h2>
 
                 <p>
-                    Other experiences that shaped the way I work
-                    with technology, communities, and global issues.
+                    Experiences that took my work beyond the
+                    classroom and into international and local communities.
                 </p>
+
             </div>
 
 
-            <div class="work-list">
+            <p class="global-intro">
+                I care about ideas that move between people, places,
+                and disciplines. These experiences taught me how
+                collaboration changes the scale of an idea.
+            </p>
 
-                <!-- COP31 -->
 
-                <a href="cop31.html" class="work-item">
+            <div class="global-grid">
 
-                    <span class="work-number">05</span>
 
-                    <span class="work-title">
-                        IDD ORG &amp; COP31
-                    </span>
+                <!-- COP31 / IDD -->
 
-                    <span class="work-category">
-                        Climate · Youth Policy
-                    </span>
+                <a href="cop31.html" class="global-card">
 
-                    <span class="work-arrow">
-                        →
-                    </span>
+                    <div>
+
+                        <div class="featured-top">
+
+                            <span class="project-number">
+                                05
+                            </span>
+
+                            <span class="project-type">
+                                Global · Climate
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            IDD ORG &amp; COP31
+                        </h3>
+
+                        <p>
+                            Youth-led climate engagement through
+                            international collaboration, climate
+                            communication, and preparation for COP31.
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer">
+
+                        <span class="category">
+                            Climate · Youth Policy
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </div>
 
                 </a>
 
 
                 <!-- YOUTH LEAP -->
 
-                <a href="youth-leap.html" class="work-item">
+                <a href="youth-leap.html" class="global-card">
 
-                    <span class="work-number">06</span>
+                    <div>
 
-                    <span class="work-title">
-                        Youth LEAP
-                    </span>
+                        <div class="featured-top">
 
-                    <span class="work-category">
-                        International · Civic Engagement
-                    </span>
+                            <span class="project-number">
+                                06
+                            </span>
 
-                    <span class="work-arrow">
-                        →
-                    </span>
+                            <span class="project-type">
+                                International
+                            </span>
 
-                </a>
+                        </div>
 
+                        <h3>
+                            Youth LEAP
+                        </h3>
 
-                <!-- DEFENSE ACADEMY -->
+                        <p>
+                            An international youth initiative connecting
+                            young people across countries through civic
+                            engagement, collaboration, and shared ideas.
+                        </p>
 
-                <a href="defense-academy.html" class="work-item">
+                    </div>
 
-                    <span class="work-number">07</span>
+                    <div class="card-footer">
 
-                    <span class="work-title">
-                        Defense Industry Academy
-                    </span>
+                        <span class="category">
+                            Civic Engagement · International
+                        </span>
 
-                    <span class="work-category">
-                        Technology · Engineering
-                    </span>
+                        <span class="arrow">
+                            →
+                        </span>
 
-                    <span class="work-arrow">
-                        →
-                    </span>
+                    </div>
 
                 </a>
 
 
                 <!-- LÖSEV -->
 
-                <a href="losev.html" class="work-item">
+                <a href="losev.html" class="global-card">
 
-                    <span class="work-number">08</span>
+                    <div>
 
-                    <span class="work-title">
-                        LÖSEV
+                        <div class="featured-top">
+
+                            <span class="project-number">
+                                07
+                            </span>
+
+                            <span class="project-type">
+                                Community
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            LÖSEV
+                        </h3>
+
+                        <p>
+                            Community-focused volunteering and
+                            awareness work shaped by the belief that
+                            impact begins with people.
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer">
+
+                        <span class="category">
+                            Community · Volunteering
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRAMS & EXPERIENCES
+    ========================== -->
+
+    <section class="programs-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Programs &amp; Experiences
+                </h2>
+
+                <p>
+                    Programs that expanded the way I think about
+                    technology, engineering, and global challenges.
+                </p>
+
+            </div>
+
+
+            <div class="program-list">
+
+
+                <!-- DEFENSE ACADEMY -->
+
+                <a
+                    href="defense-academy.html"
+                    class="program-item"
+                >
+
+                    <span class="program-number">
+                        08
                     </span>
 
-                    <span class="work-category">
-                        Community · Volunteering
+                    <span class="program-title">
+                        Defense Industry Academy
                     </span>
 
-                    <span class="work-arrow">
+                    <span class="program-category">
+                        Technology · Engineering
+                    </span>
+
+                    <span class="program-arrow">
                         →
                     </span>
 
                 </a>
 
+
             </div>
 
         </div>
+
     </section>
 
 
@@ -836,12 +1139,13 @@
     ========================== -->
 
     <section class="reflection">
+
         <div class="container">
 
             <div class="reflection-box">
 
                 <div class="reflection-label">
-                    Beyond the projects
+                    What connects these projects
                 </div>
 
                 <h2>
@@ -853,13 +1157,17 @@
                     Building JARVIS made me think about how people
                     interact with intelligent systems. Writing Mimozia
                     showed me how code can become a storytelling medium.
-                    ECOBO taught me that even a good idea only matters
-                    when people are willing to act on it.
+                    TÜBİTAK taught me to approach sustainability through
+                    research, while ECOBO showed me how ideas become
+                    meaningful when people act on them. My international
+                    work through Youth LEAP and COP31 has pushed that
+                    thinking beyond my immediate community.
                 </p>
 
             </div>
 
         </div>
+
     </section>
 
 
@@ -868,6 +1176,7 @@
     ========================== -->
 
     <section class="closing">
+
         <div class="container">
 
             <h2>
@@ -876,10 +1185,11 @@
 
             <p>
                 I like turning them into things people can use,
-                experience, or build on.
+                experience, question, or build on.
             </p>
 
         </div>
+
     </section>
 
 
@@ -896,6 +1206,7 @@
             </p>
 
             <p style="margin-top: 8px;">
+
                 <a
                     href="https://github.com/elifsuarifoglu"
                     target="_blank"
@@ -913,6 +1224,7 @@
                 >
                     LinkedIn
                 </a>
+
             </p>
 
         </div>
@@ -921,3 +1233,4 @@
 
 </body>
 </html>
+```
