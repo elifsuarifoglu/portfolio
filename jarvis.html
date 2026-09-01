@@ -3,256 +3,528 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JARVIS AI Assistant | Elifsu Arifoğlu</title>
+
+    <title>JARVIS | Elifsu Arifoğlu</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
     <style>
-        /* JARVIS özel stilleri - SADECE İÇERİK İÇİN */
-        .project-hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .project-hero .icon-large {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .project-hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #fcc7e1;
-            margin-bottom: 8px;
-        }
-
-        .project-hero .tag-large {
-            display: inline-block;
-            padding: 6px 20px;
-            background: #4a2f01;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fcc7e1;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .project-main {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 36px;
-            color: #4a2f01;
-        }
-
-        .project-main h2 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #4a2f01;
-            border-bottom: 3px solid #6D4C2A;
-            padding-bottom: 10px;
-        }
-
-        .project-main h3 {
-            font-size: 18px;
-            margin: 24px 0 12px;
-            color: #4a2f01;
-        }
-
-        .project-main p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #3E2723;
-            margin-bottom: 12px;
-        }
-
-        .project-main ul {
-            list-style: none;
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .project-main ul li {
-            padding: 10px 16px;
-            margin-bottom: 8px;
-            background: #ffffff;
-            border-radius: 10px;
-            border-left: 4px solid #6D4C2A;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3E2723;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            padding: 20px 0;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.12);
+        }
+
+        nav .container {
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .project-main ul li .li-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .project-sidebar {
-            display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             gap: 20px;
         }
 
-        .sidebar-card {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 24px;
+        .logo {
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
             color: #4a2f01;
         }
 
-        .sidebar-card h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #4a2f01;
-            border-bottom: 2px solid #6D4C2A;
-            padding-bottom: 8px;
+        .logo span {
+            color: #6D4C2A;
         }
 
-        .sidebar-card p,
-        .sidebar-card li {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #3E2723;
-        }
-
-        .sidebar-card ul {
+        .nav-links {
             list-style: none;
-            padding: 0;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
-        .sidebar-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        .nav-links a {
+            text-decoration: none;
+            color: #4a2f01;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
         }
 
-        .sidebar-card ul li:last-child {
-            border-bottom: none;
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(74, 47, 1, 0.08);
+            color: #6D4C2A;
         }
 
-        .highlight-box {
-            background: #4a2f01;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: 16px 0;
-            color: #fcc7e1;
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 105px 0 85px;
         }
 
-        .highlight-box strong {
-            color: #ffffff;
-        }
-
-        .highlight-box a {
-            color: #fcc7e1;
-            text-decoration: underline;
+        .back-link {
+            display: inline-flex;
+            text-decoration: none;
+            font-size: 13px;
             font-weight: 600;
-            transition: color 0.3s;
+            opacity: 0.65;
+            margin-bottom: 45px;
+            transition: opacity 0.25s ease;
         }
 
-        .highlight-box a:hover {
-            color: #ffffff;
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.58;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(52px, 8vw, 95px);
+            line-height: 0.88;
+            letter-spacing: -5px;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            max-width: 680px;
+            font-size: 20px;
+            opacity: 0.78;
+        }
+
+        .hero-right {
+            border-left: 1px solid rgba(252, 199, 225, 0.35);
+            padding-left: 30px;
+        }
+
+        .hero-right p {
+            font-size: 15px;
+            opacity: 0.68;
+            margin-bottom: 20px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .hero-tag {
+            padding: 7px 11px;
+            border: 1px solid rgba(252, 199, 225, 0.32);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           INTRO
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            opacity: 0.55;
+            margin-bottom: 20px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .intro-grid h2 {
+            font-size: 38px;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            opacity: 0.76;
+            max-width: 720px;
+        }
+
+        .intro-text p + p {
+            margin-top: 18px;
+        }
+
+        /* =========================
+           WHY I BUILT IT
+        ========================== */
+
+        .why-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .why-section .section-title {
+            opacity: 0.55;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+        }
+
+        .why-grid h2 {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .why-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .quote {
+            margin-top: 35px;
+            padding-left: 20px;
+            border-left: 3px solid #6D4C2A;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           SYSTEM
+        ========================== */
+
+        .system-header {
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .system-header h2 {
+            font-size: 42px;
+            letter-spacing: -1.5px;
+            margin-bottom: 14px;
+        }
+
+        .system-header p {
+            font-size: 16px;
+            opacity: 0.68;
+        }
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .system-card {
+            padding: 27px;
+            border: 1px solid rgba(252, 199, 225, 0.3);
+            border-radius: 18px;
+            background: rgba(252, 199, 225, 0.035);
+        }
+
+        .system-number {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            opacity: 0.42;
+            margin-bottom: 25px;
+        }
+
+        .system-card h3 {
+            font-size: 20px;
+            margin-bottom: 9px;
+        }
+
+        .system-card p {
+            font-size: 14px;
+            opacity: 0.68;
+        }
+
+        /* =========================
+           TECH STACK
+        ========================== */
+
+        .tech-section {
+            padding-top: 40px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .tech-grid h2 {
+            font-size: 37px;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 12px 0;
         }
 
         .tech-tag {
-            display: inline-block;
-            padding: 5px 14px;
-            background: #6D4C2A;
-            border-radius: 20px;
-            font-size: 13px;
+            padding: 9px 14px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 999px;
+            font-size: 12px;
             font-weight: 600;
-            color: #fcc7e1;
         }
 
-        .github-link {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #4a2f01;
-            color: #fcc7e1;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: background 0.3s, transform 0.2s;
-            margin-top: 8px;
+        /* =========================
+           CHALLENGES
+        ========================== */
+
+        .challenges {
+            background: rgba(252, 199, 225, 0.045);
         }
 
-        .github-link:hover {
-            background: #6D4C2A;
-            transform: translateY(-2px);
-        }
-
-        .github-link .icon {
-            margin-right: 8px;
-        }
-
-        .gallery-section {
-            margin-top: 40px;
-        }
-
-        .gallery-section h2 {
-            font-size: 24px;
-            color: #fcc7e1;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .gallery-grid {
+        .challenge-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .gallery-item {
+        .challenge-card {
+            padding: 30px;
             background: #fcc7e1;
-            border-radius: 16px;
+            color: #4a2f01;
+            border-radius: 20px;
+        }
+
+        .challenge-card span {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.5;
+            margin-bottom: 18px;
+        }
+
+        .challenge-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .challenge-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: 0.76;
+        }
+
+        /* =========================
+           LEARNING
+        ========================== */
+
+        .learning-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px;
+            border: 1px solid rgba(252, 199, 225, 0.34);
+            border-radius: 26px;
+        }
+
+        .learning-box h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .learning-box p {
+            font-size: 17px;
+            opacity: 0.75;
+        }
+
+        /* =========================
+           FUTURE
+        ========================== */
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .future-card {
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(252, 199, 225, 0.3);
+        }
+
+        .future-card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .future-card p {
+            font-size: 14px;
+            opacity: 0.68;
+        }
+
+        /* =========================
+           LINKS
+        ========================== */
+
+        .links-section {
+            text-align: center;
+            padding: 95px 0;
+        }
+
+        .links-section h2 {
+            font-size: 48px;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+        }
+
+        .links-section p {
+            max-width: 560px;
+            margin: 0 auto 30px;
+            opacity: 0.66;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: transform 0.25s ease,
+                        background 0.25s ease;
+        }
+
+        .button-primary {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(252, 199, 225, 0.4);
+            color: #fcc7e1;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding-top: 20px;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .gallery-header h2 {
+            font-size: 34px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-header p {
+            font-size: 13px;
+            opacity: 0.5;
+            text-align: right;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4 / 3;
+            background: #fcc7e1;
+            border-radius: 18px;
             overflow: hidden;
-            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #4a2f01;
-            font-size: 14px;
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            border: 2px dashed #6D4C2A;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item .placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-item .placeholder .icon {
-            font-size: 48px;
-        }
-
-        .gallery-item .placeholder .label {
-            font-weight: 500;
-            font-size: 13px;
-            color: #6D4C2A;
         }
 
         .gallery-item img {
@@ -261,336 +533,984 @@
             object-fit: cover;
         }
 
-        .demo-video {
-            background: #4a2f01;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 16px 0;
+        .placeholder {
             text-align: center;
-            color: #fcc7e1;
+            padding: 20px;
         }
 
-        .demo-video a {
-            color: #fcc7e1;
-            text-decoration: underline;
+        .placeholder strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .placeholder span {
+            font-size: 12px;
+            opacity: 0.55;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #4a2f01;
+            text-decoration: none;
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
-            .project-content {
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav .container {
+                flex-direction: column;
+            }
+
+            .hero-grid,
+            .intro-grid,
+            .why-grid,
+            .tech-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-hero h1 {
-                font-size: 30px;
+            .hero-right {
+                border-left: none;
+                border-top: 1px solid rgba(252, 199, 225, 0.35);
+                padding-left: 0;
+                padding-top: 25px;
             }
 
-            .project-main {
-                padding: 24px;
+            .system-grid,
+            .challenge-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .gallery-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gallery-header p {
+                text-align: left;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                padding: 70px 0 55px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .system-grid,
+            .challenge-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .intro-grid h2,
+            .why-grid h2,
+            .tech-grid h2,
+            .learning-box h2 {
+                font-size: 31px;
+            }
+
+            .learning-box {
+                padding: 32px 24px;
+            }
+
+            .links-section h2 {
+                font-size: 38px;
             }
         }
     </style>
 </head>
+
+
 <body>
+
+    <!-- =========================
+         NAV
+    ========================== -->
 
     <nav>
         <div class="container">
-            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+
+            <a href="index.html" class="logo">
+                Elifsu Arifoğlu<span>.</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="poetry.html">Poetry</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="poetry.html">Poetry</a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+
+                <li>
+                    <a href="cop31.html">COP31</a>
+                </li>
+
             </ul>
+
         </div>
     </nav>
 
-    <section>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
         <div class="container">
 
-            <a href="projects.html" class="btn-back">← Back to Projects</a>
+            <a href="projects.html" class="back-link">
+                ← Back to Projects
+            </a>
 
-            <div class="project-hero">
-                <span class="icon-large">🤖</span>
-                <h1>JARVIS AI Assistant</h1>
-                <span class="tag-large">Python · Personal AI</span>
-            </div>
+            <div class="hero-grid">
 
-            <div class="project-content">
+                <div>
 
-                <div class="project-main">
-                    <h2>About JARVIS</h2>
-                    <p>
-                        <strong>JARVIS</strong> is a personal AI assistant project inspired by Tony Stark's
-                        iconic AI from the Marvel Cinematic Universe. Built with Python, this assistant
-                        is designed to handle various tasks through voice commands, making daily
-                        productivity seamless and efficient.
+                    <div class="eyebrow">
+                        Personal AI · Active Development
+                    </div>
+
+                    <h1>
+                        JARVIS
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        A personal AI assistant I’m building to explore
+                        how voice, vision, automation, and intelligent
+                        systems can work together.
                     </p>
 
-                    <div class="highlight-box">
-                        <strong>🤖 Project Vision</strong><br />
-                        To create a fully functional, voice-controlled personal AI assistant that
-                        integrates with system operations, automates tasks, and provides an interactive
-                        user experience — all while prioritizing privacy and security.
-                    </div>
-
-                    <h3>⚡ Key Features</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">🎤</span>
-                            <div>
-                                <strong>Voice Recognition:</strong> Natural language processing and
-                                speech recognition for hands-free interaction.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📷</span>
-                            <div>
-                                <strong>Camera Access:</strong> Integrated camera functionality for
-                                computer vision tasks and visual recognition.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🖥️</span>
-                            <div>
-                                <strong>Remote Control:</strong> System control capabilities for
-                                managing applications and automating workflows.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">⚙️</span>
-                            <div>
-                                <strong>Task Automation:</strong> Automated routine tasks to boost
-                                productivity and efficiency.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🔒</span>
-                            <div>
-                                <strong>Privacy Focused:</strong> Designed with privacy and security
-                                as core principles, keeping your data safe.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🧠</span>
-                            <div>
-                                <strong>AI Integration:</strong> Intelligent responses and contextual
-                                understanding for natural conversations.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3>🛠️ Technologies Used</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">🐍 Python</span>
-                        <span class="tech-tag">🎤 Speech Recognition</span>
-                        <span class="tech-tag">👁️ OpenCV</span>
-                        <span class="tech-tag">🤖 NLP</span>
-                        <span class="tech-tag">📷 Camera Integration</span>
-                        <span class="tech-tag">⚡ Automation</span>
-                    </div>
-
-                    <h3>🚀 What JARVIS Can Do</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">🗣️</span>
-                            <div>
-                                <strong>Voice Commands:</strong> Execute commands through natural
-                                speech, just like talking to a real assistant.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📂</span>
-                            <div>
-                                <strong>File Management:</strong> Open files, organize folders,
-                                and manage system resources with simple voice instructions.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🌐</span>
-                            <div>
-                                <strong>Web Integration:</strong> Search the web, open websites,
-                                and fetch information on demand.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📅</span>
-                            <div>
-                                <strong>Task Management:</strong> Set reminders, manage calendars,
-                                and keep track of your daily schedule.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🎵</span>
-                            <div>
-                                <strong>Media Control:</strong> Play music, control volume, and
-                                manage media playback.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">💬</span>
-                            <div>
-                                <strong>Conversational AI:</strong> Engage in natural conversations
-                                with context-aware responses.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3>📈 Future Plans</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">🧩</span>
-                            <div>
-                                <strong>Plugin System:</strong> Extend functionality with a modular
-                                plugin architecture.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">☁️</span>
-                            <div>
-                                <strong>Cloud Integration:</strong> Sync with cloud services for
-                                seamless data access across devices.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📱</span>
-                            <div>
-                                <strong>Mobile Support:</strong> Mobile companion app for on-the-go
-                                assistance.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🧠</span>
-                            <div>
-                                <strong>Deep Learning:</strong> Advanced machine learning models
-                                for improved understanding and personalization.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="demo-video">
-                        <strong>📹 Demo & Source Code</strong><br />
-                        <p style="color: #fcc7e1; margin-top: 8px;">
-                            Check out the project on GitHub and see JARVIS in action!
-                        </p>
-                        <a href="https://github.com/elifsuarifoglu/jarvis-ai-assistant" class="github-link" target="_blank">
-                            <span class="icon">🐙</span> View on GitHub
-                        </a>
-                    </div>
                 </div>
 
-                <div class="project-sidebar">
 
-                    <div class="sidebar-card">
-                        <h4>📊 Quick Facts</h4>
-                        <ul>
-                            <li><strong>Project:</strong> JARVIS AI Assistant</li>
-                            <li><strong>Language:</strong> Python</li>
-                            <li><strong>Status:</strong> Active Development</li>
-                            <li><strong>Type:</strong> Personal AI</li>
-                            <li><strong>Platform:</strong> Desktop</li>
-                        </ul>
-                    </div>
+                <div class="hero-right">
 
-                    <div class="sidebar-card">
-                        <h4>🏅 Key Achievements</h4>
-                        <ul>
-                            <li>✅ Voice-controlled interaction</li>
-                            <li>✅ Camera & vision integration</li>
-                            <li>✅ Task automation system</li>
-                            <li>✅ Privacy-first design</li>
-                            <li>✅ Natural language processing</li>
-                        </ul>
-                    </div>
+                    <p>
+                        Inspired by the idea of a computer that feels
+                        less like a tool and more like an interface
+                        between a person and their digital environment.
+                    </p>
 
-                    <div class="sidebar-card">
-                        <h4>🔗 Related</h4>
-                        <ul>
-                            <li>🤖 Artificial Intelligence</li>
-                            <li>🐍 Python</li>
-                            <li>🎤 Voice Recognition</li>
-                            <li>⚡ Automation</li>
-                            <li>🔒 Privacy</li>
-                        </ul>
+                    <div class="hero-tags">
+
+                        <span class="hero-tag">
+                            Python
+                        </span>
+
+                        <span class="hero-tag">
+                            Computer Vision
+                        </span>
+
+                        <span class="hero-tag">
+                            NLP
+                        </span>
+
+                        <span class="hero-tag">
+                            Automation
+                        </span>
+
+                        <span class="hero-tag">
+                            Privacy
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            <div class="gallery-section">
-                <h2>📸 JARVIS Gallery</h2>
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🖥️</span>
-                            <span class="label">JARVIS Interface</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🎤</span>
-                            <span class="label">Voice Recognition</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">📷</span>
-                            <span class="label">Camera Integration</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">⚙️</span>
-                            <span class="label">Task Automation</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">💬</span>
-                            <span class="label">Conversation Demo</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🧠</span>
-                            <span class="label">AI Processing</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add screenshot)</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
+
+    </header>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="intro-grid">
+
+                <div>
+
+                    <div class="section-title">
+                        The Project
+                    </div>
+
+                    <h2>
+                        More than a chatbot.
+                    </h2>
+
+                </div>
+
+
+                <div class="intro-text">
+
+                    <p>
+                        JARVIS is a personal AI assistant designed to
+                        interact with my computer and respond to natural
+                        language commands.
+                    </p>
+
+                    <p>
+                        Rather than building only a conversational
+                        interface, I wanted to explore a system that
+                        could connect language with actions: understanding
+                        a request, accessing information, interacting with
+                        the system, and automating routine tasks.
+                    </p>
+
+                    <p>
+                        The project is still evolving. I’m using it as a
+                        way to experiment with AI, human-computer
+                        interaction, computer vision, and privacy-aware
+                        system design.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <footer>
+
+    <!-- =========================
+         WHY I BUILT IT
+    ========================== -->
+
+    <section class="why-section">
+
         <div class="container">
-            <p>© 2026 Elif. Built with ❤️</p>
+
+            <div class="why-grid">
+
+                <div>
+
+                    <div class="section-title">
+                        Why I Built It
+                    </div>
+
+                    <h2>
+                        I wanted to understand
+                        what an AI assistant
+                        actually means.
+                    </h2>
+
+                </div>
+
+
+                <div class="why-text">
+
+                    <p>
+                        It is easy to use an AI model through an existing
+                        interface. I was more interested in what happens
+                        when you try to build the interface yourself.
+                    </p>
+
+                    <br />
+
+                    <p>
+                        How should a computer understand what a person
+                        wants? When should an AI simply answer, and when
+                        should it take action? What information should
+                        remain local? How can automation remain useful
+                        without taking control away from the user?
+                    </p>
+
+                    <div class="quote">
+                        JARVIS became a way for me to explore those
+                        questions by actually building the system.
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =========================
+         SYSTEM
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="system-header">
+
+                <div class="section-title">
+                    What I Built
+                </div>
+
+                <h2>
+                    From conversation to action.
+                </h2>
+
+                <p>
+                    The system combines several components instead of
+                    relying on a single AI feature.
+                </p>
+
+            </div>
+
+
+            <div class="system-grid">
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Voice Interface
+                    </h3>
+
+                    <p>
+                        Speech recognition allows JARVIS to receive
+                        natural language commands without requiring
+                        constant keyboard input.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Language &amp; Context
+                    </h3>
+
+                    <p>
+                        Natural language processing helps interpret
+                        requests and generate contextual responses.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Computer Vision
+                    </h3>
+
+                    <p>
+                        Camera integration creates a path toward
+                        visual input and computer vision experiments.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        04
+                    </span>
+
+                    <h3>
+                        System Control
+                    </h3>
+
+                    <p>
+                        JARVIS can interact with applications, files,
+                        media, and other parts of the desktop environment.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Automation
+                    </h3>
+
+                    <p>
+                        Routine actions can be triggered through
+                        voice-based commands and predefined workflows.
+                    </p>
+
+                </div>
+
+
+                <div class="system-card">
+
+                    <span class="system-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Privacy by Design
+                    </h3>
+
+                    <p>
+                        Privacy and security are considered as part of
+                        the system rather than something added later.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGY
+    ========================== -->
+
+    <section class="tech-section">
+
+        <div class="container">
+
+            <div class="tech-grid">
+
+                <div>
+
+                    <div class="section-title">
+                        Technical Stack
+                    </div>
+
+                    <h2>
+                        Tools I’m learning
+                        through the project.
+                    </h2>
+
+                </div>
+
+
+                <div class="tech-tags">
+
+                    <span class="tech-tag">
+                        Python
+                    </span>
+
+                    <span class="tech-tag">
+                        Speech Recognition
+                    </span>
+
+                    <span class="tech-tag">
+                        OpenCV
+                    </span>
+
+                    <span class="tech-tag">
+                        Natural Language Processing
+                    </span>
+
+                    <span class="tech-tag">
+                        Camera Integration
+                    </span>
+
+                    <span class="tech-tag">
+                        Automation
+                    </span>
+
+                    <span class="tech-tag">
+                        APIs
+                    </span>
+
+                    <span class="tech-tag">
+                        Desktop Systems
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHALLENGES
+    ========================== -->
+
+    <section class="challenges">
+
+        <div class="container">
+
+            <div class="system-header">
+
+                <div class="section-title">
+                    Engineering Questions
+                </div>
+
+                <h2>
+                    The interesting part is what
+                    doesn't work immediately.
+                </h2>
+
+                <p>
+                    Add your real technical challenges here as the
+                    project develops. These details are often more
+                    valuable than another feature list.
+                </p>
+
+            </div>
+
+
+            <div class="challenge-grid">
+
+
+                <div class="challenge-card">
+
+                    <span>
+                        QUESTION 01
+                    </span>
+
+                    <h3>
+                        Understanding intent
+                    </h3>
+
+                    <p>
+                        How can a system distinguish between a question,
+                        a command, and a request that needs confirmation?
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-card">
+
+                    <span>
+                        QUESTION 02
+                    </span>
+
+                    <h3>
+                        Connecting AI to action
+                    </h3>
+
+                    <p>
+                        How can natural-language input be translated
+                        into reliable and predictable computer actions?
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-card">
+
+                    <span>
+                        QUESTION 03
+                    </span>
+
+                    <h3>
+                        Privacy
+                    </h3>
+
+                    <p>
+                        How much information should an assistant be
+                        allowed to access in order to remain useful?
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT I LEARNED
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="learning-box">
+
+                <div class="section-title">
+                    What I'm Learning
+                </div>
+
+                <h2>
+                    Building an intelligent system
+                    is not just about making it smarter.
+                </h2>
+
+                <p>
+                    The project has made me think more carefully about
+                    interfaces, reliability, privacy, and the relationship
+                    between human decisions and automated actions.
+                    I’m learning that the difficult part of AI is often
+                    not generating an answer — it is designing what should
+                    happen around that answer.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FUTURE
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="system-header">
+
+                <div class="section-title">
+                    Next
+                </div>
+
+                <h2>
+                    Where JARVIS goes next.
+                </h2>
+
+                <p>
+                    These are the directions I’m currently considering
+                    as I continue developing the system.
+                </p>
+
+            </div>
+
+
+            <div class="future-grid">
+
+
+                <div class="future-card">
+
+                    <h3>
+                        Modular Architecture
+                    </h3>
+
+                    <p>
+                        A plugin-based structure that makes it easier
+                        to add capabilities without rebuilding the core.
+                    </p>
+
+                </div>
+
+
+                <div class="future-card">
+
+                    <h3>
+                        Better Vision
+                    </h3>
+
+                    <p>
+                        Expanding computer vision capabilities and
+                        experimenting with more useful visual context.
+                    </p>
+
+                </div>
+
+
+                <div class="future-card">
+
+                    <h3>
+                        Cross-Device Interaction
+                    </h3>
+
+                    <p>
+                        Exploring how a desktop assistant could eventually
+                        communicate with other devices.
+                    </p>
+
+                </div>
+
+
+                <div class="future-card">
+
+                    <h3>
+                        Smarter Personalization
+                    </h3>
+
+                    <p>
+                        Investigating how personalization can improve
+                        usefulness while keeping user control and privacy.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="container">
+
+            <div class="gallery-header">
+
+                <div>
+
+                    <div class="section-title">
+                        Visual Log
+                    </div>
+
+                    <h2>
+                        Building JARVIS
+                    </h2>
+
+                </div>
+
+                <p>
+                    Screenshots and development snapshots.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+                        <strong>Interface</strong>
+                        <span>Add screenshot here</span>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+                        <strong>Voice Interaction</strong>
+                        <span>Add screenshot here</span>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+                        <strong>Computer Vision</strong>
+                        <span>Add screenshot here</span>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+                        <strong>Automation</strong>
+                        <span>Add screenshot here</span>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+                        <strong>Development</strong>
+                        <span>Add screenshot here</span>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+                        <strong>System Architecture</strong>
+                        <span>Add diagram here</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LINKS
+    ========================== -->
+
+    <section class="links-section">
+
+        <div class="container">
+
+            <div class="section-title">
+                Explore the project
+            </div>
+
+            <h2>
+                See it in action.
+            </h2>
+
+            <p>
+                The code and future demo will make the project
+                easier to explore beyond this page.
+            </p>
+
+            <div class="button-row">
+
+                <!--
+                Replace this URL with your actual repository
+                when the final GitHub link is ready.
+                -->
+
+                <a
+                    href="https://github.com/elifsuarifoglu/jarvis-ai-assistant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-primary"
+                >
+                    GitHub →
+                </a>
+
+                <!-- Add your live demo later -->
+
+                <!--
+                <a
+                    href="YOUR-DEMO-LINK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary"
+                >
+                    Live Demo →
+                </a>
+                -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Elifsu Arifoğlu · Built with curiosity.
+            </p>
+
+            <p style="margin-top: 8px;">
+
+                <a
+                    href="https://github.com/elifsuarifoglu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                ·
+
+                <a
+                    href="https://linkedin.com/in/elifsuarifoglu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+            </p>
+
+        </div>
+
     </footer>
 
-    <script src="script.js"></script>
+
 </body>
 </html>
