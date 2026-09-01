@@ -255,6 +255,22 @@ section {
     margin-bottom: 14px;
 }
 
+.unpublished-card {
+    background: #4a2f01;
+    border: 1px solid #6D4C2A;
+    border-radius: 22px;
+    padding: 30px;
+}
+
+.unpublished-card h3 {
+    color: #ffffff;
+}
+
+.unpublished-card .poem-full {
+    color: #f5eee8;
+    opacity: 1;
+}
+
 .poem-full {
     color: #000000;
     font-size: 0.95rem;
@@ -292,8 +308,8 @@ section {
 }
 
 .poem-status.unpublished {
-    background: #ffebee;
-    color: #c62828;
+    background: #6D4C2A;
+    color: #f5eee8;
 }
 
 .all-poems {
