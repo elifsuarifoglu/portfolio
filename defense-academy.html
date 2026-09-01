@@ -3,235 +3,514 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Defense Industry Academy | Elifsu Arifoğlu</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
     <style>
-        /* Savunma Sanayii özel stilleri - SADECE İÇERİK İÇİN */
-        .project-hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
 
-        .project-hero .icon-large {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 16px;
-        }
+        /* =========================
+           GLOBAL
+        ========================== */
 
-        .project-hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #fcc7e1;
-            margin-bottom: 8px;
-        }
-
-        .project-hero .tag-large {
-            display: inline-block;
-            padding: 6px 20px;
-            background: #4a2f01;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fcc7e1;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .project-main {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 36px;
-            color: #4a2f01;
-        }
-
-        .project-main h2 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #4a2f01;
-            border-bottom: 3px solid #6D4C2A;
-            padding-bottom: 10px;
-        }
-
-        .project-main h3 {
-            font-size: 18px;
-            margin: 24px 0 12px;
-            color: #4a2f01;
-        }
-
-        .project-main p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #3E2723;
-            margin-bottom: 12px;
-        }
-
-        .project-main ul {
-            list-style: none;
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .project-main ul li {
-            padding: 10px 16px;
-            margin-bottom: 8px;
-            background: #ffffff;
-            border-radius: 10px;
-            border-left: 4px solid #6D4C2A;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3E2723;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            padding: 20px 0;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.12);
+        }
+
+        nav .container {
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .project-main ul li .li-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .project-sidebar {
-            display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             gap: 20px;
         }
 
-        .sidebar-card {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 24px;
+        .logo {
             color: #4a2f01;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .sidebar-card h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #4a2f01;
-            border-bottom: 2px solid #6D4C2A;
-            padding-bottom: 8px;
+        .logo span {
+            color: #6D4C2A;
         }
 
-        .sidebar-card p,
-        .sidebar-card li {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #3E2723;
-        }
-
-        .sidebar-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
-        }
-
-        .sidebar-card ul li:last-child {
-            border-bottom: none;
-        }
-
-        .highlight-box {
-            background: #4a2f01;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: 16px 0;
-            color: #fcc7e1;
-        }
-
-        .highlight-box strong {
-            color: #ffffff;
-        }
-
-        .highlight-box a {
-            color: #fcc7e1;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .highlight-box a:hover {
-            color: #ffffff;
-        }
-
-        .institution-logos {
+        .nav-links {
             display: flex;
-            flex-wrap: wrap;
             gap: 12px;
-            margin: 16px 0;
-            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
-        .institution-tag {
+        .nav-links a {
+            color: #4a2f01;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #6D4C2A;
+            background: rgba(74, 47, 1, 0.08);
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 100px 0 85px;
+        }
+
+        .back-link {
             display: inline-block;
-            padding: 6px 16px;
-            background: #6D4C2A;
-            border-radius: 20px;
+            text-decoration: none;
             font-size: 13px;
             font-weight: 600;
-            color: #fcc7e1;
+            opacity: 0.6;
+            margin-bottom: 45px;
         }
 
-        .gallery-section {
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 65px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 0.9;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            max-width: 760px;
+            font-size: 20px;
+            opacity: 0.78;
+        }
+
+        .hero-side {
+            border-left: 1px solid rgba(252, 199, 225, 0.35);
+            padding-left: 30px;
+        }
+
+        .hero-side p {
+            font-size: 15px;
+            opacity: 0.68;
+            margin-bottom: 22px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 7px 11px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -1.8px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 730px;
+            font-size: 17px;
+            opacity: 0.71;
+        }
+
+
+        /* =========================
+           PROGRAM OVERVIEW
+        ========================== */
+
+        .overview-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 0.78fr 1.22fr;
+            gap: 70px;
+        }
+
+        .overview-grid .section-label {
+            color: #4a2f01;
+        }
+
+        .overview-grid h2 {
+            font-size: 43px;
+            line-height: 1.04;
+            letter-spacing: -2px;
+        }
+
+        .overview-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .overview-text p + p {
+            margin-top: 18px;
+        }
+
+        .overview-highlight {
+            margin-top: 28px;
+            padding: 22px;
+            background: #4a2f01;
+            color: #fcc7e1;
+            border-radius: 16px;
+        }
+
+        .overview-highlight strong {
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           QUICK FACTS
+        ========================== */
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
             margin-top: 40px;
         }
 
-        .gallery-section h2 {
-            font-size: 24px;
-            color: #fcc7e1;
-            text-align: center;
-            margin-bottom: 24px;
+        .fact-card {
+            padding: 23px;
+            border: 1px solid rgba(252, 199, 225, 0.28);
+            border-radius: 18px;
+            background: rgba(252, 199, 225, 0.04);
+        }
+
+        .fact-card span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            opacity: 0.45;
+            margin-bottom: 9px;
+        }
+
+        .fact-card strong {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+
+        /* =========================
+           WHAT I EXPLORED
+        ========================== */
+
+        .explore-section {
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .explore-header {
+            max-width: 730px;
+            margin-bottom: 40px;
+        }
+
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .explore-card {
+            padding: 30px;
+            background: #fcc7e1;
+            color: #4a2f01;
+            border-radius: 20px;
+        }
+
+        .explore-number {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.45;
+            margin-bottom: 20px;
+        }
+
+        .explore-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .explore-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: 0.76;
+        }
+
+
+        /* =========================
+           EXPERT SESSIONS
+        ========================== */
+
+        .sessions-header {
+            max-width: 740px;
+            margin-bottom: 40px;
+        }
+
+        .sessions-list {
+            border-top: 1px solid rgba(252, 199, 225, 0.35);
+        }
+
+        .session-item {
+            display: grid;
+            grid-template-columns: 70px 1.1fr 1.2fr;
+            gap: 20px;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(252, 199, 225, 0.35);
+        }
+
+        .session-number {
+            font-size: 11px;
+            opacity: 0.45;
+            font-weight: 700;
+        }
+
+        .speaker {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .topic {
+            font-size: 13px;
+            opacity: 0.65;
+        }
+
+
+        /* =========================
+           INSTITUTIONS
+        ========================== */
+
+        .institutions-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .institutions-section .section-label {
+            color: #4a2f01;
+        }
+
+        .institution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .institution-card {
+            padding: 22px;
+            background: #ffffff;
+            border-radius: 16px;
+            border-left: 4px solid #6D4C2A;
+        }
+
+        .institution-card strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .institution-card span {
+            font-size: 12px;
+            color: #3E2723;
+            opacity: 0.68;
+        }
+
+
+        /* =========================
+           REFLECTION
+        ========================== */
+
+        .reflection-box {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 60px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 26px;
+        }
+
+        .reflection-box h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .reflection-box p {
+            max-width: 800px;
+            font-size: 17px;
+            opacity: 0.74;
+        }
+
+
+        /* =========================
+           CERTIFICATION
+        ========================== */
+
+        .certificate {
+            margin-top: 45px;
+            padding: 30px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 20px;
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .certificate h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .certificate p {
+            font-size: 14px;
+            opacity: 0.68;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding-top: 30px;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-header h2 {
+            font-size: 35px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-header p {
+            max-width: 420px;
+            font-size: 13px;
+            opacity: 0.5;
+            text-align: right;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
 
         .gallery-item {
+            aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            border-radius: 16px;
+            color: #4a2f01;
+            border-radius: 18px;
             overflow: hidden;
-            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4a2f01;
-            font-size: 14px;
             text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            border: 2px dashed #6D4C2A;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item .placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-item .placeholder .icon {
-            font-size: 48px;
-        }
-
-        .gallery-item .placeholder .label {
-            font-weight: 500;
-            font-size: 13px;
-            color: #6D4C2A;
         }
 
         .gallery-item img {
@@ -240,316 +519,1113 @@
             object-fit: cover;
         }
 
-        @media (max-width: 768px) {
-            .project-content {
+        .placeholder {
+            padding: 20px;
+        }
+
+        .placeholder strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .placeholder span {
+            font-size: 12px;
+            opacity: 0.55;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav .container {
+                flex-direction: column;
+            }
+
+            .hero-grid,
+            .overview-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-hero h1 {
-                font-size: 30px;
+            .hero-side {
+                border-left: none;
+                border-top: 1px solid rgba(252, 199, 225, 0.35);
+                padding-left: 0;
+                padding-top: 25px;
             }
 
-            .project-main {
-                padding: 24px;
+            .facts-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .explore-grid,
+            .institution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .session-item {
+                grid-template-columns: 55px 1fr;
+            }
+
+            .topic {
+                grid-column: 2;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .gallery-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gallery-header p {
+                text-align: left;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                padding: 70px 0 55px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-title {
+                font-size: 17px;
+            }
+
+            .facts-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
+
+            .overview-grid h2,
+            .reflection-box h2 {
+                font-size: 31px;
+            }
+
+            .reflection-box {
+                padding: 32px 24px;
+            }
+
         }
+
     </style>
 </head>
+
+
 <body>
 
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav>
+
         <div class="container">
-            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+
+            <a href="index.html" class="logo">
+                Elifsu Arifoğlu<span>.</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="poetry.html">Poetry</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="poetry.html">Poetry</a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+
             </ul>
+
         </div>
+
     </nav>
 
-    <section>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
         <div class="container">
 
-            <a href="projects.html" class="btn-back">← Back to Projects</a>
+            <a href="projects.html" class="back-link">
+                ← Back to Projects
+            </a>
 
-            <div class="project-hero">
-                <span class="icon-large">🛡️</span>
-                <h1>Defense Industry Academy</h1>
-                <span class="tag-large">SSB · National Competence Initiative</span>
-            </div>
 
-            <div class="project-content">
+            <div class="hero-grid">
 
-                <div class="project-main">
-                    <h2>About the Program</h2>
-                    <p>
-                        The <strong>Savunma Lise Eğitim Programı (Defense High School Education Program)</strong>
-                        is an initiative by the <strong>T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı (SSB)</strong>
-                        under the <strong>Milli Yetkinlik Hamlesi (National Competence Initiative)</strong>.
-                        This 11-week program introduces high school students to Turkey's defense industry
-                        ecosystem, its historical development, and future trends.
-                    </p>
+                <div>
 
-                    <div class="highlight-box">
-                        <strong>🎯 Program Mission</strong><br />
-                        To raise awareness about the Turkish defense industry, provide insight into
-                        its products and history, address ethics and confidentiality, and analyze
-                        current and near-future technologies.
+                    <div class="eyebrow">
+                        Savunma Sanayii Akademi · 11-Week Program
                     </div>
 
-                    <h3>🏛️ Executing Institutions</h3>
-                    <div class="institution-logos">
-                        <span class="institution-tag">T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı (Presidency of the Republic of Türkiye Presidency of Defence Industries)</span>
-                        <span class="institution-tag">Savunma Sanayii Akademi (Defense Industry Academy)</span>
-                        <span class="institution-tag">TR Eğitim ve Teknoloji A.Ş. (TR Education and Technology Inc.)</span>
-                        <span class="institution-tag">T.C. Millî Eğitim Bakanlığı (Republic of Türkiye Ministry of National Education)</span>
-                        <span class="institution-tag">Savunma Kariyer (Defense Career)</span>
-                    </div>
+                    <h1>
+                        Defense<br />
+                        Industry Academy
+                    </h1>
 
-                    <h3>📚 What I Learned</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">🔐</span>
-                            <div>
-                                <strong>Security & Defense Concepts:</strong> Understanding fundamental
-                                security and defense concepts and discovering career opportunities
-                                in the field.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">⏳</span>
-                            <div>
-                                <strong>Historical Development:</strong> Examining how defense technologies
-                                have evolved from the past to the present.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🇹🇷</span>
-                            <div>
-                                <strong>Turkish Defense Industry:</strong> Learning about the dynamics
-                                of the Turkish defense industry and the opportunities it offers.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🚀</span>
-                            <div>
-                                <strong>Future Trends:</strong> Understanding where defense technologies
-                                are heading and what to expect in the coming years.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">⚖️</span>
-                            <div>
-                                <strong>Ethics in Defense:</strong> Exploring the relationship between
-                                defense technologies and ethical responsibilities.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">💼</span>
-                            <div>
-                                <strong>Career Opportunities:</strong> Discovering how to build a
-                                career in the defense industry sector.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3>🎓 Expert Speakers & Sessions</h3>
-                    <p>
-                        The program featured 11 weekly sessions with leading experts from Turkey's
-                        top defense institutions:
+                    <p class="hero-title">
+                        An intensive program that introduced me to
+                        defense technologies, security, ethics,
+                        autonomous systems, and the future of engineering.
                     </p>
-                    <ul>
-                        <li>
-                            <span class="li-icon">1️⃣</span>
-                            <div>
-                                <strong>Mustafa Emre Cansev (ROKETSAN):</strong> Production Technologies
-                                & OT Security
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">2️⃣</span>
-                            <div>
-                                <strong>Mustafa Özçelik (HTR):</strong> Software-Based Security Technologies
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">3️⃣</span>
-                            <div>
-                                <strong>Burak Akdemir (STM):</strong> Unmanned & Autonomous Platforms
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">4️⃣</span>
-                            <div>
-                                <strong>Levent Erikan (SSB):</strong> Human-Machine Collaboration in Security
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">5️⃣</span>
-                            <div>
-                                <strong>Prof. Dr. Fatma Duygu Özel Demiralp:</strong> Bio-Security
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">6️⃣</span>
-                            <div>
-                                <strong>Dr. Orçun Dayıbaş (TÜBİTAK-BİLGEM İLTAREN):</strong> Cognitive Excellence
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">7️⃣</span>
-                            <div>
-                                <strong>Dr. Erol Yücel (HAVELSAN):</strong> Real-Time Mapping & Dynamic Environments
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">8️⃣</span>
-                            <div>
-                                <strong>Prof. Dr. Abdurrahman Akyol (Teknopark İstanbul):</strong> Environment & Energy
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">9️⃣</span>
-                            <div>
-                                <strong>Prof. Dr. Cenk Aktaş (SSA):</strong> New Materials in Security Technologies
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🔟</span>
-                            <div>
-                                <strong>Onur Caba (BİTES):</strong> Extended & Augmented Reality-Based Security Technologies
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">1️⃣1️⃣</span>
-                            <div>
-                                <strong>Prof. Dr. Hakan Karataş (SSB):</strong> Talent Transformation in Defense Industry
-                            </div>
-                        </li>
-                    </ul>
 
-                    <h3>📜 Certification</h3>
-                    <p>
-                        Upon successful completion of the 11-week program, participants receive
-                        an official <strong>Katılım Belgesi (Certificate of Participation)</strong>
-                        recognized by the Presidency of Defense Industries.
-                    </p>
                 </div>
 
-                <div class="project-sidebar">
 
-                    <div class="sidebar-card">
-                        <h4>📊 Quick Facts</h4>
-                        <ul>
-                            <li><strong>Institution:</strong> SSB / SSA</li>
-                            <li><strong>Program:</strong> Savunma Lise</li>
-                            <li><strong>Duration:</strong> 11 Weeks</li>
-                            <li><strong>Status:</strong> Completed</li>
-                            <li><strong>Certificate:</strong> Katılım Belgesi (Certificate of Participation)</li>
-                        </ul>
-                    </div>
+                <div class="hero-side">
 
-                    <div class="sidebar-card">
-                        <h4>🏅 Key Takeaways</h4>
-                        <ul>
-                            <li>✅ Defense industry fundamentals</li>
-                            <li>✅ Turkish defense technologies</li>
-                            <li>✅ Ethics & confidentiality</li>
-                            <li>✅ Career pathways in defense</li>
-                            <li>✅ Expert insights from 11 speakers</li>
-                        </ul>
-                    </div>
+                    <p>
+                        Through the Savunma Lise Eğitim Programı,
+                        I explored Türkiye's defense technology ecosystem
+                        through weekly sessions led by experts from
+                        leading institutions.
+                    </p>
 
-                    <div class="sidebar-card">
-                        <h4>🔗 Related</h4>
-                        <ul>
-                            <li>🛡️ National Security</li>
-                            <li>🇹🇷 Turkish Defense Industry</li>
-                            <li>🚀 Technology</li>
-                            <li>🎓 Education</li>
-                            <li>💼 Career Development</li>
-                        </ul>
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            11 Weeks
+                        </span>
+
+                        <span class="tag">
+                            Technology
+                        </span>
+
+                        <span class="tag">
+                            Engineering
+                        </span>
+
+                        <span class="tag">
+                            Ethics
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            <div class="gallery-section">
-                <h2>📸 Defense Industry Academy Gallery</h2>
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🛡️</span>
-                            <span class="label">Program Certificate</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🎓</span>
-                            <span class="label">Online Session</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">📋</span>
-                            <span class="label">Training Material</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">👨‍🏫</span>
-                            <span class="label">Expert Speaker</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🏛️</span>
-                            <span class="label">SSB Official</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🚀</span>
-                            <span class="label">Defense Technology</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
+
+    </header>
+
+
+    <!-- =========================
+         OVERVIEW
+    ========================== -->
+
+    <section class="overview-section">
+
+        <div class="container">
+
+            <div class="overview-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        The Program
+                    </div>
+
+                    <h2>
+                        Seeing engineering
+                        beyond the classroom.
+                    </h2>
+
+                </div>
+
+
+                <div class="overview-text">
+
+                    <p>
+                        The <strong>Savunma Lise Eğitim Programı</strong>
+                        is part of the
+                        <strong>Milli Yetkinlik Hamlesi</strong>
+                        of the Presidency of Defence Industries of
+                        the Republic of Türkiye.
+                    </p>
+
+                    <p>
+                        Over 11 weeks, the program introduced
+                        high school students to the history,
+                        technologies, institutions, and future
+                        direction of Türkiye's defense industry.
+                    </p>
+
+                    <p>
+                        For me, the value of the program was not
+                        simply learning about defense products.
+                        It was seeing how fields such as software,
+                        cybersecurity, autonomous systems, materials,
+                        AI, and human-machine interaction meet
+                        in real engineering environments.
+                    </p>
+
+                    <div class="overview-highlight">
+
+                        <strong>
+                            A question I kept coming back to:
+                        </strong>
+
+                        How do we design powerful technologies
+                        while thinking seriously about security,
+                        responsibility, and the people who use them?
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <footer>
+
+    <!-- =========================
+         FACTS
+    ========================== -->
+
+    <section>
+
         <div class="container">
-            <p>© 2026 Elif. Built with ❤️</p>
+
+            <div class="section-label">
+                Program at a Glance
+            </div>
+
+            <h2 class="section-title">
+                Eleven weeks of expert-led learning.
+            </h2>
+
+
+            <div class="facts-grid">
+
+                <div class="fact-card">
+
+                    <span>
+                        Duration
+                    </span>
+
+                    <strong>
+                        11 Weeks
+                    </strong>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <span>
+                        Format
+                    </span>
+
+                    <strong>
+                        Weekly Expert Sessions
+                    </strong>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <span>
+                        Completion
+                    </span>
+
+                    <strong>
+                        Completed
+                    </strong>
+
+                </div>
+
+
+                <div class="fact-card">
+
+                    <span>
+                        Certificate
+                    </span>
+
+                    <strong>
+                        Katılım Belgesi
+                    </strong>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT I EXPLORED
+    ========================== -->
+
+    <section class="explore-section">
+
+        <div class="container">
+
+            <div class="explore-header">
+
+                <div class="section-label">
+                    What I Explored
+                </div>
+
+                <h2 class="section-title">
+                    Eleven sessions,
+                    many different systems.
+                </h2>
+
+                <p class="section-description">
+                    The sessions covered a surprisingly broad
+                    range of technologies and questions.
+                </p>
+
+            </div>
+
+
+            <div class="explore-grid">
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        01 · SECURITY
+                    </span>
+
+                    <h3>
+                        Cybersecurity &amp; OT Security
+                    </h3>
+
+                    <p>
+                        Explored software-based security and
+                        operational technology security,
+                        including the importance of protecting
+                        connected systems.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        02 · AUTONOMY
+                    </span>
+
+                    <h3>
+                        Unmanned Systems
+                    </h3>
+
+                    <p>
+                        Learned about unmanned and autonomous
+                        platforms and the engineering challenges
+                        behind increasingly independent systems.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        03 · HUMAN + MACHINE
+                    </span>
+
+                    <h3>
+                        Human-Machine Collaboration
+                    </h3>
+
+                    <p>
+                        Examined how people interact with intelligent
+                        systems and why technology design cannot
+                        ignore human decision-making.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        04 · BIOSECURITY
+                    </span>
+
+                    <h3>
+                        Biosecurity
+                    </h3>
+
+                    <p>
+                        Explored the relationship between biological
+                        systems, technological development,
+                        security, and responsibility.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        05 · MAPPING
+                    </span>
+
+                    <h3>
+                        Real-Time Systems
+                    </h3>
+
+                    <p>
+                        Investigated real-time mapping and
+                        dynamic environments as examples of
+                        systems that must process changing
+                        information continuously.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        06 · MATERIALS
+                    </span>
+
+                    <h3>
+                        New Materials
+                    </h3>
+
+                    <p>
+                        Learned how advances in materials can
+                        create new possibilities for security
+                        and engineering applications.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        07 · ENVIRONMENT
+                    </span>
+
+                    <h3>
+                        Environment &amp; Energy
+                    </h3>
+
+                    <p>
+                        Explored how energy and environmental
+                        considerations intersect with technological
+                        systems.
+                    </p>
+
+                </div>
+
+
+                <div class="explore-card">
+
+                    <span class="explore-number">
+                        08 · XR
+                    </span>
+
+                    <h3>
+                        Extended &amp; Augmented Reality
+                    </h3>
+
+                    <p>
+                        Examined how immersive interfaces can be
+                        applied to security and operational environments.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERT SESSIONS
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="sessions-header">
+
+                <div class="section-label">
+                    Expert Sessions
+                </div>
+
+                <h2 class="section-title">
+                    Learning directly from
+                    industry experts.
+                </h2>
+
+                <p class="section-description">
+                    The program featured 11 sessions led by experts
+                    from major Turkish defense and technology institutions.
+                </p>
+
+            </div>
+
+
+            <div class="sessions-list">
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        01
+                    </span>
+
+                    <span class="speaker">
+                        Mustafa Emre Cansev · ROKETSAN
+                    </span>
+
+                    <span class="topic">
+                        Production Technologies &amp; OT Security
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        02
+                    </span>
+
+                    <span class="speaker">
+                        Mustafa Özçelik · HTR
+                    </span>
+
+                    <span class="topic">
+                        Software-Based Security Technologies
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        03
+                    </span>
+
+                    <span class="speaker">
+                        Burak Akdemir · STM
+                    </span>
+
+                    <span class="topic">
+                        Unmanned &amp; Autonomous Platforms
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        04
+                    </span>
+
+                    <span class="speaker">
+                        Levent Erikan · SSB
+                    </span>
+
+                    <span class="topic">
+                        Human-Machine Collaboration
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        05
+                    </span>
+
+                    <span class="speaker">
+                        Prof. Dr. Fatma Duygu Özel Demiralp
+                    </span>
+
+                    <span class="topic">
+                        Biosecurity
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        06
+                    </span>
+
+                    <span class="speaker">
+                        Dr. Orçun Dayıbaş · TÜBİTAK-BİLGEM
+                    </span>
+
+                    <span class="topic">
+                        Cognitive Excellence
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        07
+                    </span>
+
+                    <span class="speaker">
+                        Dr. Erol Yücel · HAVELSAN
+                    </span>
+
+                    <span class="topic">
+                        Real-Time Mapping &amp; Dynamic Environments
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        08
+                    </span>
+
+                    <span class="speaker">
+                        Prof. Dr. Abdurrahman Akyol
+                    </span>
+
+                    <span class="topic">
+                        Environment &amp; Energy
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        09
+                    </span>
+
+                    <span class="speaker">
+                        Prof. Dr. Cenk Aktaş
+                    </span>
+
+                    <span class="topic">
+                        New Materials in Security Technologies
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        10
+                    </span>
+
+                    <span class="speaker">
+                        Onur Caba · BİTES
+                    </span>
+
+                    <span class="topic">
+                        Extended &amp; Augmented Reality
+                    </span>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <span class="session-number">
+                        11
+                    </span>
+
+                    <span class="speaker">
+                        Prof. Dr. Hakan Karataş · SSB
+                    </span>
+
+                    <span class="topic">
+                        Talent Transformation in Defense Industry
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INSTITUTIONS
+    ========================== -->
+
+    <section class="institutions-section">
+
+        <div class="container">
+
+            <div class="section-label">
+                Institutions
+            </div>
+
+            <h2 class="section-title">
+                A program connected to
+                a wider ecosystem.
+            </h2>
+
+
+            <div class="institution-grid">
+
+
+                <div class="institution-card">
+
+                    <strong>
+                        Presidency of Defence Industries
+                    </strong>
+
+                    <span>
+                        T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı
+                    </span>
+
+                </div>
+
+
+                <div class="institution-card">
+
+                    <strong>
+                        Defense Industry Academy
+                    </strong>
+
+                    <span>
+                        Savunma Sanayii Akademi
+                    </span>
+
+                </div>
+
+
+                <div class="institution-card">
+
+                    <strong>
+                        TR Education and Technology
+                    </strong>
+
+                    <span>
+                        TR Eğitim ve Teknoloji A.Ş.
+                    </span>
+
+                </div>
+
+
+                <div class="institution-card">
+
+                    <strong>
+                        Ministry of National Education
+                    </strong>
+
+                    <span>
+                        T.C. Millî Eğitim Bakanlığı
+                    </span>
+
+                </div>
+
+
+                <div class="institution-card">
+
+                    <strong>
+                        Savunma Kariyer
+                    </strong>
+
+                    <span>
+                        Defense Career platform
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REFLECTION
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="reflection-box">
+
+                <div class="section-label">
+                    What I Learned
+                </div>
+
+                <h2>
+                    Technology and responsibility
+                    cannot be separated.
+                </h2>
+
+                <p>
+                    The program expanded the way I think about
+                    engineering. Before encountering many of these
+                    topics, it was easy to think about technology
+                    mainly in terms of what a system can do.
+                    The sessions made me think more about what a
+                    system should do, what happens when it fails,
+                    who controls it, and what responsibilities come
+                    with building powerful tools.
+                </p>
+
+                <p style="margin-top: 18px;">
+                    I also became more interested in the intersections
+                    between AI, autonomous systems, cybersecurity,
+                    human-machine interaction, and ethics.
+                </p>
+
+                <div class="certificate">
+
+                    <h3>
+                        🎓 Certificate of Participation
+                    </h3>
+
+                    <p>
+                        Successfully completing the 11-week program
+                        resulted in an official
+                        <strong>Katılım Belgesi</strong>
+                        (Certificate of Participation).
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="container">
+
+            <div class="gallery-header">
+
+                <div>
+
+                    <div class="section-label">
+                        Visual Documentation
+                    </div>
+
+                    <h2>
+                        Inside the program
+                    </h2>
+
+                </div>
+
+                <p>
+                    Add your certificate, session screenshots,
+                    speaker slides, and other program documentation.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Program Certificate
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Expert Session
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Training Material
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Speaker Session
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Program Interface
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Personal Notes
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Elifsu Arifoğlu · Built with curiosity.
+            </p>
+
+        </div>
+
     </footer>
 
-    <script src="script.js"></script>
+
 </body>
 </html>
