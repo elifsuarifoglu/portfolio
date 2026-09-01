@@ -7,504 +7,272 @@
     <title>IDD ORG & COP31 | Elifsu Arifoğlu</title>
 
     <link rel="stylesheet" href="style.css" />
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #4a2f01;
-            color: #fcc7e1;
-            line-height: 1.65;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        .container {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
         /* =========================
-           NAVIGATION
-        ========================== */
+           IDD ORG & COP31
+           Project Page Styles
+        ========================= */
 
-        nav {
-            padding: 20px 0;
-            background: #fcc7e1;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(74, 47, 1, 0.12);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .logo {
-            color: #4a2f01;
-            text-decoration: none;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: #6D4C2A;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 12px;
-            list-style: none;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .nav-links a {
-            color: #4a2f01;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 6px 10px;
-            border-radius: 8px;
-            transition: all 0.25s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #6D4C2A;
-            background: rgba(74, 47, 1, 0.08);
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            padding: 100px 0 85px;
-        }
-
-        .back-link {
-            display: inline-block;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            opacity: 0.6;
-            margin-bottom: 45px;
-        }
-
-        .back-link:hover {
-            opacity: 1;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 65px;
-            align-items: end;
-        }
-
-        .eyebrow {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.55;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 84px);
-            line-height: 0.9;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
-        }
-
-        .hero-title {
-            max-width: 720px;
-            font-size: 21px;
-            opacity: 0.78;
-        }
-
-        .hero-side {
-            border-left: 1px solid rgba(252, 199, 225, 0.35);
-            padding-left: 30px;
-        }
-
-        .hero-side p {
-            font-size: 15px;
-            opacity: 0.68;
-            margin-bottom: 22px;
-        }
-
-        .tag-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            padding: 7px 11px;
-            border: 1px solid rgba(252, 199, 225, 0.35);
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        /* =========================
-           GENERAL
-        ========================== */
-
-        section {
-            padding: 80px 0;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.55;
-            margin-bottom: 18px;
-        }
-
-        .section-title {
-            font-size: 42px;
-            line-height: 1.05;
-            letter-spacing: -1.8px;
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            max-width: 730px;
-            font-size: 17px;
-            opacity: 0.71;
-        }
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about-section {
-            background: #fcc7e1;
-            color: #4a2f01;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 70px;
-        }
-
-        .about-grid .section-label {
-            color: #4a2f01;
-        }
-
-        .about-grid h2 {
-            font-size: 43px;
-            line-height: 1.04;
-            letter-spacing: -2px;
-        }
-
-        .about-text {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .about-text p + p {
-            margin-top: 18px;
-        }
-
-        .quote {
-            margin-top: 30px;
-            border-left: 3px solid #6D4C2A;
-            padding-left: 20px;
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-        /* =========================
-           CONTRIBUTIONS
-        ========================== */
-
-        .contribution-header {
-            max-width: 730px;
+        .project-hero {
+            text-align: center;
             margin-bottom: 40px;
         }
 
-        .contribution-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .contribution-card {
-            padding: 30px;
-            border: 1px solid rgba(252, 199, 225, 0.3);
-            border-radius: 20px;
-            background: rgba(252, 199, 225, 0.04);
-        }
-
-        .contribution-number {
+        .project-hero .icon-large {
+            font-size: 80px;
             display: block;
-            font-size: 11px;
+            margin-bottom: 16px;
+        }
+
+        .project-hero h1 {
+            font-size: 42px;
             font-weight: 700;
-            letter-spacing: 1px;
-            opacity: 0.43;
-            margin-bottom: 20px;
+            color: #fcc7e1;
+            margin-bottom: 8px;
         }
 
-        .contribution-card h3 {
-            font-size: 23px;
-            margin-bottom: 11px;
-        }
-
-        .contribution-card p {
+        .project-hero .tag-large {
+            display: inline-block;
+            padding: 7px 20px;
+            background: #4a2f01;
+            border-radius: 30px;
             font-size: 14px;
-            opacity: 0.7;
+            font-weight: 600;
+            color: #fcc7e1;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .project-main {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 36px;
+            color: #4a2f01;
+        }
+
+        .project-main h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #4a2f01;
+            border-bottom: 3px solid #6D4C2A;
+            padding-bottom: 10px;
+        }
+
+        .project-main h3 {
+            font-size: 18px;
+            margin: 28px 0 12px;
+            color: #4a2f01;
+        }
+
+        .project-main p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3E2723;
+            margin-bottom: 14px;
+        }
+
+        .project-main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-main ul li {
+            padding: 12px 16px;
+            margin-bottom: 9px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #6D4C2A;
+            font-size: 15px;
+            line-height: 1.65;
+            color: #3E2723;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-main ul li .li-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* =========================
+           Highlight
+        ========================= */
+
+        .highlight-box {
+            background: #4a2f01;
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin: 22px 0;
+            color: #fcc7e1;
             line-height: 1.7;
         }
 
-        .magazine-button {
-            display: inline-flex;
-            margin-top: 20px;
-            padding: 9px 15px;
-            border: 1px solid rgba(252, 199, 225, 0.35);
-            border-radius: 999px;
-            text-decoration: none;
+        .highlight-box strong {
+            color: #ffffff;
+        }
+
+        /* =========================
+           Published Work
+        ========================= */
+
+        .publication-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 22px;
+            margin: 22px 0;
+            border: 2px solid #6D4C2A;
+        }
+
+        .publication-box .publication-label {
             font-size: 12px;
             font-weight: 700;
-            transition: transform 0.25s ease,
-                        background 0.25s ease;
-        }
-
-        .magazine-button:hover {
-            transform: translateY(-2px);
-            background: rgba(252, 199, 225, 0.08);
-        }
-
-        /* =========================
-           COP31 TIMELINE
-        ========================== */
-
-        .timeline-section {
-            background: rgba(252, 199, 225, 0.045);
-        }
-
-        .timeline-header {
-            max-width: 740px;
-            margin-bottom: 40px;
-        }
-
-        .timeline {
-            border-left: 1px solid rgba(252, 199, 225, 0.35);
-            margin-left: 12px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 0 0 45px 35px;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #fcc7e1;
-            left: -6px;
-            top: 6px;
-        }
-
-        .timeline-date {
-            display: block;
-            font-size: 10px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            opacity: 0.48;
+            letter-spacing: 1px;
+            color: #6D4C2A;
             margin-bottom: 8px;
         }
 
-        .timeline-item h3 {
-            font-size: 22px;
+        .publication-box h4 {
+            font-size: 20px;
+            color: #4a2f01;
             margin-bottom: 8px;
         }
 
-        .timeline-item p {
-            max-width: 720px;
+        .publication-box p {
             font-size: 14px;
-            opacity: 0.69;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .btn-magazine {
+            display: inline-block;
+            padding: 11px 22px;
+            background: #6D4C2A;
+            color: #fcc7e1;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-magazine:hover {
+            background: #4a2f01;
+            transform: translateY(-2px);
         }
 
         /* =========================
-           GLOBAL PERSPECTIVE
-        ========================== */
+           Sidebar
+        ========================= */
 
-        .global-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 70px;
-        }
-
-        .global-grid h2 {
-            font-size: 43px;
-            line-height: 1.05;
-            letter-spacing: -2px;
-        }
-
-        .global-text {
-            font-size: 17px;
-            opacity: 0.74;
-        }
-
-        .global-text p + p {
-            margin-top: 18px;
-        }
-
-        /* =========================
-           IMPACT
-        ========================== */
-
-        .impact-section {
-            background: #fcc7e1;
-            color: #4a2f01;
-        }
-
-        .impact-section .section-label {
-            color: #4a2f01;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 40px;
-        }
-
-        .impact-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 30px;
-            border-left: 4px solid #6D4C2A;
-        }
-
-        .impact-number {
-            font-size: 47px;
-            font-weight: 700;
-            letter-spacing: -2px;
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .impact-card h3 {
-            font-size: 17px;
-            margin-bottom: 7px;
-        }
-
-        .impact-card p {
-            color: #3E2723;
-            font-size: 13px;
-            opacity: 0.72;
-        }
-
-        /* =========================
-           WHAT I LEARNED
-        ========================== */
-
-        .reflection {
-            max-width: 920px;
-            margin: 0 auto;
-        }
-
-        .reflection-box {
-            padding: 60px;
-            border: 1px solid rgba(252, 199, 225, 0.35);
-            border-radius: 26px;
-        }
-
-        .reflection-box h2 {
-            font-size: 43px;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            margin-bottom: 22px;
-        }
-
-        .reflection-box p {
-            max-width: 800px;
-            font-size: 17px;
-            opacity: 0.74;
-        }
-
-        /* =========================
-           GALLERY
-        ========================== */
-
-        .gallery {
-            padding-top: 30px;
-        }
-
-        .gallery-header {
+        .project-sidebar {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-direction: column;
             gap: 20px;
-            margin-bottom: 30px;
         }
 
-        .gallery-header h2 {
-            font-size: 35px;
-            letter-spacing: -1px;
+        .sidebar-card {
+            background: #fcc7e1;
+            border-radius: 20px;
+            padding: 24px;
+            color: #4a2f01;
         }
 
-        .gallery-header p {
-            max-width: 400px;
-            font-size: 13px;
-            opacity: 0.5;
-            text-align: right;
+        .sidebar-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4a2f01;
+            border-bottom: 2px solid #6D4C2A;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-card p,
+        .sidebar-card li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-card ul li {
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        }
+
+        .sidebar-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* =========================
+           Gallery
+        ========================= */
+
+        .gallery-section {
+            margin-top: 45px;
+        }
+
+        .gallery-section h2 {
+            font-size: 24px;
+            color: #fcc7e1;
+            text-align: center;
+            margin-bottom: 24px;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 20px;
         }
 
         .gallery-item {
-            aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            color: #4a2f01;
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
+            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #4a2f01;
+            font-size: 14px;
             text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 2px dashed #6D4C2A;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gallery-item .placeholder .icon {
+            font-size: 48px;
+        }
+
+        .gallery-item .placeholder .label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #6D4C2A;
         }
 
         .gallery-item img {
@@ -513,130 +281,38 @@
             object-fit: cover;
         }
 
-        .placeholder {
-            padding: 20px;
-        }
-
-        .placeholder strong {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .placeholder span {
-            font-size: 12px;
-            opacity: 0.55;
-        }
-
         /* =========================
-           FOOTER
-        ========================== */
+           Mobile
+        ========================= */
 
-        footer {
-            padding: 40px 0;
-            background: #fcc7e1;
-            color: #4a2f01;
-            text-align: center;
-        }
+        @media (max-width: 768px) {
 
-        footer p {
-            font-size: 13px;
-        }
-
-        footer a {
-            color: #4a2f01;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================== */
-
-        @media (max-width: 850px) {
-
-            nav .container {
-                flex-direction: column;
-            }
-
-            .hero-grid,
-            .about-grid,
-            .global-grid {
+            .project-content {
                 grid-template-columns: 1fr;
             }
 
-            .hero-side {
-                border-left: none;
-                border-top: 1px solid rgba(252, 199, 225, 0.35);
-                padding-left: 0;
-                padding-top: 25px;
+            .project-hero h1 {
+                font-size: 30px;
             }
 
-            .contribution-grid,
-            .impact-grid {
-                grid-template-columns: 1fr 1fr;
+            .project-main {
+                padding: 24px;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
-            .gallery-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .gallery-header p {
-                text-align: left;
-            }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
 
-            .container {
-                padding: 0 18px;
-            }
-
-            section {
-                padding: 55px 0;
-            }
-
-            .hero {
-                padding: 70px 0 55px;
-            }
-
-            .hero h1 {
-                letter-spacing: -3px;
-            }
-
-            .hero-title {
-                font-size: 17px;
-            }
-
-            .contribution-grid,
-            .impact-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-
-            .about-grid h2,
-            .global-grid h2,
-            .impact-section .section-title,
-            .reflection-box h2 {
-                font-size: 31px;
-            }
-
-            .impact-number {
-                font-size: 42px;
-            }
-
-            .reflection-box {
-                padding: 32px 24px;
-            }
         }
+
     </style>
 </head>
-
 
 <body>
 
@@ -647,12 +323,11 @@
     <nav>
         <div class="container">
 
-            <a href="index.html" class="logo">
+            <div class="logo">
                 Elifsu Arifoğlu<span>.</span>
-            </a>
+            </div>
 
             <ul class="nav-links">
-
                 <li>
                     <a href="index.html">Home</a>
                 </li>
@@ -664,7 +339,6 @@
                 <li>
                     <a href="projects.html" class="active">Projects</a>
                 </li>
-
             </ul>
 
         </div>
@@ -672,682 +346,625 @@
 
 
     <!-- =========================
-         HERO
+         MAIN CONTENT
     ========================== -->
 
-    <header class="hero">
+    <section>
 
         <div class="container">
 
-            <a href="projects.html" class="back-link">
+            <a href="projects.html" class="btn-back">
                 ← Back to Projects
             </a>
 
-            <div class="hero-grid">
 
-                <div>
+            <!-- HERO -->
 
-                    <div class="eyebrow">
-                        Global Climate Engagement · 2026
-                    </div>
+            <div class="project-hero">
 
-                    <h1>
-                        IDD ORG<br />
-                        &amp; COP31
-                    </h1>
+                <span class="icon-large">
+                    🌍
+                </span>
 
-                    <p class="hero-title">
-                        Exploring climate action beyond the classroom
-                        through youth advocacy, international collaboration,
-                        climate communication, and the road to COP31.
-                    </p>
+                <h1>
+                    IDD ORG & COP31
+                </h1>
 
-                </div>
-
-
-                <div class="hero-side">
-
-                    <p>
-                        Through IDD ORG and the Capital Youth Assembly,
-                        I have been contributing to youth-led climate
-                        work in the lead-up to COP31 in Antalya.
-                    </p>
-
-                    <div class="tag-row">
-
-                        <span class="tag">
-                            Climate
-                        </span>
-
-                        <span class="tag">
-                            Youth Advocacy
-                        </span>
-
-                        <span class="tag">
-                            International
-                        </span>
-
-                        <span class="tag">
-                            Diplomacy
-                        </span>
-
-                    </div>
-
-                </div>
+                <span class="tag-large">
+                    Climate Action · Youth Advocacy · International Engagement
+                </span>
 
             </div>
 
-        </div>
 
-    </header>
+            <!-- MAIN + SIDEBAR -->
+
+            <div class="project-content">
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+                <!-- =========================
+                     MAIN COLUMN
+                ========================== -->
 
-    <section class="about-section">
+                <div class="project-main">
 
-        <div class="container">
-
-            <div class="about-grid">
-
-                <div>
-
-                    <div class="section-label">
-                        The Context
-                    </div>
 
                     <h2>
-                        Climate action becomes
-                        different when the
-                        conversation goes global.
+                        About IDD ORG
                     </h2>
+
+                    <p>
+                        <strong>IDD ORG (İklim Değişmeden Değiş)</strong> is an
+                        international youth-focused organization working around
+                        climate action, environmental awareness, sustainable
+                        development, and youth engagement.
+                    </p>
+
+                    <p>
+                        Through my involvement with IDD ORG, I have participated
+                        in climate-focused initiatives, contributed to youth
+                        advocacy, and engaged with discussions surrounding
+                        climate diplomacy and international cooperation.
+                    </p>
+
+
+                    <!-- COP31 -->
+
+                    <div class="highlight-box">
+
+                        <strong>
+                            🌍 COP31 DELEGATE
+                        </strong>
+
+                        <br />
+
+                        Selected as a youth delegate through
+                        <strong>Capital Youth Assembly</strong>,
+                        contributing to pre-COP31 engagement and
+                        climate-focused discussions in Türkiye.
+
+                    </div>
+
+
+                    <!-- CONTRIBUTIONS -->
+
+                    <h3>
+                        📝 Key Contributions
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            <span class="li-icon">
+                                ✍️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Published Climate Writing:
+                                </strong>
+
+                                Co-authored a contribution for IDD ORG's
+                                climate magazine, focusing on youth,
+                                climate action, and sustainable development.
+
+                            </div>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="li-icon">
+                                🇺🇳
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    COP31 Delegation:
+                                </strong>
+
+                                Selected as a delegate through
+                                Capital Youth Assembly and participated
+                                in climate-focused youth engagement
+                                connected to COP31.
+
+                            </div>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="li-icon">
+                                📢
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Pre-COP31 Campaigns:
+                                </strong>
+
+                                Contributed to awareness and engagement
+                                activities encouraging young people to
+                                participate in climate dialogue.
+
+                            </div>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="li-icon">
+                                🌱
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Climate Advocacy:
+                                </strong>
+
+                                Engaged with youth-centered climate
+                                discussions and initiatives focused on
+                                environmental sustainability and
+                                international cooperation.
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+
+                    <!-- =========================
+                         PUBLISHED WORK
+                    ========================== -->
+
+                    <h3>
+                        📖 Published Work
+                    </h3>
+
+                    <div class="publication-box">
+
+                        <div class="publication-label">
+                            Published Climate Magazine
+                        </div>
+
+                        <h4>
+                            COP31 Türkiye: Shaping the Future of Climate
+                        </h4>
+
+                        <p>
+                            IDD ORG's 56-page climate publication explores
+                            COP31, global climate diplomacy, Türkiye's
+                            strategic position in climate policy, and
+                            opportunities for climate action.
+                        </p>
+
+                        <p>
+                            I contributed to this publication as a youth
+                            climate advocate.
+                        </p>
+
+                        <a
+                            href="https://iklimdd.org/public/dergi/?sayfa=1"
+                            class="btn-magazine"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            📖 Read the Magazine →
+                        </a>
+
+                    </div>
+
+
+                    <!-- YOUTH LEADERSHIP -->
+
+                    <h3>
+                        🌿 Youth Leadership & Global Engagement
+                    </h3>
+
+                    <p>
+                        My involvement with IDD ORG has allowed me to connect
+                        with young people interested in climate action,
+                        sustainability, and international cooperation.
+                    </p>
+
+                    <p>
+                        Through these experiences, I have explored how young
+                        people can participate not only in environmental
+                        awareness campaigns, but also in broader conversations
+                        around policy, diplomacy, and global climate governance.
+                    </p>
+
+
+                    <!-- WHAT I LEARNED -->
+
+                    <h3>
+                        🎯 What I Learned
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            <span class="li-icon">
+                                🌍
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Global Perspective:
+                                </strong>
+
+                                Understanding climate change as a
+                                cross-border issue requiring international
+                                cooperation.
+                            </div>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="li-icon">
+                                🗣️
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Advocacy:
+                                </strong>
+
+                                Learning how youth voices can contribute
+                                to public awareness and policy discussions.
+                            </div>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="li-icon">
+                                🤝
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Collaboration:
+                                </strong>
+
+                                Working with young people around shared
+                                environmental and social goals.
+                            </div>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="li-icon">
+                                📝
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Communication:
+                                </strong>
+
+                                Developing experience in communicating
+                                climate-related ideas through writing,
+                                campaigns, and public engagement.
+                            </div>
+
+                        </li>
+
+                    </ul>
 
                 </div>
 
 
-                <div class="about-text">
+                <!-- =========================
+                     SIDEBAR
+                ========================== -->
 
-                    <p>
-                        IDD ORG is a platform focused on international
-                        development, diplomacy, global governance,
-                        climate action, and sustainable development.
-                    </p>
+                <div class="project-sidebar">
 
-                    <p>
-                        Through this work, I have been able to move from
-                        school-level environmental initiatives into
-                        broader conversations about climate policy,
-                        youth participation, and international cooperation.
-                    </p>
 
-                    <div class="quote">
-                        I am especially interested in the space between
-                        local action and global decision-making:
-                        how can young people make their ideas heard
-                        at both levels?
+                    <!-- QUICK FACTS -->
+
+                    <div class="sidebar-card">
+
+                        <h4>
+                            📊 Quick Facts
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                <strong>Organization:</strong>
+                                IDD ORG
+                            </li>
+
+                            <li>
+                                <strong>Role:</strong>
+                                Delegate & Contributor
+                            </li>
+
+                            <li>
+                                <strong>Scope:</strong>
+                                International
+                            </li>
+
+                            <li>
+                                <strong>Focus:</strong>
+                                Climate Action
+                            </li>
+
+                            <li>
+                                <strong>Event:</strong>
+                                COP31
+                            </li>
+
+                            <li>
+                                <strong>Status:</strong>
+                                Active
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- KEY ACHIEVEMENTS -->
+
+                    <div class="sidebar-card">
+
+                        <h4>
+                            🏅 Key Achievements
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                ✅ Contributed to published climate magazine
+                            </li>
+
+                            <li>
+                                ✅ COP31 youth delegate
+                            </li>
+
+                            <li>
+                                ✅ Capital Youth Assembly involvement
+                            </li>
+
+                            <li>
+                                ✅ Participated in climate advocacy activities
+                            </li>
+
+                            <li>
+                                ✅ Engaged in international youth climate dialogue
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- PUBLISHED WORK -->
+
+                    <div class="sidebar-card">
+
+                        <h4>
+                            📖 Published Work
+                        </h4>
+
+                        <p>
+                            <strong>
+                                COP31 Türkiye:
+                                Shaping the Future of Climate
+                            </strong>
+                        </p>
+
+                        <p>
+                            56-page climate publication by IDD ORG.
+                        </p>
+
+                        <a
+                            href="https://iklimdd.org/public/dergi/?sayfa=1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Read publication →
+                        </a>
+
+                    </div>
+
+
+                    <!-- RELATED -->
+
+                    <div class="sidebar-card">
+
+                        <h4>
+                            🔗 Related
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                🌍 Climate Action
+                            </li>
+
+                            <li>
+                                🌱 Sustainability
+                            </li>
+
+                            <li>
+                                📢 Youth Advocacy
+                            </li>
+
+                            <li>
+                                🤝 International Cooperation
+                            </li>
+
+                            <li>
+                                🇺🇳 Climate Diplomacy
+                            </li>
+
+                        </ul>
+
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
 
-    </section>
+            <!-- =========================
+                 GALLERY
+            ========================== -->
 
+            <div class="gallery-section">
 
-    <!-- =========================
-         CONTRIBUTIONS
-    ========================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="contribution-header">
-
-                <div class="section-label">
-                    My Contributions
-                </div>
-
-                <h2 class="section-title">
-                    From writing to advocacy.
+                <h2>
+                    📸 IDD ORG & COP31 Gallery
                 </h2>
 
-                <p class="section-description">
-                    My involvement has combined climate communication,
-                    youth participation, preparation for COP31, and
-                    collaboration with other young people.
-                </p>
+                <div class="gallery-grid">
 
-            </div>
 
+                    <div class="gallery-item">
 
-            <div class="contribution-grid">
+                        <div class="placeholder">
 
+                            <span class="icon">
+                                🇺🇳
+                            </span>
 
-                <!-- MAGAZINE -->
+                            <span class="label">
+                                COP31 Delegation
+                            </span>
 
-                <article class="contribution-card">
+                            <span style="font-size:12px;color:#6D4C2A;">
+                                (Add image)
+                            </span>
 
-                    <span class="contribution-number">
-                        01 · CLIMATE COMMUNICATION
-                    </span>
+                        </div>
 
-                    <h3>
-                        UN-Bound Climate Magazine
-                    </h3>
-
-                    <p>
-                        Co-authored an article for a climate magazine
-                        connected to IDD ORG, focusing on youth-led
-                        climate action and sustainable development.
-                    </p>
-
-                    <a
-                        href="https://iklimdd.org/public/dergi/?sayfa=1"
-                        class="magazine-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Read the magazine →
-                    </a>
-
-                </article>
-
-
-                <!-- DELEGATE -->
-
-                <article class="contribution-card">
-
-                    <span class="contribution-number">
-                        02 · REPRESENTATION
-                    </span>
-
-                    <h3>
-                        COP31 Delegate
-                    </h3>
-
-                    <p>
-                        Selected as a delegate representing the Capital
-                        Youth Assembly in connection with the COP31 process,
-                        contributing to youth-focused climate engagement
-                        in the lead-up to the conference.
-                    </p>
-
-                </article>
-
-
-                <!-- CAMPAIGNS -->
-
-                <article class="contribution-card">
-
-                    <span class="contribution-number">
-                        03 · LOCAL ACTION
-                    </span>
-
-                    <h3>
-                        Pre-COP31 Campaigns
-                    </h3>
-
-                    <p>
-                        Organizing and supporting awareness initiatives
-                        in Ankara designed to bring climate conversations
-                        to students and young people before COP31.
-                    </p>
-
-                </article>
-
-
-                <!-- FORUMS -->
-
-                <article class="contribution-card">
-
-                    <span class="contribution-number">
-                        04 · GLOBAL DIALOGUE
-                    </span>
-
-                    <h3>
-                        Youth Climate Dialogue
-                    </h3>
-
-                    <p>
-                        Participating in climate-focused forums and
-                        exchanges centered on youth perspectives,
-                        international cooperation, and inclusive
-                        climate action.
-                    </p>
-
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         ROAD TO COP31
-    ========================== -->
-
-    <section class="timeline-section">
-
-        <div class="container">
-
-            <div class="timeline-header">
-
-                <div class="section-label">
-                    The Road to Antalya
-                </div>
-
-                <h2 class="section-title">
-                    COP31 has not happened yet.
-                    That is what makes the road there important.
-                </h2>
-
-                <p class="section-description">
-                    COP31 will take place in Antalya from
-                    9–20 November 2026. My current work is part
-                    of the youth engagement and preparation happening
-                    before the conference. :contentReference[oaicite:2]{index=2}
-                </p>
-
-            </div>
-
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <span class="timeline-dot"></span>
-
-                    <span class="timeline-date">
-                        Completed
-                    </span>
-
-                    <h3>
-                        Climate Magazine Contribution
-                    </h3>
-
-                    <p>
-                        Contributed written work focused on climate
-                        action and youth participation.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <span class="timeline-dot"></span>
-
-                    <span class="timeline-date">
-                        Current
-                    </span>
-
-                    <h3>
-                        Youth Climate Engagement
-                    </h3>
-
-                    <p>
-                        Taking part in climate discussions and
-                        pre-COP31 initiatives with other young people.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <span class="timeline-dot"></span>
-
-                    <span class="timeline-date">
-                        9–20 November 2026
-                    </span>
-
-                    <h3>
-                        COP31 · Antalya
-                    </h3>
-
-                    <p>
-                        The United Nations Climate Change Conference
-                        will take place in Antalya, Türkiye. My goal is
-                        to bring the perspective developed through
-                        youth-led environmental work into that process.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         GLOBAL PERSPECTIVE
-    ========================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="global-grid">
-
-                <div>
-
-                    <div class="section-label">
-                        What This Changed
                     </div>
 
-                    <h2>
-                        From environmental
-                        action to climate policy.
-                    </h2>
 
-                </div>
+                    <div class="gallery-item">
 
+                        <div class="placeholder">
 
-                <div class="global-text">
+                            <span class="icon">
+                                📖
+                            </span>
 
-                    <p>
-                        My work with ECOBO taught me how to organize
-                        people around environmental action within a
-                        school community.
-                    </p>
+                            <span class="label">
+                                Climate Magazine
+                            </span>
 
-                    <p>
-                        Working through IDD ORG and the COP31 process
-                        has expanded that perspective. Climate change
-                        is not only a scientific or environmental issue;
-                        it is also a question of policy, diplomacy,
-                        communication, economics, and representation.
-                    </p>
+                            <span style="font-size:12px;color:#6D4C2A;">
+                                (Add image)
+                            </span>
 
-                    <p>
-                        That intersection is what I want to explore
-                        further: how scientific knowledge becomes policy,
-                        how policy becomes action, and how young people
-                        can participate meaningfully in both.
-                    </p>
+                        </div>
 
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         IMPACT
-    ========================== -->
-
-    <section class="impact-section">
-
-        <div class="container">
-
-            <div class="section-label">
-                Scale
-            </div>
-
-            <h2 class="section-title">
-                The numbers behind the work.
-            </h2>
-
-            <p class="section-description">
-                Quantifying participation helps show the scale of
-                the work while the stories behind those numbers
-                explain why they matter.
-            </p>
-
-
-            <div class="impact-grid">
-
-
-                <div class="impact-card">
-
-                    <div class="impact-number">
-                        500+
                     </div>
 
-                    <h3>
-                        Youth Engaged
-                    </h3>
 
-                    <p>
-                        Youth reached through climate-awareness
-                        and engagement activities.
-                    </p>
+                    <div class="gallery-item">
 
-                </div>
+                        <div class="placeholder">
 
+                            <span class="icon">
+                                ✍️
+                            </span>
 
-                <div class="impact-card">
+                            <span class="label">
+                                Published Contribution
+                            </span>
 
-                    <div class="impact-number">
-                        1
+                            <span style="font-size:12px;color:#6D4C2A;">
+                                (Add image)
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <h3>
-                        Climate Magazine
-                    </h3>
 
-                    <p>
-                        Co-authored contribution to a climate-focused
-                        publication.
-                    </p>
+                    <div class="gallery-item">
 
-                </div>
+                        <div class="placeholder">
 
+                            <span class="icon">
+                                📢
+                            </span>
 
-                <div class="impact-card">
+                            <span class="label">
+                                Pre-COP31 Campaign
+                            </span>
 
-                    <div class="impact-number">
-                        2026
+                            <span style="font-size:12px;color:#6D4C2A;">
+                                (Add image)
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <h3>
-                        COP31
-                    </h3>
 
-                    <p>
-                        The year young people from many backgrounds
-                        will gather in Antalya for COP31.
-                    </p>
+                    <div class="gallery-item">
 
-                </div>
+                        <div class="placeholder">
 
+                            <span class="icon">
+                                🌍
+                            </span>
 
-            </div>
+                            <span class="label">
+                                Climate Forum
+                            </span>
 
-        </div>
+                            <span style="font-size:12px;color:#6D4C2A;">
+                                (Add image)
+                            </span>
 
-    </section>
+                        </div>
 
-
-    <!-- =========================
-         REFLECTION
-    ========================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="reflection">
-
-                <div class="reflection-box">
-
-                    <div class="section-label">
-                        What I Learned
                     </div>
 
-                    <h2>
-                        Global problems need more
-                        than global conversations.
-                    </h2>
 
-                    <p>
-                        International climate work has made me think
-                        differently about impact. Speaking about climate
-                        change is important, but so are the systems
-                        underneath it: research, institutions, policy,
-                        communication, and participation. I have become
-                        more interested in how these pieces connect —
-                        and in where young people can create real leverage
-                        within them.
-                    </p>
+                    <div class="gallery-item">
 
-                </div>
+                        <div class="placeholder">
 
-            </div>
+                            <span class="icon">
+                                👥
+                            </span>
 
-        </div>
+                            <span class="label">
+                                Youth Delegates
+                            </span>
 
-    </section>
+                            <span style="font-size:12px;color:#6D4C2A;">
+                                (Add image)
+                            </span>
 
-
-    <!-- =========================
-         GALLERY
-    ========================== -->
-
-    <section class="gallery">
-
-        <div class="container">
-
-            <div class="gallery-header">
-
-                <div>
-
-                    <div class="section-label">
-                        Visual Documentation
-                    </div>
-
-                    <h2>
-                        The road to COP31
-                    </h2>
-
-                </div>
-
-                <p>
-                    Add photographs from campaigns, meetings,
-                    publications, and youth events here.
-                </p>
-
-            </div>
-
-
-            <div class="gallery-grid">
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Climate Magazine
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
+                        </div>
 
                     </div>
 
                 </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Youth Climate Event
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Pre-COP31 Campaign
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Youth Delegates
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            International Forum
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            COP31 Preparation
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
 
             </div>
 
@@ -1365,12 +982,16 @@
         <div class="container">
 
             <p>
-                © 2026 Elifsu Arifoğlu · Built with curiosity.
+                © 2026 Elif. Built with ❤️
             </p>
 
         </div>
 
     </footer>
 
+
+    <script src="script.js"></script>
+
 </body>
 </html>
+```
