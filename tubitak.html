@@ -1,236 +1,560 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>TÜBİTAK 4006 | Elifsu Arifoğlu</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
     <style>
-        /* TÜBİTAK özel stilleri - SADECE İÇERİK İÇİN */
-        .project-hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .project-hero .icon-large {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .project-hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #fcc7e1;
-            margin-bottom: 8px;
-        }
-
-        .project-hero .tag-large {
-            display: inline-block;
-            padding: 6px 20px;
-            background: #4a2f01;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fcc7e1;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .project-main {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 36px;
-            color: #4a2f01;
-        }
-
-        .project-main h2 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #4a2f01;
-            border-bottom: 3px solid #6D4C2A;
-            padding-bottom: 10px;
-        }
-
-        .project-main h3 {
-            font-size: 18px;
-            margin: 24px 0 12px;
-            color: #4a2f01;
-        }
-
-        .project-main p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #3E2723;
-            margin-bottom: 12px;
-        }
-
-        .project-main ul {
-            list-style: none;
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .project-main ul li {
-            padding: 10px 16px;
-            margin-bottom: 8px;
-            background: #ffffff;
-            border-radius: 10px;
-            border-left: 4px solid #6D4C2A;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3E2723;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #4a2f01;
+            color: #fcc7e1;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            padding: 20px 0;
+            background: #fcc7e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(74, 47, 1, 0.12);
+        }
+
+        nav .container {
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .project-main ul li .li-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .project-sidebar {
-            display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             gap: 20px;
         }
 
-        .sidebar-card {
-            background: #fcc7e1;
-            border-radius: 20px;
-            padding: 24px;
+        .logo {
             color: #4a2f01;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .sidebar-card h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #4a2f01;
-            border-bottom: 2px solid #6D4C2A;
-            padding-bottom: 8px;
+        .logo span {
+            color: #6D4C2A;
         }
 
-        .sidebar-card p,
-        .sidebar-card li {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #3E2723;
-        }
-
-        .sidebar-card ul {
+        .nav-links {
             list-style: none;
-            padding: 0;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
-        .sidebar-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(74, 47, 1, 0.1);
+        .nav-links a {
+            color: #4a2f01;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
         }
 
-        .sidebar-card ul li:last-child {
-            border-bottom: none;
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(74, 47, 1, 0.08);
+            color: #6D4C2A;
         }
 
-        .highlight-box {
-            background: #4a2f01;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: 16px 0;
-            color: #fcc7e1;
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 100px 0 80px;
         }
 
-        .highlight-box strong {
-            color: #ffffff;
-        }
-
-        .highlight-box a {
-            color: #fcc7e1;
-            text-decoration: underline;
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 13px;
             font-weight: 600;
-            transition: color 0.3s;
+            opacity: 0.6;
+            margin-bottom: 45px;
+            transition: opacity 0.25s ease;
         }
 
-        .highlight-box a:hover {
-            color: #ffffff;
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 88px);
+            line-height: 0.9;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        .hero-title {
+            max-width: 780px;
+            font-size: 21px;
+            line-height: 1.45;
+            opacity: 0.78;
+        }
+
+        .hero-side {
+            border-left: 1px solid rgba(252, 199, 225, 0.35);
+            padding-left: 30px;
+        }
+
+        .hero-side p {
+            font-size: 14px;
+            opacity: 0.68;
+            margin-bottom: 22px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .hero-tag {
+            padding: 7px 11px;
+            border: 1px solid rgba(252, 199, 225, 0.35);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -1.7px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 740px;
+            font-size: 17px;
+            opacity: 0.71;
+        }
+
+        /* =========================
+           RESEARCH QUESTION
+        ========================== */
+
+        .question-section {
+            background: #fcc7e1;
+            color: #4a2f01;
+        }
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 70px;
+        }
+
+        .question-grid .section-label {
+            color: #4a2f01;
+        }
+
+        .question-grid h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .question-text p + p {
+            margin-top: 18px;
+        }
+
+        .research-question {
+            margin-top: 28px;
+            padding: 22px 24px;
+            background: #4a2f01;
+            color: #fcc7e1;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           PROJECT INFO
+        ========================== */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 38px;
+        }
+
+        .info-card {
+            padding: 24px;
+            border: 1px solid rgba(252, 199, 225, 0.28);
+            border-radius: 18px;
+            background: rgba(252, 199, 225, 0.035);
+        }
+
+        .info-card span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            opacity: 0.46;
+            margin-bottom: 10px;
+        }
+
+        .info-card strong {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        /* =========================
+           TEAM
+        ========================== */
+
+        .team-section {
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 70px;
+        }
+
+        .team-grid h2 {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -1.8px;
+        }
+
+        .team-text {
+            font-size: 17px;
+            opacity: 0.74;
         }
 
         .team-members {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin: 12px 0;
+            gap: 10px;
+            margin-top: 25px;
         }
 
-        .team-tag {
+        .team-member {
             display: inline-block;
-            padding: 6px 16px;
-            background: #6D4C2A;
+            padding: 9px 13px;
+            border: 1px solid rgba(252, 199, 225, 0.32);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           METHODOLOGY
+        ========================== */
+
+        .method-header {
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .method-card {
+            background: #fcc7e1;
+            color: #4a2f01;
             border-radius: 20px;
+            padding: 30px;
+        }
+
+        .method-number {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.45;
+            margin-bottom: 20px;
+        }
+
+        .method-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .method-card p {
             font-size: 14px;
-            font-weight: 500;
-            color: #fcc7e1;
+            line-height: 1.7;
+            opacity: 0.76;
         }
 
-        .gallery-section {
-            margin-top: 40px;
+        /* =========================
+           FINDINGS
+        ========================== */
+
+        .findings-section {
+            background: #fcc7e1;
+            color: #4a2f01;
         }
 
-        .gallery-section h2 {
-            font-size: 24px;
-            color: #fcc7e1;
-            text-align: center;
-            margin-bottom: 24px;
+        .findings-header {
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .findings-header .section-label {
+            color: #4a2f01;
+        }
+
+        .finding-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .finding-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 26px;
+            border-left: 4px solid #6D4C2A;
+        }
+
+        .finding-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .finding-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #3E2723;
+            opacity: 0.82;
+        }
+
+        /* =========================
+           CONCLUSION
+        ========================== */
+
+        .conclusion-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+        }
+
+        .conclusion-grid h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .conclusion-text {
+            font-size: 17px;
+            opacity: 0.75;
+        }
+
+        .conclusion-text p + p {
+            margin-top: 18px;
+        }
+
+        .note {
+            margin-top: 28px;
+            padding: 20px;
+            border: 1px solid rgba(252, 199, 225, 0.3);
+            border-radius: 16px;
+            font-size: 14px;
+            opacity: 0.72;
+        }
+
+        /* =========================
+           LEARNING
+        ========================== */
+
+        .learning {
+            margin-top: 10px;
+        }
+
+        .learning-box {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 60px;
+            border: 1px solid rgba(252, 199, 225, 0.34);
+            border-radius: 26px;
+        }
+
+        .learning-box h2 {
+            font-size: 43px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .learning-box p {
+            max-width: 800px;
+            font-size: 17px;
+            opacity: 0.75;
+        }
+
+        /* =========================
+           SOURCES
+        ========================== */
+
+        .sources {
+            background: rgba(252, 199, 225, 0.045);
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .source-box {
+            padding: 30px;
+            border: 1px solid rgba(252, 199, 225, 0.28);
+            border-radius: 20px;
+        }
+
+        .source-box h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .source-box p {
+            font-size: 14px;
+            opacity: 0.66;
+        }
+
+        .source-box ul {
+            margin-top: 15px;
+            padding-left: 18px;
+        }
+
+        .source-box li {
+            font-size: 13px;
+            opacity: 0.68;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding-top: 35px;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-header h2 {
+            font-size: 35px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-header p {
+            font-size: 13px;
+            opacity: 0.5;
+            text-align: right;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
 
         .gallery-item {
+            aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            border-radius: 16px;
+            color: #4a2f01;
+            border-radius: 18px;
             overflow: hidden;
-            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4a2f01;
-            font-size: 14px;
             text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            border: 2px dashed #6D4C2A;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item .placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-item .placeholder .icon {
-            font-size: 48px;
-        }
-
-        .gallery-item .placeholder .label {
-            font-weight: 500;
-            font-size: 13px;
-            color: #6D4C2A;
         }
 
         .gallery-item img {
@@ -239,295 +563,1041 @@
             object-fit: cover;
         }
 
-        /* Bulgular özel listesi */
-        .findings-list {
-            list-style: none;
-            padding: 0;
+        .placeholder {
+            padding: 20px;
         }
 
-        .findings-list li {
-            padding: 8px 16px;
-            margin-bottom: 6px;
-            background: #ffffff;
-            border-radius: 8px;
-            border-left: 3px solid #6D4C2A;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3E2723;
+        .placeholder strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
         }
 
-        @media (max-width: 768px) {
-            .project-content {
+        .placeholder span {
+            font-size: 12px;
+            opacity: 0.55;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 40px 0;
+            background: #fcc7e1;
+            color: #4a2f01;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #4a2f01;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav .container {
+                flex-direction: column;
+            }
+
+            .hero-grid,
+            .question-grid,
+            .team-grid,
+            .conclusion-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-hero h1 {
-                font-size: 30px;
+            .hero-side {
+                border-left: none;
+                border-top: 1px solid rgba(252, 199, 225, 0.35);
+                padding-left: 0;
+                padding-top: 25px;
             }
 
-            .project-main {
-                padding: 24px;
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .method-grid,
+            .finding-grid,
+            .sources-grid {
+                grid-template-columns: 1fr;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .gallery-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gallery-header p {
+                text-align: left;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                padding: 70px 0 55px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-title {
+                font-size: 17px;
+            }
+
+            .info-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .question-grid h2,
+            .team-grid h2,
+            .conclusion-grid h2,
+            .learning-box h2 {
+                font-size: 31px;
+            }
+
+            .learning-box {
+                padding: 32px 24px;
             }
         }
     </style>
 </head>
+
+
 <body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <nav>
         <div class="container">
-            <div class="logo">Elifsu Arifoğlu<span>.</span></div>
+
+            <a href="index.html" class="logo">
+                Elifsu Arifoğlu<span>.</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="poetry.html">Poetry</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="poetry.html">Poetry</a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+
             </ul>
+
         </div>
     </nav>
 
-    <section>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
         <div class="container">
 
-            <a href="projects.html" class="btn-back">← Back to Projects</a>
+            <a href="projects.html" class="back-link">
+                ← Back to Projects
+            </a>
 
-            <div class="project-hero">
-                <span class="icon-large">🧬</span>
-                <h1>TÜBİTAK 4006</h1>
-                <span class="tag-large">Research · Sustainable Protein</span>
-            </div>
+            <div class="hero-grid">
 
-            <div class="project-content">
+                <div>
 
-                <div class="project-main">
-                    <h2>About the Project</h2>
-                    <p>
-                        <strong>Alternatif Protein Kaynağı: Böcek Yetiştiriciliği ve Besin Değeri Analizi</strong>
-                        (Alternative Protein Source: Insect Farming and Nutritional Value Analysis)
-                        is a TÜBİTAK 4006 research project exploring the potential of <strong>Tenebrio molitor</strong>
-                        (mealworm) larvae as a sustainable protein source for the future.
-                    </p>
-
-                    <div class="highlight-box">
-                        <strong>🧬 Project Information</strong><br />
-                        <strong>Project Type:</strong> Research<br />
-                        <strong>Main Field:</strong> Food and Food Supply Security<br />
-                        <strong>Thematic Topic:</strong> Food and Food Supply Security<br />
-                        <strong>Advisor Teacher:</strong> Nazlı ÇOBAN YEŞİL
+                    <div class="eyebrow">
+                        TÜBİTAK 4006 · Research
                     </div>
 
-                    <h3>👥 Project Team</h3>
-                    <div class="team-members">
-                        <span class="team-tag">Azra Gül BAKIR</span>
-                        <span class="team-tag">Elifsu ARİFOĞLU</span>
-                        <span class="team-tag">Meryem ÖZER</span>
-                    </div>
+                    <h1>
+                        Alternative Protein
+                    </h1>
 
-                    <h3>❓ Problem Statement</h3>
-                    <p>
-                        The world population is growing rapidly, but food production is not keeping pace.
-                        According to Malthus's theory, population grows geometrically while food production
-                        grows arithmetically. Climate change, water scarcity, and decreasing agricultural
-                        land create a risk of protein deficiency in the future. This situation makes
-                        alternative and sustainable protein sources essential.
+                    <p class="hero-title">
+                        Investigating <em>Tenebrio molitor</em> larvae
+                        as a potential sustainable protein source for
+                        a changing food system.
                     </p>
 
-                    <h3>🔬 Methodology</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">🔄</span>
-                            <div>
-                                <strong>Life Cycle Analysis:</strong> The life cycle of mealworms (Egg → Larva → Pupa → Adult Beetle) was studied.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🧪</span>
-                            <div>
-                                <strong>Laboratory Farming:</strong> Mealworms were raised in laboratory conditions.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">🌾</span>
-                            <div>
-                                <strong>Feeding Regimen:</strong> Larvae were fed wheat bran and organic waste (carrots, etc.).
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📚</span>
-                            <div>
-                                <strong>Literature Review:</strong> Nutritional values were researched through scientific literature.
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📊</span>
-                            <div>
-                                <strong>Observation & Analysis:</strong> Comparative analysis and observations were conducted.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3>📊 Findings</h3>
-                    <ul class="findings-list">
-                        <li>🔹 <strong>High Protein Content:</strong> Mealworm larvae contain up to <strong>50% protein</strong>.</li>
-                        <li>🔹 <strong>Low Resource Requirements:</strong> Requires very little water and space, reproduces quickly.</li>
-                        <li>🔹 <strong>Organic Waste Utilization:</strong> Can be easily fed with organic waste.</li>
-                        <li>🔹 <strong>Environmental Friendliness:</strong> Lower carbon emissions compared to traditional livestock farming.</li>
-                        <li>🔹 <strong>Successful Cultivation:</strong> Larval and adult stages were successfully obtained in laboratory conditions.</li>
-                    </ul>
-
-                    <h3>📝 Conclusion & Discussion</h3>
-                    <p>
-                        <strong>Tenebrio molitor</strong> larvae have great potential as a sustainable,
-                        economical, and environmentally friendly alternative protein source for the
-                        growing world population and increasing protein needs.
-                    </p>
-                    <p>
-                        With high protein content (up to 50%), low water and space requirements, ability
-                        to feed on organic waste, and low carbon footprint, they offer significant advantages
-                        over traditional livestock. In laboratory experiments, larval and adult stages were
-                        successfully obtained, demonstrating that farming is practically feasible.
-                    </p>
-                    <p>
-                        While there are challenges such as cultural prejudices, legal regulations, and
-                        hygiene standards, the approach of <strong>"No to GMOs, Yes to Natural Worms!"</strong>
-                        presents a natural and healthy option. If necessary regulations are made in Turkey,
-                        mealworm farming could significantly contribute to food supply security.
-                    </p>
-
-                    <h3>📖 References</h3>
-                    <ul>
-                        <li>
-                            <span class="li-icon">📄</span>
-                            <div>
-                                <strong>FAO</strong> — Sustainable Nutrition Reports
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📄</span>
-                            <div>
-                                <strong>Scientific Studies:</strong> Nutritional value and cultivation research on Tenebrio molitor
-                            </div>
-                        </li>
-                        <li>
-                            <span class="li-icon">📄</span>
-                            <div>
-                                <strong>Laboratory Observations:</strong> Experimental data and photographic documentation
-                            </div>
-                        </li>
-                    </ul>
                 </div>
 
-                <div class="project-sidebar">
 
-                    <div class="sidebar-card">
-                        <h4>📊 Quick Facts</h4>
-                        <ul>
-                            <li><strong>Project:</strong> TÜBİTAK 4006</li>
-                            <li><strong>Type:</strong> Research</li>
-                            <li><strong>Field:</strong> Food & Supply Security</li>
-                            <li><strong>Status:</strong> Completed</li>
-                            <li><strong>Advisor:</strong> Nazlı ÇOBAN YEŞİL</li>
-                        </ul>
-                    </div>
+                <div class="hero-side">
 
-                    <div class="sidebar-card">
-                        <h4>🏅 Key Achievements</h4>
-                        <ul>
-                            <li>✅ High-protein alternative source</li>
-                            <li>✅ Sustainable farming method</li>
-                            <li>✅ Organic waste utilization</li>
-                            <li>✅ Low environmental impact</li>
-                            <li>✅ Successful laboratory cultivation</li>
-                        </ul>
-                    </div>
+                    <p>
+                        A research project combining laboratory
+                        observation, literature review, cultivation,
+                        and sustainability analysis.
+                    </p>
 
-                    <div class="sidebar-card">
-                        <h4>🔗 Related</h4>
-                        <ul>
-                            <li>🧬 Sustainable Protein</li>
-                            <li>🌾 Food Security</li>
-                            <li>🔬 Research</li>
-                            <li>♻️ Environmental Sustainability</li>
-                            <li>🧪 Laboratory Science</li>
-                        </ul>
+                    <div class="hero-tags">
+
+                        <span class="hero-tag">
+                            Food Security
+                        </span>
+
+                        <span class="hero-tag">
+                            Sustainability
+                        </span>
+
+                        <span class="hero-tag">
+                            Research
+                        </span>
+
+                        <span class="hero-tag">
+                            Laboratory
+                        </span>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            <div class="gallery-section">
-                <h2>📸 TÜBİTAK 4006 Gallery</h2>
-                <div class="gallery-grid">
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🪲</span>
-                            <span class="label">Adult Mealworm Beetles</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🐛</span>
-                            <span class="label">Larval Farming Environment</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🔬</span>
-                            <span class="label">Larva Stage</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🧪</span>
-                            <span class="label">Laboratory Analysis</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">⚗️</span>
-                            <span class="label">Processed Larva Sample</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="placeholder">
-                            <span class="icon">🌱</span>
-                            <span class="label">Natural vs GMO Poster</span>
-                            <span style="font-size:12px;color:#6D4C2A;">(Add image)</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
+
+    </header>
+
+
+    <!-- =========================
+         RESEARCH QUESTION
+    ========================== -->
+
+    <section class="question-section">
+
+        <div class="container">
+
+            <div class="question-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        The Question
+                    </div>
+
+                    <h2>
+                        Can insects become
+                        part of a more
+                        sustainable food system?
+                    </h2>
+
+                </div>
+
+
+                <div class="question-text">
+
+                    <p>
+                        Global population growth, climate change,
+                        water scarcity, and shrinking agricultural
+                        resources raise an important question:
+                        how can future food systems provide enough
+                        protein while using fewer resources?
+                    </p>
+
+                    <p>
+                        Our project investigated whether
+                        <strong>Tenebrio molitor</strong> larvae
+                        could represent one possible answer.
+                    </p>
+
+                    <div class="research-question">
+                        Research focus:
+                        Can mealworm larvae be cultivated
+                        effectively and offer meaningful
+                        nutritional and environmental advantages
+                        as an alternative protein source?
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <footer>
+
+    <!-- =========================
+         PROJECT INFORMATION
+    ========================== -->
+
+    <section>
+
         <div class="container">
-            <p>© 2026 Elif. Built with ❤️</p>
+
+            <div class="section-label">
+                Project Information
+            </div>
+
+            <h2 class="section-title">
+                The research at a glance.
+            </h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <span>
+                        Project Type
+                    </span>
+
+                    <strong>
+                        TÜBİTAK 4006 Research Project
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>
+                        Main Field
+                    </span>
+
+                    <strong>
+                        Food &amp; Food Supply Security
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>
+                        Study Organism
+                    </span>
+
+                    <strong>
+                        Tenebrio molitor
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>
+                        Advisor
+                    </span>
+
+                    <strong>
+                        Nazlı Çoban Yeşil
+                    </strong>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =========================
+         TEAM
+    ========================== -->
+
+    <section class="team-section">
+
+        <div class="container">
+
+            <div class="team-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        Research Team
+                    </div>
+
+                    <h2>
+                        Research is
+                        collaborative.
+                    </h2>
+
+                </div>
+
+
+                <div class="team-text">
+
+                    <p>
+                        The project was conducted as a team, with each
+                        stage requiring observation, discussion,
+                        documentation, and analysis.
+                    </p>
+
+                    <div class="team-members">
+
+                        <span class="team-member">
+                            Azra Gül BAKIR
+                        </span>
+
+                        <span class="team-member">
+                            Elifsu ARİFOĞLU
+                        </span>
+
+                        <span class="team-member">
+                            Meryem ÖZER
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         METHODOLOGY
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="method-header">
+
+                <div class="section-label">
+                    Methodology
+                </div>
+
+                <h2 class="section-title">
+                    From cultivation to analysis.
+                </h2>
+
+                <p class="section-description">
+                    We combined practical laboratory work with
+                    background research to evaluate both cultivation
+                    and the potential sustainability of mealworms.
+                </p>
+
+            </div>
+
+
+            <div class="method-grid">
+
+
+                <div class="method-card">
+
+                    <span class="method-number">
+                        01 · LIFE CYCLE
+                    </span>
+
+                    <h3>
+                        Life Cycle Analysis
+                    </h3>
+
+                    <p>
+                        We studied the development of mealworms through
+                        the stages of egg, larva, pupa, and adult beetle.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span class="method-number">
+                        02 · CULTIVATION
+                    </span>
+
+                    <h3>
+                        Laboratory Farming
+                    </h3>
+
+                    <p>
+                        Mealworms were raised under laboratory conditions
+                        to observe their development and cultivation process.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span class="method-number">
+                        03 · FEEDING
+                    </span>
+
+                    <h3>
+                        Feeding Regimen
+                    </h3>
+
+                    <p>
+                        Larvae were fed wheat bran and organic materials,
+                        including carrots, as part of the cultivation process.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span class="method-number">
+                        04 · LITERATURE
+                    </span>
+
+                    <h3>
+                        Literature Review
+                    </h3>
+
+                    <p>
+                        Scientific literature was reviewed to understand
+                        nutritional value, cultivation practices, and
+                        sustainability considerations.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span class="method-number">
+                        05 · OBSERVATION
+                    </span>
+
+                    <h3>
+                        Observation &amp; Analysis
+                    </h3>
+
+                    <p>
+                        Observations and comparative analysis were used
+                        to evaluate the results of the cultivation process.
+                    </p>
+
+                </div>
+
+
+                <div class="method-card">
+
+                    <span class="method-number">
+                        06 · DOCUMENTATION
+                    </span>
+
+                    <h3>
+                        Experimental Record
+                    </h3>
+
+                    <p>
+                        The process was documented through observations,
+                        experimental data, and photographic records.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINDINGS
+    ========================== -->
+
+    <section class="findings-section">
+
+        <div class="container">
+
+            <div class="findings-header">
+
+                <div class="section-label">
+                    Findings
+                </div>
+
+                <h2 class="section-title">
+                    What the research suggested.
+                </h2>
+
+                <p class="section-description">
+                    The project pointed toward several potential
+                    advantages of mealworm cultivation while also
+                    highlighting the need for further research.
+                </p>
+
+            </div>
+
+
+            <div class="finding-grid">
+
+
+                <div class="finding-card">
+
+                    <h3>
+                        High Protein Content
+                    </h3>
+
+                    <p>
+                        Literature reviewed for the project reports
+                        protein levels of up to approximately 50%
+                        in mealworm larvae.
+                    </p>
+
+                </div>
+
+
+                <div class="finding-card">
+
+                    <h3>
+                        Low Resource Requirements
+                    </h3>
+
+                    <p>
+                        Mealworms can be cultivated using relatively
+                        little water and space and have a comparatively
+                        short development cycle.
+                    </p>
+
+                </div>
+
+
+                <div class="finding-card">
+
+                    <h3>
+                        Organic Waste Utilization
+                    </h3>
+
+                    <p>
+                        The cultivation process can make use of organic
+                        materials as part of the feeding regimen.
+                    </p>
+
+                </div>
+
+
+                <div class="finding-card">
+
+                    <h3>
+                        Potential Environmental Benefit
+                    </h3>
+
+                    <p>
+                        The literature reviewed suggests potential
+                        environmental advantages compared with
+                        conventional livestock systems.
+                    </p>
+
+                </div>
+
+
+                <div class="finding-card">
+
+                    <h3>
+                        Successful Cultivation
+                    </h3>
+
+                    <p>
+                        Larval and adult stages were successfully
+                        obtained during the laboratory cultivation process.
+                    </p>
+
+                </div>
+
+
+                <div class="finding-card">
+
+                    <h3>
+                        Further Questions
+                    </h3>
+
+                    <p>
+                        Cultural acceptance, legal frameworks,
+                        food hygiene, and large-scale implementation
+                        remain important considerations.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONCLUSION
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="conclusion-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        Conclusion
+                    </div>
+
+                    <h2>
+                        A small organism
+                        raised a much bigger question.
+                    </h2>
+
+                </div>
+
+
+                <div class="conclusion-text">
+
+                    <p>
+                        Our findings suggest that
+                        <strong>Tenebrio molitor</strong> has potential
+                        as an alternative protein source because of its
+                        nutritional value, cultivation requirements,
+                        and ability to develop under controlled conditions.
+                    </p>
+
+                    <p>
+                        At the same time, the project showed that
+                        sustainability is more complicated than a single
+                        metric. Nutrition, resource use, environmental
+                        impact, regulation, hygiene, and social acceptance
+                        all have to be considered together.
+                    </p>
+
+                    <div class="note">
+                        <strong>
+                            Project perspective:
+                        </strong>
+                        Rather than treating insect farming as a complete
+                        solution, we approached it as one possible direction
+                        for future food-system research.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT I LEARNED
+    ========================== -->
+
+    <section class="learning">
+
+        <div class="container">
+
+            <div class="learning-box">
+
+                <div class="section-label">
+                    What I Learned
+                </div>
+
+                <h2>
+                    Research changed the way
+                    I think about sustainability.
+                </h2>
+
+                <p>
+                    This project taught me that sustainability is not
+                    simply about finding something that looks
+                    environmentally friendly. It requires asking
+                    questions, examining evidence, testing ideas,
+                    and being willing to discover limitations.
+                    Working with a real organism also made the
+                    research process much more concrete: we had to
+                    observe what happened rather than only discuss
+                    what might happen.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOURCES
+    ========================== -->
+
+    <section class="sources">
+
+        <div class="container">
+
+            <div class="section-label">
+                Research Basis
+            </div>
+
+            <h2 class="section-title">
+                Sources &amp; documentation.
+            </h2>
+
+            <div class="sources-grid">
+
+                <div class="source-box">
+
+                    <h3>
+                        Scientific Literature
+                    </h3>
+
+                    <p>
+                        The research used scientific literature to
+                        investigate nutritional value, cultivation,
+                        and sustainability.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Food and Agriculture Organization (FAO)
+                        </li>
+
+                        <li>
+                            Research on the nutritional value of
+                            Tenebrio molitor
+                        </li>
+
+                        <li>
+                            Research on insect cultivation and
+                            sustainability
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="source-box">
+
+                    <h3>
+                        Experimental Documentation
+                    </h3>
+
+                    <p>
+                        Laboratory observations and experimental
+                        documentation formed the practical component
+                        of the project.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Laboratory cultivation observations
+                        </li>
+
+                        <li>
+                            Development-stage documentation
+                        </li>
+
+                        <li>
+                            Photographic records and analysis
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="container">
+
+            <div class="gallery-header">
+
+                <div>
+
+                    <div class="section-label">
+                        Visual Documentation
+                    </div>
+
+                    <h2>
+                        Inside the research.
+                    </h2>
+
+                </div>
+
+                <p>
+                    Laboratory work, cultivation,
+                    specimens, and documentation.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Adult Mealworm Beetles
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Larval Stage
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Cultivation Environment
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Laboratory Observation
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Experimental Documentation
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <div class="placeholder">
+
+                        <strong>
+                            Research Poster
+                        </strong>
+
+                        <span>
+                            Add image
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Elifsu Arifoğlu · Built with curiosity.
+            </p>
+
+        </div>
+
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
+```
