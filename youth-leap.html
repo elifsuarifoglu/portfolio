@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -613,7 +612,7 @@
 
 
         /* =========================
-           GALLERY
+           GALLERY - DÜZELTİLDİ
         ========================== */
 
         .gallery {
@@ -649,34 +648,37 @@
         .gallery-item {
             aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            color: #4a2f01;
             border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .gallery-item .placeholder {
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gallery-item .placeholder img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            transition: transform 0.5s ease;
         }
 
-        .placeholder {
-            padding: 20px;
-        }
-
-        .placeholder strong {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .placeholder span {
-            font-size: 12px;
-            opacity: 0.55;
+        .gallery-item:hover .placeholder img {
+            transform: scale(1.1);
         }
 
 
@@ -1586,220 +1588,4 @@
 
                     <p>
                         The project concluded with a conference
-                        involving civil society actors from
-                        Bulgaria, Italy, and Spain.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         REFLECTION
-    ========================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="reflection-box">
-
-                <div class="section-label">
-                    What I Learned
-                </div>
-
-                <h2>
-                    Participation needs
-                    architecture.
-                </h2>
-
-                <p>
-                    Youth LEAP changed how I think about civic
-                    participation. It is easy to say that young
-                    people should have a voice, but meaningful
-                    participation requires structures that make
-                    contribution possible. Working across countries
-                    also showed me that the same model can look
-                    different depending on the community using it.
-                    I became more interested in how institutions,
-                    technology, and people can work together to
-                    make participation more than a slogan.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         GALLERY
-    ========================== -->
-
-    <section class="gallery">
-
-        <div class="container">
-
-            <div class="gallery-header">
-
-                <div>
-
-                    <div class="section-label">
-                        Visual Documentation
-                    </div>
-
-                    <h2>
-                        Youth LEAP in action
-                    </h2>
-
-                </div>
-
-                <p>
-                    Add your strongest photographs from
-                    international meetings, workshops,
-                    simulations, and group activities.
-                </p>
-
-            </div>
-
-
-            <div class="gallery-grid">
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Italy Meeting
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            International Delegates
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Model City Council
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Workshop
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Youth Participants
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Erasmus+ Event
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <p>
-                © 2026 Elifsu Arifoğlu · Built with curiosity.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+                        involving civil society
