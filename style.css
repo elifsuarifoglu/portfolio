@@ -609,7 +609,7 @@ section {
     margin-right: 8px;
 }
 
-/* ===== GALLERY - DÜZENLENDİ ===== */
+/* ===== GALLERY - YENİDEN DÜZENLENDİ ===== */
 .gallery-section {
     margin-top: 40px;
 }
@@ -631,10 +631,9 @@ section {
     background: #fcc7e1;
     border-radius: 16px;
     overflow: hidden;
-    aspect-ratio: 4/3;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
+    aspect-ratio: 4 / 3;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .gallery-item:hover {
@@ -646,28 +645,27 @@ section {
 .gallery-item .placeholder {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    background: #6D4C2A;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    background: #6D4C2A;
 }
 
-/* FOTOĞRAFLARIN TAM KAPLAMASI İÇİN */
+/* ===== FOTOĞRAFLARIN TAM KAPLAMASI ===== */
 .gallery-item .placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
     transition: transform 0.5s ease;
 }
 
-/* Hover'da hafif zoom efekti */
 .gallery-item:hover .placeholder img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
-/* Eğer placeholder içinde yazı/ikon varsa (fallback) */
+/* Placeholder içinde yazı/ikon varsa (fallback) */
 .gallery-item .placeholder .icon {
     font-size: 48px;
     color: #fcc7e1;
