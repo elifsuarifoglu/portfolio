@@ -462,7 +462,7 @@
         }
 
         /* =========================
-           GALLERY
+           GALLERY - DÜZELTİLDİ
         ========================== */
 
         .gallery {
@@ -498,34 +498,37 @@
         .gallery-item {
             aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            color: #4a2f01;
             border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .gallery-item .placeholder {
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gallery-item .placeholder img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            transition: transform 0.5s ease;
         }
 
-        .placeholder {
-            padding: 20px;
-        }
-
-        .placeholder strong {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .placeholder span {
-            font-size: 12px;
-            opacity: 0.55;
+        .gallery-item:hover .placeholder img {
+            transform: scale(1.1);
         }
 
         /* =========================
@@ -953,7 +956,7 @@
                     COP31 will take place in Antalya from
                     9–20 November 2026. My current work is part
                     of the youth engagement and preparation happening
-                    before the conference. :contentReference[oaicite:2]{index=2}
+                    before the conference.
                 </p>
 
             </div>
@@ -1215,7 +1218,7 @@
 
 
     <!-- =========================
-         GALLERY
+         GALLERY - DÜZELTİLDİ
     ========================== -->
 
     <section class="gallery">
@@ -1237,117 +1240,31 @@
                 </div>
 
                 <p>
-                    Add photographs from campaigns, meetings,
+                    Photographs from campaigns, meetings,
                     publications, and youth events here.
                 </p>
 
             </div>
 
-
             <div class="gallery-grid">
 
-
                 <div class="gallery-item">
-
                     <div class="placeholder">
-
-                        <strong>
-                            Climate Magazine
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
+                        <img src="images/idddergi.jpeg" alt="IDD Magazine" />
                     </div>
-
                 </div>
 
-
                 <div class="gallery-item">
-
                     <div class="placeholder">
-
-                        <strong>
-                            Youth Climate Event
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
+                        <img src="images/lcoy.jpeg" alt="LCOY" />
                     </div>
-
                 </div>
 
-
                 <div class="gallery-item">
-
                     <div class="placeholder">
-
-                        <strong>
-                            Pre-COP31 Campaign
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
+                        <img src="images/idd.jpeg" alt="IDD" />
                     </div>
-
                 </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            Youth Delegates
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            International Forum
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-item">
-
-                    <div class="placeholder">
-
-                        <strong>
-                            COP31 Preparation
-                        </strong>
-
-                        <span>
-                            Add image
-                        </span>
-
-                    </div>
-
-                </div>
-
 
             </div>
 
