@@ -437,7 +437,7 @@
         }
 
         /* =========================
-           GALLERY
+           GALLERY - DÜZELTİLDİ
         ========================== */
 
         .gallery {
@@ -472,34 +472,38 @@
         .gallery-item {
             aspect-ratio: 4 / 3;
             background: #fcc7e1;
-            color: #4a2f01;
             border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .gallery-item .placeholder {
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* ===== FOTOĞRAFLARIN TAM KAPLAMASI ===== */
+        .gallery-item .placeholder img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            transition: transform 0.5s ease;
         }
 
-        .placeholder {
-            padding: 20px;
-        }
-
-        .placeholder strong {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .placeholder span {
-            font-size: 12px;
-            opacity: 0.55;
+        .gallery-item:hover .placeholder img {
+            transform: scale(1.1);
         }
 
         /* =========================
@@ -1171,28 +1175,28 @@
 
                 <div class="gallery-item">
                     <div class="placeholder">
-                        <img src="images/ecobodr.jpeg" />
+                        <img src="images/ecobodr.jpeg" alt="Event" />
                     </div>
                 </div>
 
 
                 <div class="gallery-item">
                     <div class="placeholder">
-                        <img src="images/ecoboe.jpeg" />
+                        <img src="images/ecoboe.jpeg" alt="Activity" />
                     </div>
                 </div>
 
 
                 <div class="gallery-item">
                     <div class="placeholder">
-                        <img src="images/ecobome.jpeg" />
+                        <img src="images/ecobome.jpeg" alt="Meeting" />
                     </div>
                 </div>
 
 
                 <div class="gallery-item">
                     <div class="placeholder">
-                        <img src="images/ecobosunum.jpeg" />
+                        <img src="images/ecobosunum.jpeg" alt="Seminar" />
                     </div>
                 </div>
 
